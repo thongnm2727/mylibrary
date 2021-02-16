@@ -10,6 +10,7 @@
     <!-- <link href="../dist-assets/css/themes/lite-purple.min.css" rel="stylesheet" />
     <link href="../dist-assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet" /> -->
 
+    <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('dist-assets/images/page_icon.png')}}" />
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/themes/lite-purple.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/perfect-scrollbar.min.css') }}">
 </head>
@@ -52,6 +53,9 @@
                             </li>
                             <li>
                                 <a href="#">Books</a>
+                            </li>
+                            <li>
+                                <a href="#">BookRequests</a>
                             </li>
                         </ul>
                     </div>
