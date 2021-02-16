@@ -1,7 +1,7 @@
 <template>
   <div class="col-lg-6 mb-3">
     <!-- begin::form 2-->
-    <form action="">
+    <form @submit.prevent="addBook" method="POST">
       <!-- start card  Horizontal Form Layout-->
       <div class="card ul-card__margin-25">
         <div class="card-header bg-transparent">
@@ -17,9 +17,9 @@
             <div class="col-lg-6 mb-4">
               <input
                 class="form-control"
-                id="staticEmail"
                 type="text"
                 placeholder="book's name"
+                v-model="book.name"
               /><small class="ul-form__text form-text" id="passwordHelpBlock"
                 >Enter book's name</small
               >
@@ -32,9 +32,9 @@
             <div class="col-lg-6 mb-4">
               <input
                 class="form-control"
-                id="staticEmail"
                 type="text"
                 placeholder="book's author"
+                v-model="book.author"
               /><small class="ul-form__text form-text" id="passwordHelpBlock"
                 >Enter author of the book</small
               >
@@ -50,11 +50,12 @@
                 id="staticEmail"
                 type="text"
                 placeholder="book's publisher"
+                v-model="book.publisher"
               /><small class="ul-form__text form-text" id="passwordHelpBlock"
                 >Enter publisher of the book</small
               >
             </div>
-            <label
+            <!-- <label
               class="action-bar-horizontal-label col-lg-4 col-form-label"
               for="staticEmail"
               >Total Pages:
@@ -65,12 +66,13 @@
                 id="staticEmail"
                 type="text"
                 placeholder="number of pages"
+                v-model="book.number_of_pages"
               /><small class="ul-form__text form-text" id="passwordHelpBlock"
                 >Enter number of pages</small
               >
-            </div>
+            </div> -->
           </div>
-          <div class="form-group row mt-4">
+          <!-- <div class="form-group row mt-4">
             <label
               class="action-bar-horizontal-label col-lg-4 col-form-label"
               for="staticEmail"
@@ -94,17 +96,17 @@
                 ><span class="checkmark"></span>
               </label>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="card-footer">
           <div class="mc-footer">
             <div class="row text-right">
               <div class="col-lg-4"></div>
               <div class="col-lg-6 text-left">
-                <button class="btn btn-primary m-1" type="button">Save</button>
-                <button class="btn btn-outline-secondary m-1" type="button">
+                <button class="btn btn-primary m-1" type="submit">Save</button>
+                <!-- <button class="btn btn-outline-secondary m-1" type="button">
                   Cancel
-                </button>
+                </button> -->
               </div>
             </div>
           </div>
@@ -117,4 +119,21 @@
 </template>
 
 <script>
+export default {
+    data(){
+        return{
+            book : {},
+        };
+    },
+    methods: {
+        addBook(){
+            this.axios.post("http://localhost:8000/api/book/add_book", this.book)
+            .then(
+                (response) => this.$router.push({ name: "books"})
+            )
+            .catch((error) => console.log(error))
+            .finally(() => (this.loading = false));
+        }
+    },
+};
 </script>

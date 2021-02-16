@@ -53,7 +53,6 @@
     <div class="main-content-wrap d-flex flex-column">
       <!-- ============ Body content start ============= -->
       <div class="main-content">
-          <h1>Test App.vue</h1>
         <transition name="fade">
           <router-view></router-view>
         </transition>
