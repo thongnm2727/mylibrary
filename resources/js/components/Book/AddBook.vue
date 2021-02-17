@@ -1,11 +1,11 @@
 <template>
-  <div class="col-lg-6 mb-3">
+  <div class="col-lg-8 mb-3">
     <!-- begin::form 2-->
     <form @submit.prevent="addBook" method="POST">
       <!-- start card  Horizontal Form Layout-->
       <div class="card ul-card__margin-25">
         <div class="card-header bg-transparent">
-          <h3 class="card-title">Add Book</h3>
+          <h1 class="heading">Add Book</h1>
         </div>
         <div class="card-body">
           <div class="form-group row">
@@ -20,9 +20,7 @@
                 type="text"
                 placeholder="book's name"
                 v-model="book.name"
-              /><small class="ul-form__text form-text" 
-                >Enter book's name</small
-              >
+              /><small class="ul-form__text form-text">Enter book's name</small>
             </div>
             <label
               class="action-bar-horizontal-label col-lg-4 col-form-label"
@@ -35,7 +33,7 @@
                 type="text"
                 placeholder="book's author"
                 v-model="book.author"
-              /><small class="ul-form__text form-text" 
+              /><small class="ul-form__text form-text"
                 >Enter author of the book</small
               >
             </div>
@@ -51,7 +49,7 @@
                 type="text"
                 placeholder="book's publisher"
                 v-model="book.publisher"
-              /><small class="ul-form__text form-text" 
+              /><small class="ul-form__text form-text"
                 >Enter publisher of the book</small
               >
             </div>
@@ -67,9 +65,43 @@
                 type="text"
                 placeholder="publication_date"
                 v-model="book.publication_date"
-              /><small class="ul-form__text form-text" 
+              /><small class="ul-form__text form-text"
                 >Enter publication date of the book (E.g: Dec 12 1992)</small
               >
+            </div>
+            <label
+              class="action-bar-horizontal-label col-lg-4 col-form-label"
+              for="staticEmail"
+              >Description:
+            </label>
+            <div class="col-lg-8 mb-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Description</span>
+                </div>
+                <textarea
+                  rows="4"
+                  class="form-control"
+                  placeholder="book's description"
+                  v-model="book.description"
+                ></textarea>
+              </div>
+            </div>
+            <label
+              class="action-bar-horizontal-label col-lg-4 col-form-label"
+              for="staticEmail"
+              >Book's image:
+            </label>
+            <div class="col-lg-8 mb-4">
+              <div class="card text-left">
+                <div class="card-body">
+                  <form class="dropzone" id="single-file-upload" action="#">
+                    <div class="fallback">
+                      <input name="file" type="file" />
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>

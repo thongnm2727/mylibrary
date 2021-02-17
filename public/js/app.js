@@ -2027,6 +2027,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2063,6 +2095,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2287,6 +2325,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -20755,7 +20801,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-lg-6 mb-3" }, [
+  return _c("div", { staticClass: "col-lg-8 mb-3" }, [
     _c(
       "form",
       {
@@ -20933,7 +20979,57 @@ var render = function() {
                     "Enter publication date of the book (E.g: Dec 12 1992)"
                   )
                 ])
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "action-bar-horizontal-label col-lg-4 col-form-label",
+                  attrs: { for: "staticEmail" }
+                },
+                [_vm._v("Description:\n          ")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-8 mb-4" }, [
+                _c("div", { staticClass: "input-group" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.book.description,
+                        expression: "book.description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { rows: "4", placeholder: "book's description" },
+                    domProps: { value: _vm.book.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.book, "description", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "action-bar-horizontal-label col-lg-4 col-form-label",
+                  attrs: { for: "staticEmail" }
+                },
+                [_vm._v("Book's image:\n          ")]
+              ),
+              _vm._v(" "),
+              _vm._m(2)
             ])
           ]),
           _vm._v(" "),
@@ -20980,7 +21076,38 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header bg-transparent" }, [
-      _c("h3", { staticClass: "card-title" }, [_vm._v("Add Book")])
+      _c("h1", { staticClass: "heading" }, [_vm._v("Add Book")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [_vm._v("Description")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-8 mb-4" }, [
+      _c("div", { staticClass: "card text-left" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c(
+            "form",
+            {
+              staticClass: "dropzone",
+              attrs: { id: "single-file-upload", action: "#" }
+            },
+            [
+              _c("div", { staticClass: "fallback" }, [
+                _c("input", { attrs: { name: "file", type: "file" } })
+              ])
+            ]
+          )
+        ])
+      ])
     ])
   }
 ]
@@ -21014,6 +21141,7 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-12" }, [
                 _c("img", {
+                  staticClass: "rounded rounded",
                   attrs: {
                     src: "/dist-assets/images/default_image.jpg",
                     alt: "alt"
@@ -21034,7 +21162,7 @@ var render = function() {
                   _vm._v("Author: " + _vm._s(_vm.book.author))
                 ]),
                 _vm._v(" "),
-                _c("p", [
+                _c("p", { staticStyle: { "white-space": "pre-line" } }, [
                   _vm._v(
                     "\n                " +
                       _vm._s(_vm.book.description) +
@@ -21372,17 +21500,20 @@ var render = function() {
               _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-lg-12" }, [
-                      _c("div", { staticClass: "ul-product-detail__image" }, [
+                    _c("div", { staticClass: "col-lg-4" }, [
+                      _c("div", { staticClass: "col-md-6 form-group mb-3" }, [
                         _c("img", {
+                          staticClass: "d-block w-100 rounded rounded",
                           attrs: {
-                            src: "dist-assets/images/mac_book.jpg",
-                            alt: "book's image"
+                            src: "/dist-assets/images/default_image.jpg",
+                            alt: "alt"
                           }
                         })
                       ])
-                    ]),
-                    _vm._v(" "),
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-md-6 form-group mb-3" }, [
                       _c("label", [_vm._v("Name: ")]),
                       _vm._v(" "),
@@ -21537,7 +21668,9 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-12 form-group mb-3" }, [
+                    _c("div", { staticClass: "col-md-6 form-group mb-3" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 form-group mb-3" }, [
                       _c("div", { staticClass: "input-group" }, [
                         _vm._m(0),
                         _vm._v(" "),
@@ -21551,7 +21684,10 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { placeholder: "book's description" },
+                          attrs: {
+                            rows: "4",
+                            placeholder: "book's description"
+                          },
                           domProps: { value: _vm.book.description },
                           on: {
                             input: function($event) {
@@ -21567,7 +21703,9 @@ var render = function() {
                           }
                         })
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 form-group mb-3" })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [

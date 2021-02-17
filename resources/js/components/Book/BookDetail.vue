@@ -6,16 +6,22 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-12">
-                <img v-bind:src="'/dist-assets/images/default_image.jpg'" alt="alt" />
+                <img
+                  class="rounded rounded"
+                  v-bind:src="'/dist-assets/images/default_image.jpg'"
+                  alt="alt"
+                />
               </div>
               <div class="col-lg-8 col-md-8 col-sm-12">
                 <h3 class="font-weight-700 mt-4 mb-2">
                   {{ book.name }}
                 </h3>
                 <h5 class="text-info">Author: {{ book.author }}</h5>
-                <p>
-                  {{book.description}}
+
+                <p style="white-space: pre-line">
+                  {{ book.description }}
                 </p>
+
                 <div class="ul-product-detail__nested-card">
                   <div class="row text-center">
                     <div class="col-lg-3 col-sm-12 mb-2">

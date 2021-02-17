@@ -8,14 +8,17 @@
             <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-lg-12">
-                    <div class="ul-product-detail__image">
+                  <div class="col-lg-4">
+                    <div class="col-md-6 form-group mb-3">
                       <img
-                        v-bind:src="'dist-assets/images/mac_book.jpg'"
-                        alt="book's image"
+                        class="d-block w-100 rounded rounded"
+                        v-bind:src="'/dist-assets/images/default_image.jpg'"
+                        alt="alt"
                       />
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6 form-group mb-3">
                     <label>Name: </label>
                     <input
@@ -66,18 +69,23 @@
                       v-model="book.language"
                     />
                   </div>
-                  <div class="col-md-12 form-group mb-3">
+                  <div class="col-md-6 form-group mb-3"></div>
+                  <div class="col-md-6 form-group mb-3">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Description</span>
                       </div>
                       <textarea
+                        rows="4"
                         class="form-control"
                         placeholder="book's description"
                         v-model="book.description"
-                      ></textarea>
+                      >
+                      
+                      </textarea>
                     </div>
                   </div>
+                  <div class="col-md-6 form-group mb-3"></div>
                 </div>
 
                 <div class="row">

@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     //
     public function index(){
-        $books = Book::all()->toArray();
+        $books = Book::all()->reverse()->values()->toArray();
         return response()->json(["status" => "success","books" => $books], 200);
     }
 
