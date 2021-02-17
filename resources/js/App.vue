@@ -3,7 +3,7 @@
     <div class="main-header">
       <div class="logo">
         <a href="http://localhost:8000"
-          ><img v-bind:src="'dist-assets/images/logo.png'" alt=""
+          ><img v-bind:src="'/dist-assets/images/logo.png'" alt=""
         /></a>
       </div>
       <div class="d-flex align-items-center">

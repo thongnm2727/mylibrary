@@ -20595,7 +20595,7 @@ var render = function() {
     _c("div", { staticClass: "main-header" }, [
       _c("div", { staticClass: "logo" }, [
         _c("a", { attrs: { href: "http://localhost:8000" } }, [
-          _c("img", { attrs: { src: "dist-assets/images/logo.png", alt: "" } })
+          _c("img", { attrs: { src: "/dist-assets/images/logo.png", alt: "" } })
         ])
       ]),
       _vm._v(" "),
@@ -21014,7 +21014,10 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-12" }, [
                 _c("img", {
-                  attrs: { src: "dist-assets/images/mac_book.jpg", alt: "alt" }
+                  attrs: {
+                    src: "/dist-assets/images/default_image.jpg",
+                    alt: "alt"
+                  }
                 })
               ]),
               _vm._v(" "),
@@ -21246,7 +21249,7 @@ var render = function() {
                         _c("img", {
                           staticClass: "d-block w-100 rounded rounded",
                           attrs: {
-                            src: "dist-assets/images/products/iphone-1.jpg",
+                            src: "/dist-assets/images/default_image2.jpg",
                             alt: "First slide"
                           }
                         })

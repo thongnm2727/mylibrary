@@ -13,11 +13,11 @@
         >
           <div class="card">
             <router-link
-              :to="{ name: 'book_detail', params: { id: book.id } }"
+              :to="{ name: 'book_detail', params: {id: book.id }}"
             >
               <img
                 class="d-block w-100 rounded rounded"
-                v-bind:src="'dist-assets/images/products/iphone-1.jpg'"
+                v-bind:src="'/dist-assets/images/default_image2.jpg'"
                 alt="First slide"
               />
             </router-link>
