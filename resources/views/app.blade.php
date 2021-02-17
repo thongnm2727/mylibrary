@@ -11,12 +11,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('dist-assets/images/page_icon.png')}}" />
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/themes/lite-purple.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/perfect-scrollbar.min.css') }}">
-    
 </head>
 
-<body class="text-left">
-    <div id="app">
-
+<body class="text-left" style="background-image: url('dist-assets/images/background-image1.jpg');">
+    <div id="app"  >
     </div>
     <!-- ============ Search UI Start ============= -->
     <!-- ============ Search UI End ============= -->

@@ -23,7 +23,7 @@
                   <div
                     class="ul-product-detail__price-and-rating d-flex align-items-baseline"
                   >
-                    <span> Publisher: {{ book.publisher }} </span>
+                    <h5> Publisher: {{ book.publisher }}</h5> 
                   </div>
 
                   <div class="ul-product-detail__features mt-3">

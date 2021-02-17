@@ -1903,6 +1903,8 @@ module.exports = {
 //
 //
 //
+//
+//
 
 /***/ }),
 
@@ -2259,7 +2261,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.axios.get("http://localhost:8000/api/books").then(function (response) {
-      _this.books = response.data.data;
+      _this.books = response.data.books;
     });
   }
 });
@@ -2272,6 +2274,7 @@ __webpack_require__.r(__webpack_exports__);
   \***********************************************************************************************************************************************************************************************************/
 /***/ (() => {
 
+//
 //
 //
 //
@@ -20364,7 +20367,9 @@ var render = function() {
   return _c("div", { staticClass: "app-admin-wrap layout-horizontal-bar" }, [
     _c("div", { staticClass: "main-header" }, [
       _c("div", { staticClass: "logo" }, [
-        _c("img", { attrs: { src: "dist-assets/images/logo.png", alt: "" } })
+        _c("a", { attrs: { href: "http://localhost:8000" } }, [
+          _c("img", { attrs: { src: "dist-assets/images/logo.png", alt: "" } })
+        ])
       ]),
       _vm._v(" "),
       _vm._m(0),
@@ -20771,10 +20776,8 @@ var render = function() {
                         "ul-product-detail__price-and-rating d-flex align-items-baseline"
                     },
                     [
-                      _c("span", [
-                        _vm._v(
-                          " Publisher: " + _vm._s(_vm.book.publisher) + " "
-                        )
+                      _c("h5", [
+                        _vm._v(" Publisher: " + _vm._s(_vm.book.publisher))
                       ])
                     ]
                   ),
@@ -20930,11 +20933,11 @@ var render = function() {
                     { staticClass: "card-body" },
                     [
                       _c("h5", { staticClass: "card-title mb-2" }, [
-                        _vm._v("Gull Admin")
+                        _vm._v(_vm._s(book.name))
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text text-mute" }, [
-                        _vm._v("By Frontend developer")
+                        _vm._v(_vm._s(book.author))
                       ]),
                       _vm._v(" "),
                       _c(
@@ -20995,9 +20998,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h2", [_vm._v("Test Home.vue!!")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("h3", [_vm._v("Home component!!!")])])
+  }
+]
 render._withStripped = true
 
 

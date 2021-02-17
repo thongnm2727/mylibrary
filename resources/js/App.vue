@@ -2,7 +2,9 @@
   <div class="app-admin-wrap layout-horizontal-bar">
     <div class="main-header">
       <div class="logo">
-        <img v-bind:src="'dist-assets/images/logo.png'" alt="" />
+        <a href="http://localhost:8000"
+          ><img v-bind:src="'dist-assets/images/logo.png'" alt=""
+        /></a>
       </div>
       <div class="d-flex align-items-center">
         <!-- Mega menu-->

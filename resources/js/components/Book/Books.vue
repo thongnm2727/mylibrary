@@ -14,8 +14,8 @@
               alt="First slide"
             />
             <div class="card-body">
-              <h5 class="card-title mb-2">Gull Admin</h5>
-              <p class="card-text text-mute">By Frontend developer</p>
+              <h5 class="card-title mb-2">{{book.name}}</h5>
+              <p class="card-text text-mute">{{book.author}}</p>
               <router-link :to="{ name: 'book_detail', params: {id:book.id}}"
                 class="btn btn-outline-success ul-btn-raised--v2 m-1"
               >
@@ -44,7 +44,7 @@ export default {
   },
   created() {
     this.axios.get("http://localhost:8000/api/books").then((response) => {
-      this.books = response.data.data;
+      this.books = response.data.books;
     });
   },
 };

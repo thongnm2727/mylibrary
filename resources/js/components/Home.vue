@@ -1,8 +1,8 @@
 <template>
-    <!-- <h1>Home component!</h1> -->
-    <h2>Test Home.vue!!</h2>
+  <div > 
+      <h3>Home component!!!</h3>
+  </div>
 </template>
 
 <script>
-
 </script>

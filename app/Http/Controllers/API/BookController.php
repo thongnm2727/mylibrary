@@ -11,7 +11,7 @@ class BookController extends Controller
     //
     public function index(){
         $books = Book::all()->toArray();
-        return response()->json(["status" => "success","data" => $books], 200);
+        return response()->json(["status" => "success","books" => $books], 200);
     }
 
     public function add(Request $request){
