@@ -1,89 +1,89 @@
 <template>
-  <div>
-    <h3>Book Detail</h3>
-    <section class="ul-product-detail">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="ul-product-detail__image">
-                    <img
-                      v-bind:src="'dist-assets/images/mac_book.jpg'"
-                      alt="alt"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="ul-product-detail__brand-name mb-4">
-                    <h1 class="heading">{{ book.name }}</h1>
-                    <mark>{{ book.author }}</mark>
-                  </div>
-                  <div
-                    class="ul-product-detail__price-and-rating d-flex align-items-baseline"
-                  >
-                    <h5> Publisher: {{ book.publisher }}</h5> 
-                  </div>
-
-                  <div class="ul-product-detail__features mt-3">
-                    <h6 class="font-weight-700">Features:</h6>
-                    <ul class="m-0 p-0">
-                      <li>
-                        <i
-                          class="i-Right1 text-primary text-15 align-middle font-weight-700"
-                        ></i
-                        ><span class="align-middle"
-                          >This Refurbished product is tested to work and look
-                          like new with minimal to no signs of wear & tear</span
-                        >
-                      </li>
-                      <li>
-                        <i
-                          class="i-Right1 text-primary text-15 align-middle font-weight-700"
-                        ></i
-                        ><span class="align-middle"
-                          >This Refurbished product is tested to work and look
-                          like new with minimal to no signs of wear & tear</span
-                        >
-                      </li>
-                      <li>
-                        <i
-                          class="i-Right1 text-primary text-15 align-middle font-weight-700"
-                        ></i
-                        ><span class="align-middle"
-                          >This Refurbished product is tested to work and look
-                          like new with minimal to no signs of wear & tear</span
-                        >
-                      </li>
-                      <li>
-                        <i
-                          class="i-Right1 text-primary text-15 align-middle font-weight-700"
-                        ></i
-                        ><span class="align-middle"
-                          >This Refurbished product is tested to work and look
-                          like new with minimal to no signs of wear & tear</span
-                        >
-                      </li>
-                      <li>
-                        <i
-                          class="i-Right1 text-primary text-15 align-middle font-weight-700"
-                        ></i
-                        ><span class="align-middle"
-                          >This Refurbished product is tested to work and look
-                          like new with minimal to no signs of wear & tear</span
-                        >
-                      </li>
-                      <li>
-                        <i
-                          class="i-Right1 text-primary text-15 align-middle font-weight-700"
-                        ></i
-                        ><span class="align-middle"
-                          >This Refurbished product is tested to work and look
-                          like new with minimal to no signs of wear & tear</span
-                        >
-                      </li>
-                    </ul>
+  <section class="ul-product-detail__tab">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mt-4">
+        <div class="card mt-2 mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <img v-bind:src="'dist-assets/images/mac_book.jpg'" alt="alt" />
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-12">
+                <h3 class="font-weight-700 mt-4 mb-2">
+                  {{ book.name }}
+                </h3>
+                <h5 class="text-info">Author: {{ book.author }}</h5>
+                <p></p>
+                <div class="ul-product-detail__nested-card">
+                  <div class="row text-center">
+                    <div class="col-lg-3 col-sm-12 mb-2">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="ul-product-detail__border-box">
+                            <div class="ul-product-detail--icon mb-2">
+                              <i
+                                class="i-Car text-success text-25 font-weight-500"
+                              ></i>
+                            </div>
+                            <h5 class="heading text-info">Publisher</h5>
+                            <span class="t-font-boldest">
+                              {{ book.publisher }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 mb-2">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="ul-product-detail__border-box">
+                            <div class="ul-product-detail--icon mb-2">
+                              <i
+                                class="i-Car text-success text-25 font-weight-500"
+                              ></i>
+                            </div>
+                            <h5 class="heading text-info">Language</h5>
+                            <span class="t-font-boldest">
+                              {{ book.publisher }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 mb-2">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="ul-product-detail__border-box">
+                            <div class="ul-product-detail--icon mb-2">
+                              <i
+                                class="i-Car text-success text-25 font-weight-500"
+                              ></i>
+                            </div>
+                            <h5 class="heading text-info">Publication Date</h5>
+                            <span class="t-font-boldest">
+                              {{ book.publication_date }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 mb-2">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="ul-product-detail__border-box">
+                            <div class="ul-product-detail--icon mb-2">
+                              <i
+                                class="i-Car text-success text-25 font-weight-500"
+                              ></i>
+                            </div>
+                            <h5 class="heading text-info">Requested</h5>
+                            <span class="t-font-boldest">
+                              {{ book.number_of_requests }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -91,8 +91,8 @@
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>

@@ -20,7 +20,7 @@
                 type="text"
                 placeholder="book's name"
                 v-model="book.name"
-              /><small class="ul-form__text form-text" id="passwordHelpBlock"
+              /><small class="ul-form__text form-text" 
                 >Enter book's name</small
               >
             </div>
@@ -35,7 +35,7 @@
                 type="text"
                 placeholder="book's author"
                 v-model="book.author"
-              /><small class="ul-form__text form-text" id="passwordHelpBlock"
+              /><small class="ul-form__text form-text" 
                 >Enter author of the book</small
               >
             </div>
@@ -51,52 +51,27 @@
                 type="text"
                 placeholder="book's publisher"
                 v-model="book.publisher"
-              /><small class="ul-form__text form-text" id="passwordHelpBlock"
+              /><small class="ul-form__text form-text" 
                 >Enter publisher of the book</small
               >
             </div>
-            <!-- <label
+            <label
               class="action-bar-horizontal-label col-lg-4 col-form-label"
               for="staticEmail"
-              >Total Pages:
+              >Publication date:
             </label>
             <div class="col-lg-6 mb-4">
               <input
                 class="form-control"
                 id="staticEmail"
                 type="text"
-                placeholder="number of pages"
-                v-model="book.number_of_pages"
-              /><small class="ul-form__text form-text" id="passwordHelpBlock"
-                >Enter number of pages</small
+                placeholder="publication_date"
+                v-model="book.publication_date"
+              /><small class="ul-form__text form-text" 
+                >Enter publication date of the book (E.g: Dec 12 1992)</small
               >
-            </div> -->
-          </div>
-          <!-- <div class="form-group row mt-4">
-            <label
-              class="action-bar-horizontal-label col-lg-4 col-form-label"
-              for="staticEmail"
-              >Genre:</label
-            >
-            <div class="col-lg-6 d-inline-flex align-self-center">
-              <label class="checkbox checkbox-primary mr-2">
-                <input type="checkbox" checked="" /><span>Drama</span
-                ><span class="checkmark"></span>
-              </label>
-              <label class="checkbox checkbox-primary mr-2">
-                <input type="checkbox" /><span>Romantic</span
-                ><span class="checkmark"></span>
-              </label>
-              <label class="checkbox checkbox-primary mr-2">
-                <input type="checkbox" /><span>Novel</span
-                ><span class="checkmark"></span>
-              </label>
-              <label class="checkbox checkbox-primary mr-2">
-                <input type="checkbox" /><span>Thriller</span
-                ><span class="checkmark"></span>
-              </label>
             </div>
-          </div> -->
+          </div>
         </div>
         <div class="card-footer">
           <div class="mc-footer">
@@ -104,9 +79,9 @@
               <div class="col-lg-4"></div>
               <div class="col-lg-6 text-left">
                 <button class="btn btn-primary m-1" type="submit">Save</button>
-                <!-- <button class="btn btn-outline-secondary m-1" type="button">
-                  Cancel
-                </button> -->
+                <router-link to="/books" class="btn btn-outline-danger m-1"
+                  >Cancel</router-link
+                >
               </div>
             </div>
           </div>
@@ -120,20 +95,19 @@
 
 <script>
 export default {
-    data(){
-        return{
-            book : {},
-        };
+  data() {
+    return {
+      book: {},
+    };
+  },
+  methods: {
+    addBook() {
+      this.axios
+        .post("http://localhost:8000/api/book/add_book", this.book)
+        .then((response) => this.$router.push({ name: "books" }))
+        .catch((error) => console.log(error))
+        .finally(() => (this.loading = false));
     },
-    methods: {
-        addBook(){
-            this.axios.post("http://localhost:8000/api/book/add_book", this.book)
-            .then(
-                (response) => this.$router.push({ name: "books"})
-            )
-            .catch((error) => console.log(error))
-            .finally(() => (this.loading = false));
-        }
-    },
+  },
 };
 </script>

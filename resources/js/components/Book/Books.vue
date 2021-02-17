@@ -27,10 +27,10 @@
                 Detail
               </router-link>
               <router-link
-                :to="{ name: 'edit_book', params: { id: book.id } }"
+                :to="{ name: 'update_book', params: { id: book.id } }"
                 class="btn btn-outline-success ul-btn-raised--v2 m-1"
               >
-                Edit
+                Update
               </router-link>
               <button
                 class="btn btn-outline-danger ul-btn-raised--v2 m-1 float-right"

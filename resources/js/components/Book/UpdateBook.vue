@@ -46,6 +46,16 @@
                       v-model="book.publisher"
                     />
                   </div>
+                  <div class="col-md-6 form-group mb-3">
+                    <label>Publication date: </label>
+                    <input
+                      class="form-control"
+                      id="publisher"
+                      type="text"
+                      placeholder="publication date (e.g: Aug 27, 1992)"
+                      v-model="book.publication_date"
+                    />
+                  </div>
                 </div>
 
                 <div class="row">
@@ -53,7 +63,9 @@
                     <button class="btn btn-outline-success m-1">
                       Save Changes
                     </button>
-                    <router-link to="/books" class="btn btn-outline-danger m-1">Cancel</router-link>
+                    <router-link to="/books" class="btn btn-outline-danger m-1"
+                      >Cancel</router-link
+                    >
                   </div>
                 </div>
               </div>
