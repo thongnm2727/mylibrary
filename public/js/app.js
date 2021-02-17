@@ -2124,8 +2124,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -20542,21 +20540,28 @@ var render = function() {
         [_vm._v("\n    Add Book\n  ")]
       ),
       _vm._v(" "),
-      _c("table", { staticClass: "table" }, [
-        _vm._m(0),
-        _vm._v(" "),
+      _c("section", { staticClass: "widget-card" }, [
         _c(
-          "tbody",
+          "div",
+          { staticClass: "row" },
           _vm._l(_vm.books, function(book) {
-            return _c("tr", { key: book.id }, [
-              _c("td", [_vm._v(_vm._s(book.name))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(book.author))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(book.publisher))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(book.number_of_requests))])
-            ])
+            return _c(
+              "div",
+              { key: book.id, staticClass: "col-lg-4 col-xl-3 mt-3" },
+              [
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "d-block w-100 rounded rounded",
+                    attrs: {
+                      src: "dist-assets/images/products/iphone-1.jpg",
+                      alt: "First slide"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(0, true)
+                ])
+              ]
+            )
           }),
           0
         )
@@ -20570,16 +20575,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Author")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Publisher")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Number of requests")])
-      ])
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title mb-2" }, [_vm._v("Gull Admin")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text text-mute" }, [
+        _vm._v("By Frontend developer")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-success ul-btn-raised--v2 m-1",
+          attrs: { type: "button" }
+        },
+        [_vm._v("\n              Detail\n            ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
+          attrs: { type: "button" }
+        },
+        [_vm._v("\n              Delete\n            ")]
+      )
     ])
   }
 ]
