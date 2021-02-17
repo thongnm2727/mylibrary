@@ -13,7 +13,9 @@
                   {{ book.name }}
                 </h3>
                 <h5 class="text-info">Author: {{ book.author }}</h5>
-                <p></p>
+                <p>
+                  {{ book.description }}
+                </p>
                 <div class="ul-product-detail__nested-card">
                   <div class="row text-center">
                     <div class="col-lg-3 col-sm-12 mb-2">
@@ -44,7 +46,7 @@
                             </div>
                             <h5 class="heading text-info">Language</h5>
                             <span class="t-font-boldest">
-                              {{ book.publisher }}
+                              {{ book.language }}
                             </span>
                           </div>
                         </div>

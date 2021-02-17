@@ -2160,6 +2160,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2280,6 +2282,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21002,7 +21026,13 @@ var render = function() {
                   _vm._v("Author: " + _vm._s(_vm.book.author))
                 ]),
                 _vm._v(" "),
-                _c("p"),
+                _c("p", [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.book.description) +
+                      "\n              "
+                  )
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "ul-product-detail__nested-card" }, [
                   _c("div", { staticClass: "row text-center" }, [
@@ -21048,7 +21078,7 @@ var render = function() {
                               _c("span", { staticClass: "t-font-boldest" }, [
                                 _vm._v(
                                   "\n                            " +
-                                    _vm._s(_vm.book.publisher) +
+                                    _vm._s(_vm.book.language) +
                                     "\n                          "
                                 )
                               ])
@@ -21446,6 +21476,68 @@ var render = function() {
                           }
                         }
                       })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 form-group mb-3" }, [
+                      _c("label", [_vm._v("Language: ")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.book.language,
+                            expression: "book.language"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "publisher",
+                          type: "text",
+                          placeholder: "book's language"
+                        },
+                        domProps: { value: _vm.book.language },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.book, "language", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-12 form-group mb-3" }, [
+                      _c("div", { staticClass: "input-group" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.book.description,
+                              expression: "book.description"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { placeholder: "book's description" },
+                          domProps: { value: _vm.book.description },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.book,
+                                "description",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
@@ -21485,7 +21577,16 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [_vm._v("Description")])
+    ])
+  }
+]
 render._withStripped = true
 
 

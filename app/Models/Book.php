@@ -10,10 +10,11 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'author','publisher', 'publication_date',
+        'name', 'author','publisher', 'publication_date','description','language',
     ];
 
     protected $attributes = [
-        'number_of_requests' => 0,        
+        'number_of_requests' => 0,     
+        'language' => "English"   
     ];
 }

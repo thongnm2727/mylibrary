@@ -56,6 +56,28 @@
                       v-model="book.publication_date"
                     />
                   </div>
+                  <div class="col-md-6 form-group mb-3">
+                    <label>Language: </label>
+                    <input
+                      class="form-control"
+                      id="publisher"
+                      type="text"
+                      placeholder="book's language"
+                      v-model="book.language"
+                    />
+                  </div>
+                  <div class="col-md-12 form-group mb-3">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Description</span>
+                      </div>
+                      <textarea
+                        class="form-control"
+                        placeholder="book's description"
+                        v-model="book.description"
+                      ></textarea>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="row">
