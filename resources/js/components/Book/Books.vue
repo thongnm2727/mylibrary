@@ -16,12 +16,11 @@
             <div class="card-body">
               <h5 class="card-title mb-2">Gull Admin</h5>
               <p class="card-text text-mute">By Frontend developer</p>
-              <button
+              <router-link :to="{ name: 'book_detail', params: {id:book.id}}"
                 class="btn btn-outline-success ul-btn-raised--v2 m-1"
-                type="button"
               >
                 Detail
-              </button>
+              </router-link>
               <button
                 class="btn btn-outline-danger ul-btn-raised--v2 m-1 float-right"
                 type="button"

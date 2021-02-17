@@ -24,4 +24,9 @@ class BookController extends Controller
             return response()->json(["status" => "failed", "message" => "Whoops! book created fail!"]);
         }
     }
+
+    public function detail($id){
+        $book = Book::find($id);
+        return response()->json(["status" => "success", "book" => $book], 200);
+    }
 }
