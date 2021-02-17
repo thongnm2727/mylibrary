@@ -12,11 +12,16 @@
           class="col-lg-4 col-xl-3 mt-3"
         >
           <div class="card">
-            <img
-              class="d-block w-100 rounded rounded"
-              v-bind:src="'dist-assets/images/products/iphone-1.jpg'"
-              alt="First slide"
-            />
+            <router-link
+              :to="{ name: 'book_detail', params: { id: book.id } }"
+            >
+              <img
+                class="d-block w-100 rounded rounded"
+                v-bind:src="'dist-assets/images/products/iphone-1.jpg'"
+                alt="First slide"
+              />
+            </router-link>
+
             <div class="card-body">
               <h5 class="card-title mb-2">{{ book.name }}</h5>
               <p class="card-text text-mute">{{ book.author }}</p>
@@ -59,15 +64,15 @@ export default {
       this.books = response.data.books;
     });
   },
-  methods:{
-    deleteBook(id){
+  methods: {
+    deleteBook(id) {
       this.axios
-      .delete(`http://localhost:8000/api/book/delete/${id}`)
-      .then((response) => {
-        let i = this.books.map((item) => item.id).indexOf(id);//fix index of objects
-        this.books.splice(i, 1);
-      });
-    }
-  }
+        .delete(`http://localhost:8000/api/book/delete/${id}`)
+        .then((response) => {
+          let i = this.books.map((item) => item.id).indexOf(id); //fix index of objects
+          this.books.splice(i, 1);
+        });
+    },
+  },
 };
 </script>

@@ -2240,6 +2240,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -21226,70 +21231,91 @@ var render = function() {
               "div",
               { key: book.id, staticClass: "col-lg-4 col-xl-3 mt-3" },
               [
-                _c("div", { staticClass: "card" }, [
-                  _c("img", {
-                    staticClass: "d-block w-100 rounded rounded",
-                    attrs: {
-                      src: "dist-assets/images/products/iphone-1.jpg",
-                      alt: "First slide"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "card-body" },
-                    [
-                      _c("h5", { staticClass: "card-title mb-2" }, [
-                        _vm._v(_vm._s(book.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text text-mute" }, [
-                        _vm._v(_vm._s(book.author))
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass:
-                            "btn btn-outline-success ul-btn-raised--v2 m-1",
+                _c(
+                  "div",
+                  { staticClass: "card" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: { name: "book_detail", params: { id: book.id } }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "d-block w-100 rounded rounded",
                           attrs: {
-                            to: { name: "book_detail", params: { id: book.id } }
+                            src: "dist-assets/images/products/iphone-1.jpg",
+                            alt: "First slide"
                           }
-                        },
-                        [_vm._v("\n              Detail\n            ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass:
-                            "btn btn-outline-success ul-btn-raised--v2 m-1",
-                          attrs: {
-                            to: { name: "update_book", params: { id: book.id } }
-                          }
-                        },
-                        [_vm._v("\n              Update\n            ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.deleteBook(book.id)
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "card-body" },
+                      [
+                        _c("h5", { staticClass: "card-title mb-2" }, [
+                          _vm._v(_vm._s(book.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text text-mute" }, [
+                          _vm._v(_vm._s(book.author))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          {
+                            staticClass:
+                              "btn btn-outline-success ul-btn-raised--v2 m-1",
+                            attrs: {
+                              to: {
+                                name: "book_detail",
+                                params: { id: book.id }
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("\n              Delete\n            ")]
-                      )
-                    ],
-                    1
-                  )
-                ])
+                          },
+                          [_vm._v("\n              Detail\n            ")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          {
+                            staticClass:
+                              "btn btn-outline-success ul-btn-raised--v2 m-1",
+                            attrs: {
+                              to: {
+                                name: "update_book",
+                                params: { id: book.id }
+                              }
+                            }
+                          },
+                          [_vm._v("\n              Update\n            ")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.deleteBook(book.id)
+                              }
+                            }
+                          },
+                          [_vm._v("\n              Delete\n            ")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
               ]
             )
           }),
