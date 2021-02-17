@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/perfect-scrollbar.min.css') }}">
 </head>
 
-<body class="text-left" style="background-image: url('dist-assets/images/background-image1.jpg');">
+<body class="text-left">
     <div id="app"  >
     </div>
     <!-- ============ Search UI Start ============= -->

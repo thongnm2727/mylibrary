@@ -22,4 +22,6 @@ Route::get("books", [BookController::class, "index"]);
 Route::group(['prefix' => 'book'], function(){
     Route::post('add_book', [BookController::class, "add"]);
     Route::get('detail/{id}', [BookController::class, "detail"]);
+    Route::delete('delete/{id}', [BookController::class, "delete"]);
+    Route::post('update/{id}', [BookController::class, "update"]);
 });

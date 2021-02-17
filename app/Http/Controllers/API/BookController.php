@@ -29,4 +29,18 @@ class BookController extends Controller
         $book = Book::find($id);
         return response()->json(["status" => "success", "book" => $book], 200);
     }
+
+    public function update($id, Request $request){
+        $input = $request->all();
+        
+        $book = Book::find($id);
+        $book->update($request->all());
+        return response()->json(["status" => "success", "message" => "Update book success!", 
+        "book" => $book], 200);
+    }
+
+    public function delete($id){
+        $book = Book::find($id)->delete();
+        return response()->json(["status" => "success", "message" => "Delete book success!"], 200);
+    }
 }
