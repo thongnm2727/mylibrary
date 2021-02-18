@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('dist-assets/images/page_icon.png')}}" />
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/themes/lite-purple.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/perfect-scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/dropzone.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/dropzone.min.css') }}"> -->
 </head>
 
 <body class="text-left">
@@ -24,8 +24,8 @@
     <script src="{{URL::asset('dist-assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <script src="{{URL::asset('dist-assets/js/scripts/script.min.js')}}"></script>
     <script src="{{URL::asset('dist-assets/js/scripts/sidebar-horizontal.script.js')}}"></script>
-    <script src="{{URL::asset('dist-assets/js/plugins/dropzone.min.js')}}"></script>
-    <script src="{{URL::asset('dist-assets/js/scripts/dropzone.script.min.js')}}"></script>
+    <!-- <script src="{{URL::asset('dist-assets/js/plugins/dropzone.min.js')}}"></script>
+    <script src="{{URL::asset('dist-assets/js/scripts/dropzone.script.min.js')}}"></script> -->
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 </body>
 

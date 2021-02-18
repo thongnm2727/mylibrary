@@ -2200,10 +2200,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      book: {}
+      book: {},
+      book_copies: {}
     };
   },
   created: function created() {
@@ -2213,6 +2276,31 @@ __webpack_require__.r(__webpack_exports__);
       _this.book = response.data.book;
       console.log(_this.book);
     });
+    this.axios.get("http://localhost:8000/api/book_copies/".concat(this.$route.params.id)).then(function (response) {
+      _this.book_copies = response.data.book_copies;
+    });
+  },
+  methods: {
+    deleteBookCopy: function deleteBookCopy(id) {
+      var _this2 = this;
+
+      this.axios["delete"]("http://localhost:8000/api/book_copy/delete/".concat(id)).then(function (response) {
+        var i = _this2.book_copies.map(function (item) {
+          return item.id;
+        }).indexOf(id); //fix index of objects
+
+
+        _this2.book_copies.splice(i, 1);
+      });
+    },
+    addBookCopy: function addBookCopy(book_id) {
+      var _this3 = this;
+
+      this.axios.post("http://localhost:8000/api/book_copy/add/".concat(book_id)).then(function (response) {
+        _this3.book_copies = response.data.book_copies; // let i = this.book_copies.map((item) => item.id).indexOf(id); //fix index of objects
+        // this.book_copies.splice(i, 1);
+      });
+    }
   }
 });
 
@@ -2454,7 +2542,10 @@ __webpack_require__.r(__webpack_exports__);
 
       this.axios.post("http://localhost:8000/api/book/update/".concat(this.$route.params.id), this.book).then(function (response) {
         _this2.$router.push({
-          name: "books"
+          name: "book_detail",
+          params: {
+            id: _this2.book.id
+          }
         });
       });
     }
@@ -21150,7 +21241,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-8 col-md-8 col-sm-12" }, [
-                _c("h3", { staticClass: "font-weight-700 mt-4 mb-2" }, [
+                _c("h1", { staticClass: "font-weight-700 mt-4 mb-2" }, [
                   _vm._v(
                     "\n                " +
                       _vm._s(_vm.book.name) +
@@ -21279,6 +21370,113 @@ var render = function() {
                 ])
               ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("h3", { staticClass: "heading card-title mb-3" }, [
+              _vm._v("Book's Copies")
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Below is all copies belong to this book")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "table-responsive" }, [
+              _c("table", { staticClass: "table table-striped" }, [
+                _vm._m(4),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.book_copies, function(book_copy) {
+                    return _c("tr", { key: book_copy.id }, [
+                      _c("td", [_vm._v(_vm._s(book_copy.id))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(book_copy.requested_date))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(book_copy.return_date))]),
+                      _vm._v(" "),
+                      book_copy.status == "Available"
+                        ? _c("td", [
+                            _c("span", { staticClass: "badge badge-success" }, [
+                              _vm._v(_vm._s(book_copy.status))
+                            ])
+                          ])
+                        : _c("td", [
+                            _c("span", { staticClass: "badge badge-info" }, [
+                              _vm._v(_vm._s(book_copy.status))
+                            ])
+                          ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-outline-danger",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.deleteBookCopy(book_copy.id)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                      Delete\n                    "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-12 text-center" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success m-2",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.addBookCopy(_vm.book.id)
+                        }
+                      }
+                    },
+                    [_vm._v("\n                Add Copy\n              ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "btn btn-outline-success ul-btn-raised--v2 m-1",
+                      attrs: {
+                        to: { name: "update_book", params: { id: _vm.book.id } }
+                      }
+                    },
+                    [_vm._v("\n                Update\n              ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-outline-primary m-2",
+                      attrs: { to: "/books" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                Back to book list\n              "
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
           ])
         ])
       ])
@@ -21316,6 +21514,24 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ul-product-detail--icon mb-2" }, [
       _c("i", { staticClass: "i-Car text-success text-25 font-weight-500" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#ID")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Requested Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Return Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Status")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
+      ])
     ])
   }
 ]

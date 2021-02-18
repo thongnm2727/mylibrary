@@ -130,7 +130,7 @@ export default {
           this.book
         )
         .then((response) => {
-          this.$router.push({ name: "books" });
+          this.$router.push({ name: "book_detail", params: {id: this.book.id} });
         });
     },
   },
