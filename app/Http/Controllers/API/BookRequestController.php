@@ -16,14 +16,24 @@ class BookRequestController extends Controller
         return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
     }
 
-    public function add(Request $request, $book_copy_id)
+    public function add(Request $request)
     {
         DB::table('book_request')->insert([
-            'book_copy_id' => $book_copy_id,
-            'requested_date' => $request->get('requested_date'),
-            'return_date' => $request->get('return_date'),
+            'book_copy_id' => $request->input('book_copy_id'),
+            'requested_date' => $request->input('requested_date'),
+            'return_date' => $request->input('return_date'),
             'status' => 'Unreturned'
         ]);
-        return response()->json(["status" => "success",], 200);
+
+        DB::table('book_copy')
+        ->where('id', $request->get('book_copy_id'))
+        ->update([
+            'status' => 'Unavailable',
+            'requested_date' => $request->get('requested_date'),
+            'return_date' => $request->get('return_date'),
+        ]);
+        
+        $book_requests = DB::table('book_request')->get()->toArray();
+        return response()->json(["status" => "success", 'book_requests' => $book_requests], 200);
     }
 }

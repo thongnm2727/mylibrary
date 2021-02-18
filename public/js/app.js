@@ -1969,9 +1969,180 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      book_request: {},
       book_requests: []
     };
   },
@@ -1981,6 +2152,19 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.get("http://localhost:8000/api/book_requests").then(function (response) {
       _this.book_requests = response.data.book_requests;
     });
+  },
+  methods: {
+    addBookRequest: function addBookRequest() {
+      var _this2 = this;
+
+      this.axios.post("http://localhost:8000/api/book_request/add", this.book_request).then(function (response) {
+        _this2.book_requests = response.data.book_requests;
+
+        if (response.data.status == "success") {
+          $("#message").text("Add request success!").addClass(" text-success");
+        }
+      });
+    }
   }
 });
 
@@ -21035,41 +21219,362 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("table", { staticClass: "table table-striped" }, [
+  return _c("div", { staticClass: "main-content" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "tbody",
-      _vm._l(_vm.book_requests, function(book_request) {
-        return _c("tr", { key: book_request.id }, [
-          _c("td", [_vm._v(_vm._s(book_request.id))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(book_request.book_copy_id))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(book_request.requested_date))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(book_request.return_date))]),
-          _vm._v(" "),
-          book_request.status == "Returned"
-            ? _c("td", [
-                _c("span", { staticClass: "badge badge-success" }, [
-                  _vm._v(_vm._s(book_request.status))
+    _c("div", { staticClass: "separator-breadcrumb border-top" }),
+    _vm._v(" "),
+    _c("section", { staticClass: "ul-todo-list-content" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "modal-add-book-request",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "verifyModalContent",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "modal-dialog", attrs: { role: "document" } },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c(
+                    "form",
+                    {
+                      attrs: { id: "form-add-book-request", method: "POST" },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.addBookRequest($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name-2" }
+                          },
+                          [_vm._v("Book copy's Id:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.book_request.book_copy_id,
+                              expression: "book_request.book_copy_id"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "number", required: "" },
+                          domProps: { value: _vm.book_request.book_copy_id },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.book_request,
+                                "book_copy_id",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name-2" }
+                          },
+                          [_vm._v("Request date:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.book_request.requested_date,
+                              expression: "book_request.requested_date"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", required: "" },
+                          domProps: { value: _vm.book_request.requested_date },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.book_request,
+                                "requested_date",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name-2" }
+                          },
+                          [_vm._v("Return date:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.book_request.return_date,
+                              expression: "book_request.return_date"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", required: "" },
+                          domProps: { value: _vm.book_request.return_date },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.book_request,
+                                "return_date",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { attrs: { id: "message" } })
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(3)
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "ul-todo-content-right" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "ul-todo-body" }, [
+                  _c("table", { staticClass: "table table-striped" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.book_requests, function(book_request) {
+                        return _c("tr", { key: book_request.id }, [
+                          _c("td", [_vm._v(_vm._s(book_request.id))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(book_request.book_copy_id))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(book_request.requested_date))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(book_request.return_date))]),
+                          _vm._v(" "),
+                          book_request.status == "Returned"
+                            ? _c("td", [
+                                _c(
+                                  "span",
+                                  { staticClass: "badge badge-success" },
+                                  [_vm._v(_vm._s(book_request.status))]
+                                )
+                              ])
+                            : _c("td", [
+                                _c(
+                                  "span",
+                                  { staticClass: "badge badge-info" },
+                                  [_vm._v(_vm._s(book_request.status))]
+                                )
+                              ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-outline-danger",
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.deleteBookCopy(_vm.book_copy.id)
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                          Return\n                        "
+                                )
+                              ]
+                            )
+                          ])
+                        ])
+                      }),
+                      0
+                    )
+                  ])
                 ])
               ])
-            : _c("td", [
-                _c("span", { staticClass: "badge badge-info" }, [
-                  _vm._v(_vm._s(book_request.status))
-                ])
-              ]),
-          _vm._v(" "),
-          _c("td")
+            ])
+          ])
         ])
-      }),
-      0
-    )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "breadcrumb" }, [
+      _c("h1", [_vm._v("Book Requests")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ul-todo-sidebar" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "pr-3 pb-3" }, [
+            _c("i", {
+              staticClass: "todo-sidebar-close i-Close pb-3 text-right",
+              attrs: { "data-sidebar-toggle": "main" }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-block mb-4",
+                attrs: {
+                  type: "button",
+                  "data-toggle": "modal",
+                  "data-target": "#modal-add-book-request"
+                }
+              },
+              [_vm._v("\n              Add Request\n            ")]
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _c("p", { staticClass: "text-muted mb-2" }, [_vm._v("Status:")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-group" }, [
+                _c("li", { staticClass: "list-group-item border-0" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "icon-regular i-Find-User mr-2" }),
+                    _vm._v(" Returned")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item border-0" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", {
+                      staticClass: "icon-regular i-Favorite-Window mr-2"
+                    }),
+                    _vm._v("\n                    Unreturned")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item border-0" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "icon-regular i-Delete-File mr-2" }),
+                    _vm._v("\n                    Overdue")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        {
+          staticClass: "modal-title",
+          attrs: { id: "verifyModalContent_title" }
+        },
+        [_vm._v("\n              Add book request\n            ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("\n              Close\n            ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { form: "form-add-book-request", type: "submit" }
+        },
+        [_vm._v("\n              Create Request\n            ")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -21078,7 +21583,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("#ID")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("#Copy ID")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#Book's Copy ID")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Requested Date")]),
         _vm._v(" "),

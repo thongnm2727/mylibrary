@@ -24,8 +24,6 @@
     <script src="{{URL::asset('dist-assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <script src="{{URL::asset('dist-assets/js/scripts/script.min.js')}}"></script>
     <script src="{{URL::asset('dist-assets/js/scripts/sidebar-horizontal.script.js')}}"></script>
-    <!-- <script src="{{URL::asset('dist-assets/js/plugins/dropzone.min.js')}}"></script>
-    <script src="{{URL::asset('dist-assets/js/scripts/dropzone.script.min.js')}}"></script> -->
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 </body>
 

@@ -36,5 +36,5 @@ Route::group(['prefix' => 'book_copy'], function(){
 
 Route::get("book_requests", [BookRequestController::class, "getAll"]);
 Route::group(['prefix' => 'book_request'], function(){
-    Route::post('add/{book_copy_id}', [BookRequestController::class, "add"]);
+    Route::post('add', [BookRequestController::class, "add"]);
 });
