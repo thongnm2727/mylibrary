@@ -44,7 +44,7 @@
                 <router-link to="/books">Books</router-link>
               </li>
               <li>
-                <router-link to="/bookrequests">Book Requests</router-link>
+                <router-link to="/book_requests">Book Requests</router-link>
               </li>
             </ul>
           </div>

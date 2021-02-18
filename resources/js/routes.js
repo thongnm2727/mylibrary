@@ -5,6 +5,7 @@ import AddBook from "./components/Book/AddBook.vue";
 import Books from "./components/Book/Books.vue";
 import BookDetail from "./components/Book/BookDetail.vue";
 import UpdateBook from "./components/Book/UpdateBook.vue";
+import BookRequests from "./components/BookRequest/BookRequests.vue";
 // import Router from "vue-router";
 // import Vue from "vue";
 
@@ -44,5 +45,10 @@ export const routes = [
         name:"update_book",
         path: "/book/update/:id",
         component: UpdateBook,
+    },
+    {
+        name:"book_requests",
+        path: "/book_requests",
+        component: BookRequests,
     },
 ]

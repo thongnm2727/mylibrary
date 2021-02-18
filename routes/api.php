@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\BookController;
 use App\Http\Controllers\API\BookCopyController;
+use App\Http\Controllers\API\BookRequestController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,4 +32,9 @@ Route::get("book_copies/{book_id}", [BookCopyController::class, "getAll"]);
 Route::group(['prefix' => 'book_copy'], function(){
     Route::delete('delete/{id}', [BookCopyController::class, "delete"]);
     Route::post('add/{book_id}', [BookCopyController::class, "add"]);
+});
+
+Route::get("book_requests", [BookRequestController::class, "getAll"]);
+Route::group(['prefix' => 'book_request'], function(){
+    Route::post('add/{book_copy_id}', [BookRequestController::class, "add"]);
 });
