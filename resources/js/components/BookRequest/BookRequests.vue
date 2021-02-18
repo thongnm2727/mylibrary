@@ -177,6 +177,11 @@
                             book_request.status
                           }}</span>
                         </td>
+                        <td v-else-if="book_request.status == `Overdue`">
+                          <span class="badge badge-warning">{{
+                            book_request.status
+                          }}</span>
+                        </td>
                         <td v-else>
                           <span class="badge badge-info">{{
                             book_request.status
@@ -185,7 +190,7 @@
                         <td>
                           <button
                             class="btn btn-outline-danger"
-                            @click.prevent="deleteBookCopy(book_copy.id)"
+                            @click.prevent="returnBook(book_request.id)"
                           >
                             Return
                           </button>
@@ -231,6 +236,17 @@ export default {
               .text("Add request success!")
               .addClass(" text-success");
           }
+        });
+    },
+    returnBook(book_request_id) {
+      this.axios
+        .post(
+          `http://localhost:8000/api/book_request/return/${book_request_id}`
+        )
+        .then((response) => {
+          // let i = this.books.map((item) => item.id).indexOf(id); //fix index of objects
+          // this.books.splice(i, 1);
+          this.book_requests = response.data.book_requests;
         });
     },
   },

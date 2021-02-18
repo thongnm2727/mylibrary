@@ -12,7 +12,32 @@ class BookRequestController extends Controller
     //
     public function getAll()
     {
-        $book_requests = DB::table('book_request')->get()->toArray();
+        $book_requests = DB::table('book_request')
+        ->orderBy('id','desc')
+        ->get()->toArray();
+        return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
+    }
+
+    public function return($id)
+    {
+        $book_request = DB::table('book_request')->find( $id);
+
+        DB::table('book_copy')->where('id', $book_request->book_copy_id)
+            ->update([
+                'status' => 'Available',
+                'requested_date' => '/',
+                'return_date' => '/',
+            ]);
+
+        DB::table('book_request')
+        ->where('id', $id)
+        ->update([
+            'status' => 'Returned',
+        ]);
+
+        $book_requests = DB::table('book_request')
+        ->orderBy('id','desc')
+        ->get()->toArray();
         return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
     }
 
@@ -26,14 +51,16 @@ class BookRequestController extends Controller
         ]);
 
         DB::table('book_copy')
-        ->where('id', $request->get('book_copy_id'))
-        ->update([
-            'status' => 'Unavailable',
-            'requested_date' => $request->get('requested_date'),
-            'return_date' => $request->get('return_date'),
-        ]);
-        
-        $book_requests = DB::table('book_request')->get()->toArray();
+            ->where('id', $request->get('book_copy_id'))
+            ->update([
+                'status' => 'Unavailable',
+                'requested_date' => $request->get('requested_date'),
+                'return_date' => $request->get('return_date'),
+            ]);
+
+        $book_requests = DB::table('book_request')
+        ->orderBy('id','desc')
+        ->get()->toArray();
         return response()->json(["status" => "success", 'book_requests' => $book_requests], 200);
     }
 }

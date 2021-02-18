@@ -11,7 +11,10 @@ class BookCopyController extends Controller
 {
     //
     public function getAll($book_id){
-        $book_copies = DB::table('book_copy')->where('book_id', $book_id)->get()->toArray();
+        $book_copies = DB::table('book_copy')
+        ->orderBy('id', 'desc')
+        ->where('book_id', $book_id)
+        ->get()->toArray();
         return response()->json(["status" => "success", "book_copies" => $book_copies], 200);
     }
 

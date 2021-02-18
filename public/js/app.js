@@ -2139,6 +2139,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2163,6 +2168,15 @@ __webpack_require__.r(__webpack_exports__);
         if (response.data.status == "success") {
           $("#message").text("Add request success!").addClass(" text-success");
         }
+      });
+    },
+    returnBook: function returnBook(book_request_id) {
+      var _this3 = this;
+
+      this.axios.post("http://localhost:8000/api/book_request/return/".concat(book_request_id)).then(function (response) {
+        // let i = this.books.map((item) => item.id).indexOf(id); //fix index of objects
+        // this.books.splice(i, 1);
+        _this3.book_requests = response.data.book_requests;
       });
     }
   }
@@ -21414,6 +21428,14 @@ var render = function() {
                                   [_vm._v(_vm._s(book_request.status))]
                                 )
                               ])
+                            : book_request.status == "Overdue"
+                            ? _c("td", [
+                                _c(
+                                  "span",
+                                  { staticClass: "badge badge-warning" },
+                                  [_vm._v(_vm._s(book_request.status))]
+                                )
+                              ])
                             : _c("td", [
                                 _c(
                                   "span",
@@ -21430,7 +21452,7 @@ var render = function() {
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
-                                    return _vm.deleteBookCopy(_vm.book_copy.id)
+                                    return _vm.returnBook(book_request.id)
                                   }
                                 }
                               },
@@ -22184,7 +22206,7 @@ var render = function() {
                         to: { name: "update_book", params: { id: _vm.book.id } }
                       }
                     },
-                    [_vm._v("\n                Update\n              ")]
+                    [_vm._v("\n                Update Book\n              ")]
                   ),
                   _vm._v(" "),
                   _c(

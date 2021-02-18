@@ -150,7 +150,7 @@
                   :to="{ name: 'update_book', params: { id: book.id } }"
                   class="btn btn-outline-success ul-btn-raised--v2 m-1"
                 >
-                  Update
+                  Update Book
                 </router-link>
                 <router-link to="/books" class="btn btn-outline-primary m-2">
                   Back to book list
