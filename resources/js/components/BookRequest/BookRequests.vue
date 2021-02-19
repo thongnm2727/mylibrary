@@ -16,7 +16,7 @@
               ></i>
               <!-- Large modal-->
               <button
-                class="btn btn-primary btn-block mb-4"
+                class="btn btn-success btn-block mb-4"
                 type="button"
                 data-toggle="modal"
                 data-target="#modal-add-book-request"
@@ -142,7 +142,9 @@
             <div class="card">
               <div class="card-body">
                 <div class="ul-todo-body">
-                  <table class="table table-striped">
+                  <table
+                    class="table table-striped"
+                  >
                     <thead>
                       <tr>
                         <th scope="col">#Request ID</th>
@@ -154,6 +156,24 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <!-- FIXED DATA  -->
+                      <!-- <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>2011/07/25</td>
+                        <td>$170,750</td>
+                      </tr> -->
+                      <!-- RESPONSE DATA  -->
                       <tr
                         v-for="book_request in book_requests"
                         :key="book_request.id"

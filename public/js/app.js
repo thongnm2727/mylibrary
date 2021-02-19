@@ -2177,6 +2177,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2617,6 +2637,108 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -22021,7 +22143,7 @@ var staticRenderFns = [
             _c(
               "button",
               {
-                staticClass: "btn btn-primary btn-block mb-4",
+                staticClass: "btn btn-success btn-block mb-4",
                 attrs: {
                   type: "button",
                   "data-toggle": "modal",
@@ -22829,123 +22951,293 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "separator-breadcrumb border-top" }),
+    _vm._v(" "),
+    _c("section", { staticClass: "widget-card" }, [
+      _c("div", { staticClass: "ul-todo-sidebar" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "div",
+              { staticClass: "pr-3 pb-3" },
+              [
+                _c("i", {
+                  staticClass: "todo-sidebar-close i-Close pb-3 text-right",
+                  attrs: { "data-sidebar-toggle": "main" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-success btn-block mb-4",
+                    attrs: { to: { name: "add_book" } }
+                  },
+                  [_vm._v("\n              Add Book\n            ")]
+                ),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2)
+              ],
+              1
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
       _c(
-        "router-link",
-        {
-          staticClass: "btn btn-outline-primary m-1",
-          attrs: { to: { name: "add_book" } }
-        },
-        [_vm._v("\n    Add Book\n  ")]
+        "div",
+        { staticClass: "row mb-4" },
+        _vm._l(_vm.books, function(book) {
+          return _c(
+            "div",
+            { key: book.id, staticClass: "col-lg-4 col-xl-3 mt-3" },
+            [
+              _c(
+                "div",
+                { staticClass: "card" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "book_detail", params: { id: book.id } }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "d-block w-100 rounded rounded",
+                        attrs: {
+                          src: "/dist-assets/images/default_image2.jpg",
+                          alt: "First slide"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "card-body" },
+                    [
+                      _c("h5", { staticClass: "card-title mb-2" }, [
+                        _vm._v(_vm._s(book.name))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _c("mark", [_vm._v(_vm._s(book.author))]),
+                        _vm._v(" - "),
+                        _c("mark", [_vm._v(_vm._s(book.publication_date))])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-success ul-btn-raised--v2 m-1",
+                          attrs: {
+                            to: { name: "book_detail", params: { id: book.id } }
+                          }
+                        },
+                        [_vm._v("\n              Detail\n            ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass:
+                            "btn btn-outline-success ul-btn-raised--v2 m-1",
+                          attrs: {
+                            to: { name: "update_book", params: { id: book.id } }
+                          }
+                        },
+                        [_vm._v("\n              Update\n            ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.deleteBook(book.id)
+                            }
+                          }
+                        },
+                        [_vm._v("\n              Delete\n            ")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]
+          )
+        }),
+        0
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "widget-card" }, [
-        _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.books, function(book) {
-            return _c(
-              "div",
-              { key: book.id, staticClass: "col-lg-4 col-xl-3 mt-3" },
-              [
-                _c(
-                  "div",
-                  { staticClass: "card" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: { name: "book_detail", params: { id: book.id } }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "d-block w-100 rounded rounded",
-                          attrs: {
-                            src: "/dist-assets/images/default_image2.jpg",
-                            alt: "First slide"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "card-body" },
-                      [
-                        _c("h5", { staticClass: "card-title mb-2" }, [
-                          _vm._v(_vm._s(book.name))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text text-mute" }, [
-                          _vm._v(_vm._s(book.author))
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "btn btn-outline-success ul-btn-raised--v2 m-1",
-                            attrs: {
-                              to: {
-                                name: "book_detail",
-                                params: { id: book.id }
-                              }
-                            }
-                          },
-                          [_vm._v("\n              Detail\n            ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "btn btn-outline-success ul-btn-raised--v2 m-1",
-                            attrs: {
-                              to: {
-                                name: "update_book",
-                                params: { id: book.id }
-                              }
-                            }
-                          },
-                          [_vm._v("\n              Update\n            ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.deleteBook(book.id)
-                              }
-                            }
-                          },
-                          [_vm._v("\n              Delete\n            ")]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    ],
-    1
-  )
+      _vm._m(4)
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "breadcrumb" }, [
+      _c("h1", [_vm._v("Books at library")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h4", [_c("strong", [_vm._v("Language:")])]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "list-group" }, [
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" English")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" French")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" Chinese (Traditional) ")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" German ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h4", [_c("strong", [_vm._v("Author:")])]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "list-group" }, [
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" Bill Bryson")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" Kristin Hannah")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" Sarah J. Maas ")])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item border-0" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(" Adam Grant ")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mb-4" }, [
+      _c("div", { staticClass: "col" }, [
+        _c("div", { staticClass: "dropdown" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success dropdown-toggle float-right",
+              attrs: {
+                id: "dropdownMenuButton",
+                type: "button",
+                "data-toggle": "dropdown"
+              }
+            },
+            [_vm._v("\n            Sort by\n          ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropdown-menu",
+              attrs: { "aria-labelledby": "dropdownMenuButton" }
+            },
+            [
+              _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+                _vm._v("Requested Number")
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+                _vm._v("Publication Date")
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mb-4" }, [
+      _c("div", { staticClass: "col-md-12 mb-4" }, [
+        _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+          _c("ul", { staticClass: "pagination justify-content-center" }, [
+            _c("li", { staticClass: "page-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "page-link",
+                  attrs: { href: "#", tabindex: "-1" }
+                },
+                [_vm._v("Previous")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item" }, [
+              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+                _vm._v("1")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item active" }, [
+              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+                _vm._v("2 "),
+                _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item" }, [
+              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+                _vm._v("3")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item" }, [
+              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+                _vm._v("Next")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
