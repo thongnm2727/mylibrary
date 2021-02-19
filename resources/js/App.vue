@@ -24,33 +24,46 @@
     <div class="horizontal-bar-wrap">
       <div class="header-topnav">
         <div class="container-fluid">
-          <div
-            class="topnav rtl-ps-none"
-            id=""
-            data-perfect-scrollbar=""
-            data-suppress-scroll-x="true"
-          >
-            <ul class="menu float-left">
-              <li>
-                <router-link to="/home">Home</router-link>
-              </li>
-              <li>
-                <router-link to="/about">About Us</router-link>
-              </li>
-              <li>
-                <router-link to="/openinghours">Opening Hours</router-link>
-              </li>
-              <li>
-                <router-link to="/books">Books</router-link>
-              </li>
-              <li>
-                <router-link to="/book_requests">Book Requests</router-link>
-              </li>
-            </ul>
-          </div>
+          <!-- <div
+            class="topnav"
+          > -->
+          <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item ">
+              <router-link data-toggle="pill" class="nav-link" to="/home">
+                <i class="nav-icon i-Home1 mr-1"></i>Home
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link data-toggle="pill" class="nav-link " to="/about"
+                ><i class="nav-icon i-Right mr-1"></i>About Us</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
+                data-toggle="pill"
+                class="nav-link "
+                to="/openinghours"
+                ><i class="nav-icon i-Clock mr-1"></i>Opening Hours</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link data-toggle="pill" class="nav-link " to="/books"
+                ><i class="nav-icon i-Book mr-1"></i>Books</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
+                data-toggle="pill"
+                class="nav-link "
+                to="/book_requests"
+                ><i class="nav-icon i-Flag-2 mr-1"></i>Book Requests</router-link
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </div>
+    <!-- </div> -->
     <!-- =============== Horizontal bar End ================-->
     <div class="main-content-wrap d-flex flex-column">
       <!-- ============ Body content start ============= -->
@@ -63,5 +76,17 @@
   </div>
 </template>
 
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+</style>
+
 <script>
+
 </script>
