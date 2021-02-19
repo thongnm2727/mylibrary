@@ -142,7 +142,8 @@
             <div class="card">
               <div class="card-body">
                 <div class="ul-todo-body">
-                  <table class="table table-striped">
+                  <table 
+                  class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#Request ID</th>
