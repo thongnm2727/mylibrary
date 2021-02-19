@@ -1,11 +1,11 @@
 <template>
-  <div class="main-content">
+  <div class="main-content" >
     <div class="breadcrumb">
       <h1>Book Requests</h1>
     </div>
     <div class="separator-breadcrumb border-top"></div>
     <!-- content goes here-->
-    <section class="ul-todo-list-content">
+    <section class="ul-todo-list-content" >
       <div class="ul-todo-sidebar">
         <div class="card">
           <div class="card-body">
@@ -136,20 +136,10 @@
         </div>
       </div>
       <!-- Request List -->
-      <div class="ul-todo-content-right">
-        <div class="row">
+      <div class="ul-todo-content-right" >
+        <div class="row" >
           <div class="col-md-12">
             <div class="card">
-              <!-- <div class="card-header bg-transparent">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="ul-todo-mobile-menu mr-3 p-2"><i class="nav-icon i-Align-Justify-All text-25 ul-contact-mobile-icon"></i></div>
-                                            <input class="form-control mr-4" id="todo-list-search" type="text" placeholder="Search" />
-                                            <div class="btn-group">
-                                                <button class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">sort</button>
-                                                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Ascending Order</a><a class="dropdown-item" href="#">Descending Order </a></div>
-                                            </div>
-                                        </div>
-                                    </div> -->
               <div class="card-body">
                 <div class="ul-todo-body">
                   <table class="table table-striped">
@@ -197,6 +187,16 @@
                         </td>
                       </tr>
                     </tbody>
+                    <tfoot>
+                      <tr>
+                        <th scope="col">#Request ID</th>
+                        <th scope="col">#Book's Copy ID</th>
+                        <th scope="col">Requested Date</th>
+                        <th scope="col">Return Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </tfoot>
                   </table>
                 </div>
               </div>

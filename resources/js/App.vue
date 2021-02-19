@@ -28,35 +28,36 @@
             class="topnav"
           > -->
           <ul class="nav nav-pills" role="tablist">
-            <li class="nav-item ">
+            <li class="nav-item">
               <router-link data-toggle="pill" class="nav-link" to="/home">
                 <i class="nav-icon i-Home1 mr-1"></i>Home
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link data-toggle="pill" class="nav-link " to="/about"
+              <router-link data-toggle="pill" class="nav-link" to="/about"
                 ><i class="nav-icon i-Right mr-1"></i>About Us</router-link
               >
             </li>
             <li class="nav-item">
               <router-link
                 data-toggle="pill"
-                class="nav-link "
+                class="nav-link"
                 to="/openinghours"
                 ><i class="nav-icon i-Clock mr-1"></i>Opening Hours</router-link
               >
             </li>
             <li class="nav-item">
-              <router-link data-toggle="pill" class="nav-link " to="/books"
+              <router-link data-toggle="pill" class="nav-link" to="/books"
                 ><i class="nav-icon i-Book mr-1"></i>Books</router-link
               >
             </li>
             <li class="nav-item">
               <router-link
                 data-toggle="pill"
-                class="nav-link "
+                class="nav-link"
                 to="/book_requests"
-                ><i class="nav-icon i-Flag-2 mr-1"></i>Book Requests</router-link
+                ><i class="nav-icon i-Flag-2 mr-1"></i>Book
+                Requests</router-link
               >
             </li>
           </ul>
@@ -88,5 +89,4 @@
 </style>
 
 <script>
-
 </script>

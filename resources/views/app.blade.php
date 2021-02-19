@@ -14,7 +14,7 @@
 </head>
 
 <body class="text-left">
-    <div id="app">
+    <div id="app" >
     </div>
     <!-- ============ Search UI Start ============= -->
     <!-- ============ Search UI End ============= -->

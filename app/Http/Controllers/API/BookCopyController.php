@@ -30,7 +30,10 @@ class BookCopyController extends Controller
             'book_id' =>$book_id,
         ]);
 
-        $book_copies = DB::table('book_copy')->where('book_id', $book_id)->get()->toArray();
+        $book_copies = DB::table('book_copy')
+        ->where('book_id', $book_id)
+        ->orderBy('id', 'desc')
+        ->get()->toArray();
         return response()->json(["status" => "success", "book_copies" => $book_copies], 200);
     }
 }

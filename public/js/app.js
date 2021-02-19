@@ -1929,6 +1929,7 @@ module.exports = {
 //
 //
 //
+//
 
 /***/ }),
 
@@ -21533,7 +21534,7 @@ var render = function() {
             [
               _c(
                 "li",
-                { staticClass: "nav-item " },
+                { staticClass: "nav-item" },
                 [
                   _c(
                     "router-link",
@@ -21557,7 +21558,7 @@ var render = function() {
                   _c(
                     "router-link",
                     {
-                      staticClass: "nav-link ",
+                      staticClass: "nav-link",
                       attrs: { "data-toggle": "pill", to: "/about" }
                     },
                     [
@@ -21576,7 +21577,7 @@ var render = function() {
                   _c(
                     "router-link",
                     {
-                      staticClass: "nav-link ",
+                      staticClass: "nav-link",
                       attrs: { "data-toggle": "pill", to: "/openinghours" }
                     },
                     [
@@ -21595,7 +21596,7 @@ var render = function() {
                   _c(
                     "router-link",
                     {
-                      staticClass: "nav-link ",
+                      staticClass: "nav-link",
                       attrs: { "data-toggle": "pill", to: "/books" }
                     },
                     [
@@ -21614,12 +21615,12 @@ var render = function() {
                   _c(
                     "router-link",
                     {
-                      staticClass: "nav-link ",
+                      staticClass: "nav-link",
                       attrs: { "data-toggle": "pill", to: "/book_requests" }
                     },
                     [
                       _c("i", { staticClass: "nav-icon i-Flag-2 mr-1" }),
-                      _vm._v("Book Requests")
+                      _vm._v("Book\n              Requests")
                     ]
                   )
                 ],
@@ -21942,7 +21943,9 @@ var render = function() {
                         ])
                       }),
                       0
-                    )
+                    ),
+                    _vm._v(" "),
+                    _vm._m(5)
                   ])
                 ])
               ])
@@ -22078,6 +22081,26 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#Request ID")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#Book's Copy ID")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Requested Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Return Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Status")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tfoot", [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("#Request ID")]),
         _vm._v(" "),
