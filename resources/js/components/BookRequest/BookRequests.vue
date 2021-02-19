@@ -143,6 +143,7 @@
               <div class="card-body">
                 <div class="ul-todo-body">
                   <table
+                    id="book_requests_table"
                     class="table table-striped"
                   >
                     <thead>
@@ -156,23 +157,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- FIXED DATA  -->
-                      <!-- <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                      </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                      </tr> -->
                       <!-- RESPONSE DATA  -->
                       <tr
                         v-for="book_request in book_requests"
@@ -250,7 +234,12 @@ export default {
     this.axios
       .get("http://localhost:8000/api/book_requests")
       .then((response) => {
-        this.book_requests = response.data.book_requests;
+        this.book_requests = response.data.book_requests;      
+      })
+      .then(() => {
+        $("#book_requests_table").DataTable({
+          "order" : [[0,"desc"]]
+        });        
       });
   },
   methods: {

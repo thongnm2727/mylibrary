@@ -93,7 +93,7 @@
               >Book's image:
             </label>
             <div class="col-lg-8 mb-4">
-              <input type="file" name="book_image"/>
+              <input type="file" name="book_image" @change="onFileChange"/>
             </div>
           </div>
         </div>
@@ -132,6 +132,22 @@ export default {
         .catch((error) => console.log(error))
         .finally(() => (this.loading = false));
     },
+    // onFileChange(e) {
+    //   var files = e.target.files || e.dataTransfer.files;
+    //   if (!files.length)
+    //     return;
+    //   this.createImage(files[0]);
+    // },
+    // createImage(file) {
+    //   // var image = new Image();
+    //   var reader = new FileReader();
+    //   var vm = this;
+
+    //   reader.onload = (e) => {
+    //     vm.book.image_name = e.target.result;
+    //   };
+    //   reader.readAsDataURL(file);
+    // },
   },
 };
 </script>

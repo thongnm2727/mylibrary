@@ -2181,22 +2181,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2209,6 +2193,10 @@ __webpack_require__.r(__webpack_exports__);
 
     this.axios.get("http://localhost:8000/api/book_requests").then(function (response) {
       _this.book_requests = response.data.book_requests;
+    }).then(function () {
+      $("#book_requests_table").DataTable({
+        "order": [[0, "desc"]]
+      });
     });
   },
   methods: {
@@ -2398,7 +2386,22 @@ __webpack_require__.r(__webpack_exports__);
       })["finally"](function () {
         return _this.loading = false;
       });
-    }
+    } // onFileChange(e) {
+    //   var files = e.target.files || e.dataTransfer.files;
+    //   if (!files.length)
+    //     return;
+    //   this.createImage(files[0]);
+    // },
+    // createImage(file) {
+    //   // var image = new Image();
+    //   var reader = new FileReader();
+    //   var vm = this;
+    //   reader.onload = (e) => {
+    //     vm.book.image_name = e.target.result;
+    //   };
+    //   reader.readAsDataURL(file);
+    // },
+
   }
 });
 
@@ -22022,93 +22025,104 @@ var render = function() {
             _c("div", { staticClass: "card" }, [
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "ul-todo-body" }, [
-                  _c("table", { staticClass: "table table-striped" }, [
-                    _vm._m(4),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.book_requests, function(book_request) {
-                        return _c("tr", { key: book_request.id }, [
-                          _c("td", [_vm._v(_vm._s(book_request.id))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(book_request.book_copy_id))]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _vm._v(_vm._s(book_request.requested_date))
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(book_request.return_date))]),
-                          _vm._v(" "),
-                          book_request.status == "Returned"
-                            ? _c("td", [
-                                _c(
-                                  "span",
-                                  { staticClass: "badge badge-success" },
-                                  [_vm._v(_vm._s(book_request.status))]
-                                )
-                              ])
-                            : book_request.status == "Overdue"
-                            ? _c("td", [
-                                _c(
-                                  "span",
-                                  { staticClass: "badge badge-warning" },
-                                  [_vm._v(_vm._s(book_request.status))]
-                                )
-                              ])
-                            : _c("td", [
-                                _c(
-                                  "span",
-                                  { staticClass: "badge badge-info" },
-                                  [_vm._v(_vm._s(book_request.status))]
-                                )
-                              ]),
-                          _vm._v(" "),
-                          _c("td", [
+                  _c(
+                    "table",
+                    {
+                      staticClass: "table table-striped",
+                      attrs: { id: "book_requests_table" }
+                    },
+                    [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.book_requests, function(book_request) {
+                          return _c("tr", { key: book_request.id }, [
+                            _c("td", [_vm._v(_vm._s(book_request.id))]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(book_request.book_copy_id))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(book_request.requested_date))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(book_request.return_date))
+                            ]),
+                            _vm._v(" "),
                             book_request.status == "Returned"
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-outline-danger",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.deleteBookRequest(
-                                          book_request.id
-                                        )
+                              ? _c("td", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "badge badge-success" },
+                                    [_vm._v(_vm._s(book_request.status))]
+                                  )
+                                ])
+                              : book_request.status == "Overdue"
+                              ? _c("td", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "badge badge-warning" },
+                                    [_vm._v(_vm._s(book_request.status))]
+                                  )
+                                ])
+                              : _c("td", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "badge badge-info" },
+                                    [_vm._v(_vm._s(book_request.status))]
+                                  )
+                                ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              book_request.status == "Returned"
+                                ? _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-outline-danger",
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.deleteBookRequest(
+                                            book_request.id
+                                          )
+                                        }
                                       }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                          Delete\n                        "
-                                    )
-                                  ]
-                                )
-                              : _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.returnBook(book_request.id)
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                          Delete\n                        "
+                                      )
+                                    ]
+                                  )
+                                : _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-outline-success",
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.returnBook(book_request.id)
+                                        }
                                       }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                          Return\n                        "
-                                    )
-                                  ]
-                                )
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                          Return\n                        "
+                                      )
+                                    ]
+                                  )
+                            ])
                           ])
-                        ])
-                      }),
-                      0
-                    ),
-                    _vm._v(" "),
-                    _vm._m(5)
-                  ])
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _vm._m(5)
+                    ]
+                  )
                 ])
               ])
             ])
@@ -22529,7 +22543,12 @@ var render = function() {
                 [_vm._v("Book's image:\n          ")]
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _c("div", { staticClass: "col-lg-8 mb-4" }, [
+                _c("input", {
+                  attrs: { type: "file", name: "book_image" },
+                  on: { change: _vm.onFileChange }
+                })
+              ])
             ])
           ]),
           _vm._v(" "),
@@ -22585,14 +22604,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-prepend" }, [
       _c("span", { staticClass: "input-group-text" }, [_vm._v("Description")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-8 mb-4" }, [
-      _c("input", { attrs: { type: "file", name: "book_image" } })
     ])
   }
 ]
