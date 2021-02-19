@@ -93,15 +93,7 @@
               >Book's image:
             </label>
             <div class="col-lg-8 mb-4">
-              <div class="card text-left">
-                <div class="card-body">
-                  <form class="dropzone" id="single-file-upload" action="#">
-                    <div class="fallback">
-                      <input name="file" type="file" />
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <input type="file" name="book_image"/>
             </div>
           </div>
         </div>

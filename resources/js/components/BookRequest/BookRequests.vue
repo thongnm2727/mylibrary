@@ -155,7 +155,7 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">#ID</th>
+                        <th scope="col">#Request ID</th>
                         <th scope="col">#Book's Copy ID</th>
                         <th scope="col">Requested Date</th>
                         <th scope="col">Return Date</th>

@@ -2314,14 +2314,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -21603,7 +21595,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("#ID")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#Request ID")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("#Book's Copy ID")]),
         _vm._v(" "),
@@ -21931,22 +21923,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-lg-8 mb-4" }, [
-      _c("div", { staticClass: "card text-left" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c(
-            "form",
-            {
-              staticClass: "dropzone",
-              attrs: { id: "single-file-upload", action: "#" }
-            },
-            [
-              _c("div", { staticClass: "fallback" }, [
-                _c("input", { attrs: { name: "file", type: "file" } })
-              ])
-            ]
-          )
-        ])
-      ])
+      _c("input", { attrs: { type: "file", name: "book_image" } })
     ])
   }
 ]

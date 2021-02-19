@@ -13,14 +13,14 @@ class BookRequestController extends Controller
     public function getAll()
     {
         $book_requests = DB::table('book_request')
-        ->orderBy('id','desc')
-        ->get()->toArray();
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
         return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
     }
 
     public function return($id)
     {
-        $book_request = DB::table('book_request')->find( $id);
+        $book_request = DB::table('book_request')->find($id);
 
         DB::table('book_copy')->where('id', $book_request->book_copy_id)
             ->update([
@@ -30,14 +30,14 @@ class BookRequestController extends Controller
             ]);
 
         DB::table('book_request')
-        ->where('id', $id)
-        ->update([
-            'status' => 'Returned',
-        ]);
+            ->where('id', $id)
+            ->update([
+                'status' => 'Returned',
+            ]);
 
         $book_requests = DB::table('book_request')
-        ->orderBy('id','desc')
-        ->get()->toArray();
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
         return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
     }
 
@@ -58,9 +58,15 @@ class BookRequestController extends Controller
                 'return_date' => $request->get('return_date'),
             ]);
 
+        $book_id = DB::table('book_copy')->find($request->get('book_copy_id'))->book_id;
+        DB::table('books')
+            ->where('id', $book_id)
+            ->increment('number_of_requests');
+
         $book_requests = DB::table('book_request')
-        ->orderBy('id','desc')
-        ->get()->toArray();
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
+
         return response()->json(["status" => "success", 'book_requests' => $book_requests], 200);
     }
 }

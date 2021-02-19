@@ -11,7 +11,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('dist-assets/images/page_icon.png')}}" />
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/themes/lite-purple.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/perfect-scrollbar.min.css') }}">
-    <!-- <link rel="stylesheet" href="{{ URL::asset('dist-assets/css/plugins/dropzone.min.css') }}"> -->
 </head>
 
 <body class="text-left">
