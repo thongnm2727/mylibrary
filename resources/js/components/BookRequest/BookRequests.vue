@@ -1,11 +1,11 @@
 <template>
-  <div class="main-content" >
+  <div class="main-content">
     <div class="breadcrumb">
       <h1>Book Requests</h1>
     </div>
     <div class="separator-breadcrumb border-top"></div>
     <!-- content goes here-->
-    <section class="ul-todo-list-content" >
+    <section class="ul-todo-list-content">
       <div class="ul-todo-sidebar">
         <div class="card">
           <div class="card-body">
@@ -136,14 +136,13 @@
         </div>
       </div>
       <!-- Request List -->
-      <div class="ul-todo-content-right" >
-        <div class="row" >
+      <div class="ul-todo-content-right">
+        <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-body">
                 <div class="ul-todo-body">
-                  <table 
-                  class="table table-striped">
+                  <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#Request ID</th>
@@ -180,7 +179,15 @@
                         </td>
                         <td>
                           <button
+                            v-if="book_request.status == `Returned`"
                             class="btn btn-outline-danger"
+                            @click.prevent="deleteBookRequest(book_request.id)"
+                          >
+                            Delete
+                          </button>
+                          <button
+                            v-else
+                            class="btn btn-outline-success"
                             @click.prevent="returnBook(book_request.id)"
                           >
                             Return
@@ -248,6 +255,14 @@ export default {
           // let i = this.books.map((item) => item.id).indexOf(id); //fix index of objects
           // this.books.splice(i, 1);
           this.book_requests = response.data.book_requests;
+        });
+    },
+    deleteBookRequest(id) {
+      this.axios
+        .delete(`http://localhost:8000/api/book_request/delete/${id}`)
+        .then((response) => {
+          let i = this.book_requests.map((item) => item.id).indexOf(id); //fix index of objects
+          this.book_requests.splice(i, 1);
         });
     },
   },

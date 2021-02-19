@@ -2170,6 +2170,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2203,6 +2210,18 @@ __webpack_require__.r(__webpack_exports__);
         // let i = this.books.map((item) => item.id).indexOf(id); //fix index of objects
         // this.books.splice(i, 1);
         _this3.book_requests = response.data.book_requests;
+      });
+    },
+    deleteBookRequest: function deleteBookRequest(id) {
+      var _this4 = this;
+
+      this.axios["delete"]("http://localhost:8000/api/book_request/delete/".concat(id)).then(function (response) {
+        var i = _this4.book_requests.map(function (item) {
+          return item.id;
+        }).indexOf(id); //fix index of objects
+
+
+        _this4.book_requests.splice(i, 1);
       });
     }
   }
@@ -21923,23 +21942,43 @@ var render = function() {
                               ]),
                           _vm._v(" "),
                           _c("td", [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-outline-danger",
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.returnBook(book_request.id)
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                          Return\n                        "
+                            book_request.status == "Returned"
+                              ? _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-outline-danger",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.deleteBookRequest(
+                                          book_request.id
+                                        )
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                          Delete\n                        "
+                                    )
+                                  ]
                                 )
-                              ]
-                            )
+                              : _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-outline-success",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.returnBook(book_request.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                          Return\n                        "
+                                    )
+                                  ]
+                                )
                           ])
                         ])
                       }),

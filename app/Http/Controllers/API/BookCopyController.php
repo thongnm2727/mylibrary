@@ -20,7 +20,6 @@ class BookCopyController extends Controller
 
     public function delete($id){
         DB::table('book_copy')->where('id', $id)->delete();
-
         return response()->json(["status" => "success", "message" => "Delete book copy success!"], 200);
     }
 

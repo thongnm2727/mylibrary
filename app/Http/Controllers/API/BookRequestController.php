@@ -69,4 +69,9 @@ class BookRequestController extends Controller
 
         return response()->json(["status" => "success", 'book_requests' => $book_requests], 200);
     }
+
+    public function delete($id){
+        DB::table('book_request')->where('id', $id)->delete();
+        return response()->json(["status" => "success", "message" => "Delete request success!"], 200);
+    }
 }
