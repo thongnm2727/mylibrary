@@ -22,7 +22,7 @@
                       <div class="ul-pricing__title">
                         <h2 class="heading text-primary">Basic</h2>
                       </div>
-                      <div class="ul-pricing__text text-mute">1 month</div>
+                      <div class="ul-pricing__text text-mute">1 month - 5 books</div>
                       <div class="ul-pricing__main-number">
                         <h3
                           class="heading display-3 text-primary t-font-boldest"
@@ -47,7 +47,7 @@
                       <div class="ul-pricing__title">
                         <h2 class="heading text-primary">Standard</h2>
                       </div>
-                      <div class="ul-pricing__text text-mute">3 months</div>
+                      <div class="ul-pricing__text text-mute">3 months - 20 books</div>
                       <div class="ul-pricing__main-number">
                         <h3
                           class="heading display-3 text-primary t-font-boldest"
@@ -72,7 +72,7 @@
                       <div class="ul-pricing__title">
                         <h2 class="heading text-primary">Premium</h2>
                       </div>
-                      <div class="ul-pricing__text text-mute">1 year</div>
+                      <div class="ul-pricing__text text-mute">1 year - No limit</div>
                       <div class="ul-pricing__main-number">
                         <h3
                           class="heading display-3 text-primary t-font-boldest"

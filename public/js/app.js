@@ -22434,7 +22434,7 @@ var staticRenderFns = [
       },
       [
         _c("h3", { staticClass: "card-title text-white t-font-boldest" }, [
-          _c("u", [_vm._v("Our Mission")])
+          _c("u", [_vm._v("Our Missions")])
         ]),
         _vm._v(" "),
         _c("p", [
@@ -24416,9 +24416,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "separator-breadcrumb border-top" }),
         _vm._v(" "),
-        _c("div", { staticClass: "row mb-4" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "card mb-4" }, [
               _c("div", { staticClass: "card-body" }, [
                 _c("h4", { staticClass: "t-font-boldest" }, [_vm._v("Phone")]),
                 _vm._v(" "),
@@ -24432,28 +24432,43 @@ var staticRenderFns = [
                   ]),
                   _vm._v(" "),
                   _c("li", [_vm._v("Second line: 1900-6034")])
-                ]),
-                _vm._v(" "),
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "card mb-4" }, [
+              _c("div", { staticClass: "card-body" }, [
                 _c("h4", { staticClass: "t-font-boldest" }, [_vm._v("Email")]),
                 _vm._v(" "),
                 _c("ul", [
+                  _c("br"),
+                  _vm._v(" "),
                   _c("li", [
-                    _vm._v("Customer support: "),
+                    _vm._v("\n                Customer support: "),
                     _c("i", { staticClass: "i-Mail-Favorite ml-1 mr-1" }),
                     _c("a", { staticClass: "text-info t-font-boldest" }, [
                       _vm._v("support@mylibrary.com")
                     ])
                   ]),
+                  _c("br"),
                   _vm._v(" "),
                   _c("li", [
-                    _vm._v("For business: "),
+                    _vm._v("\n                For business: "),
                     _c("i", { staticClass: "i-Mail-Favorite ml-1 mr-1" }),
                     _c("a", { staticClass: "text-info t-font-boldest" }, [
                       _vm._v("marketing@mylibrary.com")
                     ])
                   ])
-                ]),
-                _vm._v(" "),
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "card mb-4" }, [
+              _c("div", { staticClass: "card-body" }, [
                 _c("h4", { staticClass: "t-font-boldest" }, [
                   _vm._v("Address")
                 ]),
@@ -24726,7 +24741,7 @@ var staticRenderFns = [
                         _c(
                           "div",
                           { staticClass: "ul-pricing__text text-mute" },
-                          [_vm._v("1 month")]
+                          [_vm._v("1 month - 5 books")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "ul-pricing__main-number" }, [
@@ -24774,7 +24789,7 @@ var staticRenderFns = [
                         _c(
                           "div",
                           { staticClass: "ul-pricing__text text-mute" },
-                          [_vm._v("3 months")]
+                          [_vm._v("3 months - 20 books")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "ul-pricing__main-number" }, [
@@ -24825,7 +24840,7 @@ var staticRenderFns = [
                           _c(
                             "div",
                             { staticClass: "ul-pricing__text text-mute" },
-                            [_vm._v("1 year")]
+                            [_vm._v("1 year - No limit")]
                           ),
                           _vm._v(" "),
                           _c(

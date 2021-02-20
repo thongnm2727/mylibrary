@@ -13,7 +13,7 @@
             alt="Card image"
           />
           <div class="card-img-overlay" style="white-space: pre">
-            <h3 class="card-title text-white t-font-boldest"><u>Our Mission</u></h3>
+            <h3 class="card-title text-white t-font-boldest"><u>Our Missions</u></h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
               quis beatae officia saepe perferendis voluptatum minima eveniet
