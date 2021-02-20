@@ -44,8 +44,8 @@
             </li>
             <li class="nav-item">
               <router-link data-toggle="pill" class="nav-link" to="/contacts"
-                ><i class="nav-icon i-Telephone mr-1"></i>Contact
-                us</router-link
+                ><i class="nav-icon i-Telephone mr-1"></i>Contacts
+                </router-link
               >
             </li>
             <li class="nav-item">

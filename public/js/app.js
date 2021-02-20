@@ -22101,7 +22101,7 @@ var render = function() {
                     },
                     [
                       _c("i", { staticClass: "nav-icon i-Telephone mr-1" }),
-                      _vm._v("Contact\n              us")
+                      _vm._v("Contacts\n              ")
                     ]
                   )
                 ],
@@ -24162,12 +24162,73 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-content" }, [
-      _c("div", { staticClass: "breadcrumb" }, [
-        _c("h1", [_vm._v("Contacts")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "separator-breadcrumb border-top" })
+    return _c("div", [
+      _c("div", { staticClass: "main-content" }, [
+        _c("div", { staticClass: "breadcrumb" }, [
+          _c("h1", [_vm._v("Contacts")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "separator-breadcrumb border-top" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h1", [_vm._v("Phone")]),
+                _vm._v(" "),
+                _c("ul", [
+                  _c("li", [
+                    _c("h3", { staticClass: "heading text-danger" }, [
+                      _vm._v("Hotline: 1900-6035")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("(0.5$/min, 8 A.M. - 21 P.M. All days)")])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("Second line: 1900-6034")])
+                ]),
+                _vm._v(" "),
+                _c("h1", [_vm._v("Email")]),
+                _vm._v(" "),
+                _c("ul", [
+                  _c("li", [
+                    _vm._v("Customer support: "),
+                    _c("i", { staticClass: "i-Mail-Favorite ml-1 mr-1" }),
+                    _c("a", { staticClass: "text-info t-font-boldest" }, [
+                      _vm._v("support@mylibrary.com")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _vm._v("For business: "),
+                    _c("i", { staticClass: "i-Mail-Favorite ml-1 mr-1" }),
+                    _c("a", { staticClass: "text-info t-font-boldest" }, [
+                      _vm._v("marketing@mylibrary.com")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h1", [_vm._v("Fanpage")]),
+                _vm._v(" "),
+                _c("ul", [
+                  _c("li", [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "https://www.facebook.com/alphabooks",
+                          target: "_blank"
+                        }
+                      },
+                      [_vm._v("http://facebook.com/mylibrary")]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
     ])
   }
 ]
