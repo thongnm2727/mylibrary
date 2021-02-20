@@ -10,11 +10,23 @@ class BookController extends Controller
 {
     //
     public function index(){
-        $books = Book::all()
-        ->reverse()
-        ->values()
-        ->toArray();
-        return response()->json(["status" => "success","books" => $books], 200);
+        $books = Book::latest()->paginate(8);
+        // ->values()
+        // ->toArray();
+
+        $response = [
+            'pagination' => [
+                'total' => $books->total(),
+                'per_page' => $books->perPage(),
+                'current_page' => $books->currentPage(),
+                'last_page' => $books->lastPage(),
+                'from' => $books->firstItem(),
+                'to' => $books->lastItem(),
+            ],
+            'books' => $books,
+            "status" => "success"
+        ];
+        return response()->json($response, 200);
     }
 
     public function add(Request $request){

@@ -84,6 +84,7 @@
                     >Book copy's Id:</label
                   >
                   <input
+                  name="book_copy_id"
                     class="form-control"
                     type="number"
                     required
@@ -95,6 +96,7 @@
                     >Request date:</label
                   >
                   <input
+                  name="requested_date"
                     class="form-control"
                     type="text"
                     required
@@ -105,7 +107,8 @@
                   <label class="col-form-label" for="recipient-name-2"
                     >Return date:</label
                   >
-                  <input
+                  <input                  
+                  name="return_date"
                     class="form-control"
                     type="text"
                     required

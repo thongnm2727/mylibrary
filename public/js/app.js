@@ -2182,6 +2182,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2249,6 +2252,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
 //
 //
 //
@@ -2817,20 +2824,110 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      books: []
+      books: [],
+      pagination: {
+        total: 0,
+        per_page: 2,
+        from: 1,
+        to: 0,
+        current_page: 1
+      },
+      offset: 4
     };
   },
-  created: function created() {
-    var _this = this;
+  computed: {
+    isActived: function isActived() {
+      return this.pagination.current_page;
+    },
+    pagesNumber: function pagesNumber() {
+      if (!this.pagination.to) {
+        return [];
+      }
 
-    this.axios.get("http://localhost:8000/api/books").then(function (response) {
-      _this.books = response.data.books;
-    });
+      var from = this.pagination.current_page - this.offset;
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      var to = from + this.offset * 2;
+
+      if (to >= this.pagination.last_page) {
+        to = this.pagination.last_page;
+      }
+
+      var pagesArray = [];
+
+      while (from <= to) {
+        pagesArray.push(from);
+        from++;
+      }
+
+      return pagesArray;
+    }
+  },
+  created: function created() {
+    this.getBooks(this.pagination.current_page); // this.axios.get("http://localhost:8000/api/books").then((response) => {
+    //   this.books = response.data.books;
+    // });
   },
   methods: {
+    // isActive: function (page) {
+    //   return this.pagination.current_page == $page;
+    // },
+    getBooks: function getBooks(page) {
+      var _this = this;
+
+      this.axios.get("http://localhost:8000/api/books?page=".concat(page)).then(function (response) {
+        _this.books = response.data.books.data;
+        _this.pagination = response.data.pagination;
+      });
+    },
+    changePage: function changePage(page) {
+      this.pagination.current_page = page;
+      this.getBooks(page);
+    },
     deleteBook: function deleteBook(id) {
       var _this2 = this;
 
@@ -3053,24 +3150,22 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
  // import Store from './store';
-// import 'vuetify/dist/vuetify.min.css';
-// import Vuetify from 'vuetify';
 
 vue__WEBPACK_IMPORTED_MODULE_4__.default.prototype.$http = (axios__WEBPACK_IMPORTED_MODULE_2___default()); // const token = localStorage.getItem('token')
 // if (token) {
 //   Vue.prototype.$http.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 // }
-// Vue.use(Vuetify);
 
 vue__WEBPACK_IMPORTED_MODULE_4__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_5__.default);
-vue__WEBPACK_IMPORTED_MODULE_4__.default.use((vue_axios__WEBPACK_IMPORTED_MODULE_1___default()), (axios__WEBPACK_IMPORTED_MODULE_2___default()));
+vue__WEBPACK_IMPORTED_MODULE_4__.default.use((vue_axios__WEBPACK_IMPORTED_MODULE_1___default()), (axios__WEBPACK_IMPORTED_MODULE_2___default())); // Vue.use(require('vue-resource'));
+// Vue.component('pagination', require('laravel-vue-pagination'));
+
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__.default({
   mode: "history",
   routes: _routes__WEBPACK_IMPORTED_MODULE_3__.routes
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
   el: "#app",
-  // vuetify: new Vuetify(),
   router: router,
   // store: Store,
   render: function render(h) {
@@ -21940,7 +22035,11 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "number", required: "" },
+                          attrs: {
+                            name: "book_copy_id",
+                            type: "number",
+                            required: ""
+                          },
                           domProps: { value: _vm.book_request.book_copy_id },
                           on: {
                             input: function($event) {
@@ -21977,7 +22076,11 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text", required: "" },
+                          attrs: {
+                            name: "requested_date",
+                            type: "text",
+                            required: ""
+                          },
                           domProps: { value: _vm.book_request.requested_date },
                           on: {
                             input: function($event) {
@@ -22014,7 +22117,11 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text", required: "" },
+                          attrs: {
+                            name: "return_date",
+                            type: "text",
+                            required: ""
+                          },
                           domProps: { value: _vm.book_request.return_date },
                           on: {
                             input: function($event) {
@@ -22378,7 +22485,11 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "book's name" },
+                  attrs: {
+                    name: "book_name",
+                    type: "text",
+                    placeholder: "book's name"
+                  },
                   domProps: { value: _vm.book.name },
                   on: {
                     input: function($event) {
@@ -22415,7 +22526,11 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "book's author" },
+                  attrs: {
+                    name: "book_author",
+                    type: "text",
+                    placeholder: "book's author"
+                  },
                   domProps: { value: _vm.book.author },
                   on: {
                     input: function($event) {
@@ -22453,6 +22568,7 @@ var render = function() {
                   ],
                   staticClass: "form-control",
                   attrs: {
+                    name: "book_publisher",
                     id: "staticEmail",
                     type: "text",
                     placeholder: "book's publisher"
@@ -22541,6 +22657,7 @@ var render = function() {
                   ],
                   staticClass: "form-control",
                   attrs: {
+                    name: "book_language",
                     id: "staticEmail",
                     type: "text",
                     placeholder: "book's language"
@@ -23155,7 +23272,105 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _vm._m(4)
+      _c("div", { staticClass: "row mb-4" }, [
+        _c("div", { staticClass: "col-md-12 mb-4" }, [
+          _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+            _c(
+              "ul",
+              { staticClass: "pagination justify-content-center" },
+              [
+                _c(
+                  "li",
+                  {
+                    class: [
+                      _vm.pagination.current_page == 1
+                        ? "page-item disabled"
+                        : "page-item "
+                    ]
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link",
+                        attrs: { href: "#", tabindex: "-1" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.changePage(
+                              _vm.pagination.current_page - 1
+                            )
+                          }
+                        }
+                      },
+                      [_vm._v("\n              Previous\n              ")]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._l(_vm.pagesNumber, function(page) {
+                  return _c(
+                    "li",
+                    {
+                      key: page,
+                      staticClass: "page-item",
+                      class: [
+                        page == _vm.isActived ? "page-item active" : "page-item"
+                      ]
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link",
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.changePage(page)
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(page) + "\n              ")]
+                      )
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    class: [
+                      _vm.pagination.current_page < _vm.pagination.last_page
+                        ? "page-item"
+                        : "page-item disabled"
+                    ]
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link",
+                        attrs: { href: "#", tabindex: "-1" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.changePage(
+                              _vm.pagination.current_page + 1
+                            )
+                          }
+                        }
+                      },
+                      [_vm._v("\n              Next\n              ")]
+                    )
+                  ]
+                )
+              ],
+              2
+            )
+          ])
+        ])
+      ])
     ])
   ])
 }
@@ -23256,54 +23471,6 @@ var staticRenderFns = [
               ])
             ]
           )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mb-4" }, [
-      _c("div", { staticClass: "col-md-12 mb-4" }, [
-        _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
-          _c("ul", { staticClass: "pagination justify-content-center" }, [
-            _c("li", { staticClass: "page-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "page-link",
-                  attrs: { href: "#", tabindex: "-1" }
-                },
-                [_vm._v("Previous")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-                _vm._v("1")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item active" }, [
-              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-                _vm._v("2 "),
-                _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-                _vm._v("3")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-                _vm._v("Next")
-              ])
-            ])
-          ])
         ])
       ])
     ])

@@ -9,6 +9,7 @@
     </router-link> -->
 
     <section class="widget-card">
+      <!-- SIDE BAR  -->
       <div class="ul-todo-sidebar">
         <div class="card">
           <div class="card-body">
@@ -66,6 +67,7 @@
           </div>
         </div>
       </div>
+      <!-- SORT BY  -->
       <div class="row mb-4">
         <div class="col">
           <div class="dropdown">
@@ -85,6 +87,8 @@
         </div>
         <!-- </div> -->
       </div>
+      <!-- BOOK LIST  -->
+
       <div class="row mb-4">
         <div
           v-for="book in books"
@@ -97,7 +101,7 @@
                 :to="{ name: 'book_detail', params: { id: book.id } }"
               >
                 <img
-                style="margin:auto"
+                  style="margin: auto"
                   class="d-block w-75 rounded rounded"
                   v-bind:src="`/images/${book.image}`"
                   alt="First slide"
@@ -132,22 +136,56 @@
           </div>
         </div>
       </div>
+      <!-- PAGINATION  -->
       <div class="row mb-4">
         <div class="col-md-12 mb-4">
           <nav aria-label="Page navigation example">
+            <!-- <ul class="pagination">
+              <li v-if="pagination.current_page > 1">
+                    <a href="#" aria-label="Previous"
+                       @click.prevent="changePage(pagination.current_page - 1)">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+              <li v-for="page in pagesNumber" :key="page">
+                <a href="#" @click.prevent="changePage(page)">{{ page }}</a>
+              </li>
+              <li v-if="pagination.current_page < pagination.last_page">
+                    <a href="#" aria-label="Next" @click.prevent="changePage(pagination.current_page + 1)">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+            </ul> -->
             <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              <li 
+              v-bind:class="[pagination.current_page == 1 ? 'page-item disabled' : 'page-item ']">
+                <a class="page-link" 
+                href="#" 
+                @click.prevent="changePage(pagination.current_page - 1)"
+                tabindex="-1">
+                Previous
+                </a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active">
-                <a class="page-link" href="#"
-                  >2 <span class="sr-only">(current)</span></a
-                >
+              <li
+                class="page-item"
+                v-for="page in pagesNumber"
+                :key="page"
+                v-bind:class="[
+                  page == isActived ? 'page-item active' : 'page-item',
+                ]"
+              >
+                <a class="page-link" href="#" @click.prevent="changePage(page)"
+                  >{{ page }}
+                </a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
+              <li 
+              v-bind:class="[pagination.current_page < pagination.last_page ? 'page-item' : 'page-item disabled']">
+                <a class="page-link" 
+                href="#" 
+                @click.prevent="changePage(pagination.current_page + 1)"
+                tabindex="-1">
+                Next
+                </a>
               </li>
             </ul>
           </nav>
@@ -162,14 +200,63 @@ export default {
   data() {
     return {
       books: [],
+      pagination: {
+        total: 0,
+        per_page: 2,
+        from: 1,
+        to: 0,
+        current_page: 1,
+      },
+      offset: 4,
     };
   },
+  computed: {
+    isActived: function () {
+      return this.pagination.current_page;
+    },
+    pagesNumber: function () {
+      if (!this.pagination.to) {
+        return [];
+      }
+      var from = this.pagination.current_page - this.offset;
+      if (from < 1) {
+        from = 1;
+      }
+      var to = from + this.offset * 2;
+      if (to >= this.pagination.last_page) {
+        to = this.pagination.last_page;
+      }
+      var pagesArray = [];
+      while (from <= to) {
+        pagesArray.push(from);
+        from++;
+      }
+      return pagesArray;
+    },
+  },
   created() {
-    this.axios.get("http://localhost:8000/api/books").then((response) => {
-      this.books = response.data.books;
-    });
+    this.getBooks(this.pagination.current_page);
+    // this.axios.get("http://localhost:8000/api/books").then((response) => {
+    //   this.books = response.data.books;
+    // });
   },
   methods: {
+    // isActive: function (page) {
+    //   return this.pagination.current_page == $page;
+    // },
+    getBooks(page) {
+      this.axios
+        .get(`http://localhost:8000/api/books?page=${page}`)
+        .then((response) => {
+          this.books = response.data.books.data;
+          this.pagination = response.data.pagination;
+        });
+    },
+    changePage(page) {
+      this.pagination.current_page = page;
+      this.getBooks(page);
+    },
+
     deleteBook(id) {
       this.axios
         .delete(`http://localhost:8000/api/book/delete/${id}`)

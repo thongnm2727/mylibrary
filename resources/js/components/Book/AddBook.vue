@@ -16,6 +16,7 @@
             >
             <div class="col-lg-6 mb-4">
               <input
+                name="book_name"
                 class="form-control"
                 type="text"
                 placeholder="book's name"
@@ -29,6 +30,7 @@
             </label>
             <div class="col-lg-6 mb-4">
               <input
+                name="book_author"
                 class="form-control"
                 type="text"
                 placeholder="book's author"
@@ -44,6 +46,7 @@
             </label>
             <div class="col-lg-6 mb-4">
               <input
+                name="book_publisher"
                 class="form-control"
                 id="staticEmail"
                 type="text"
@@ -76,6 +79,7 @@
             </label>
             <div class="col-lg-6 mb-4">
               <input
+                name="book_language"
                 class="form-control"
                 id="staticEmail"
                 type="text"
@@ -109,7 +113,7 @@
               >Book's image:
             </label>
             <div class="col-lg-8 mb-4">
-              <input type="file" name="image" @change="onFileChange"/>
+              <input type="file" name="image" @change="onFileChange" />
             </div>
           </div>
         </div>
@@ -150,8 +154,7 @@ export default {
     },
     onFileChange(e) {
       let files = e.target.files || e.dataTransfer.files;
-      if (!files.length)
-        return;
+      if (!files.length) return;
       this.createImage(files[0]);
     },
     createImage(file) {
