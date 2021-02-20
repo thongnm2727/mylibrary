@@ -1941,6 +1941,11 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -1950,6 +1955,48 @@ module.exports = {
   \************************************************************************************************************************************************************************************************************/
 /***/ (() => {
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3243,6 +3290,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -3346,6 +3415,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Book_UpdateBook_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Book/UpdateBook.vue */ "./resources/js/components/Book/UpdateBook.vue");
 /* harmony import */ var _components_BookRequest_BookRequests_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/BookRequest/BookRequests.vue */ "./resources/js/components/BookRequest/BookRequests.vue");
 /* harmony import */ var _components_Contacts_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Contacts.vue */ "./resources/js/components/Contacts.vue");
+/* harmony import */ var _components_Price_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Price.vue */ "./resources/js/components/Price.vue");
+
 
 
 
@@ -3358,6 +3429,10 @@ __webpack_require__.r(__webpack_exports__);
 // import Vue from "vue";
 
 var routes = [{
+  name: 'price',
+  path: '/price',
+  component: _components_Price_vue__WEBPACK_IMPORTED_MODULE_9__.default
+}, {
   name: 'contacts',
   path: '/contacts',
   component: _components_Contacts_vue__WEBPACK_IMPORTED_MODULE_8__.default
@@ -21654,6 +21729,43 @@ component.options.__file = "resources/js/components/OpeningHours.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Price.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Price.vue ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Price_vue_vue_type_template_id_53a25d6e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Price.vue?vue&type=template&id=53a25d6e& */ "./resources/js/components/Price.vue?vue&type=template&id=53a25d6e&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Price_vue_vue_type_template_id_53a25d6e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Price_vue_vue_type_template_id_53a25d6e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Price.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/App.vue?vue&type=script&lang=js&":
 /*!*******************************************************!*\
   !*** ./resources/js/App.vue?vue&type=script&lang=js& ***!
@@ -22010,6 +22122,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Price.vue?vue&type=template&id=53a25d6e&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/Price.vue?vue&type=template&id=53a25d6e& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Price_vue_vue_type_template_id_53a25d6e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Price_vue_vue_type_template_id_53a25d6e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Price_vue_vue_type_template_id_53a25d6e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Price.vue?vue&type=template&id=53a25d6e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Price.vue?vue&type=template&id=53a25d6e&");
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/App.vue?vue&type=template&id=f348271a&":
 /*!****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/App.vue?vue&type=template&id=f348271a& ***!
@@ -22038,8 +22167,6 @@ var render = function() {
       ]),
       _vm._v(" "),
       _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticStyle: { margin: "auto" } }),
       _vm._v(" "),
       _vm._m(1)
     ]),
@@ -22097,11 +22224,11 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "nav-link",
-                      attrs: { "data-toggle": "pill", to: "/contacts" }
+                      attrs: { "data-toggle": "pill", to: "/price" }
                     },
                     [
-                      _c("i", { staticClass: "nav-icon i-Telephone mr-1" }),
-                      _vm._v("Contacts\n              ")
+                      _c("i", { staticClass: "nav-icon i-Dollar-Sign mr-1" }),
+                      _vm._v("Price")
                     ]
                   )
                 ],
@@ -22121,6 +22248,25 @@ var render = function() {
                     [
                       _c("i", { staticClass: "nav-icon i-Clock mr-1" }),
                       _vm._v("Opening Hours")
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { "data-toggle": "pill", to: "/contacts" }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-Telephone mr-1" }),
+                      _vm._v("Contacts\n            ")
                     ]
                   )
                 ],
@@ -22158,7 +22304,7 @@ var render = function() {
                     },
                     [
                       _c("i", { staticClass: "nav-icon i-Check mr-1" }),
-                      _vm._v("Book\n              Requests")
+                      _vm._v("Book Requests")
                     ]
                   )
                 ],
@@ -22196,8 +22342,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "header-part-right" }, [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Login")])
+    return _c("div", { staticClass: "header-part-right mr-4" }, [
+      _c(
+        "a",
+        {
+          staticClass: "typo_link text-primary t-font-boldest",
+          staticStyle: { "font-size": "1.1rem" },
+          attrs: { href: "#" }
+        },
+        [_vm._v("Admin Login")]
+      )
     ])
   }
 ]
@@ -22223,20 +22377,112 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "main-content" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "separator-breadcrumb border-top" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "row t-font-boldest text-20" }, [
+      _c("div", { staticClass: "col-lg-4 col-xl-6 mt-3" }, [
+        _c("div", { staticClass: "card bg-dark text-white o-hidden mb-4" }, [
+          _c("img", {
+            staticClass: "card-img",
+            attrs: {
+              src: "/dist-assets/images/photo-wide-5.jpg",
+              alt: "Card image"
+            }
+          }),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-4 col-xl-6 mt-3" }, [
+        _c("div", { staticClass: "card bg-dark text-white o-hidden mb-4" }, [
+          _c("img", {
+            staticClass: "card-img",
+            attrs: {
+              src: "/dist-assets/images/photo-wide-5.jpg",
+              alt: "Card image"
+            }
+          }),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-content" }, [
-      _c("div", { staticClass: "breadcrumb" }, [
-        _c("h1", [_vm._v("About Us")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "separator-breadcrumb border-top" })
+    return _c("div", { staticClass: "breadcrumb" }, [
+      _c("h1", [_vm._v("About Us")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "card-img-overlay",
+        staticStyle: { "white-space": "pre" }
+      },
+      [
+        _c("h3", { staticClass: "card-title text-white t-font-boldest" }, [
+          _c("u", [_vm._v("Our Mission")])
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero\n            quis beatae officia saepe perferendis voluptatum minima eveniet\n            voluptates dolorum, temporibus nisi maxime nesciunt totam\n            repudiandae commodi sequi dolor quibusdam\n          "
+          )
+        ]),
+        _vm._v(" "),
+        _c("i", { staticClass: "text-20 i-Smile" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "text-20 i-Smile" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "text-20 i-Smile" }),
+        _vm._v(" "),
+        _c("br")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "card-img-overlay",
+        staticStyle: { "white-space": "pre" }
+      },
+      [
+        _c("h3", { staticClass: "card-title text-white t-font-boldest" }, [
+          _c("u", [_vm._v("Our History")])
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero\n            quis beatae officia saepe perferendis voluptatum minima eveniet\n            voluptates dolorum, temporibus nisi maxime nesciunt totam\n            repudiandae commodi sequi dolor quibusdam\n          "
+          )
+        ]),
+        _vm._v(" "),
+        _c("i", { staticClass: "text-20 i-Smile" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "text-20 i-Smile" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "text-20 i-Smile" }),
+        _vm._v(" "),
+        _c("br")
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -24165,16 +24411,16 @@ var staticRenderFns = [
     return _c("div", [
       _c("div", { staticClass: "main-content" }, [
         _c("div", { staticClass: "breadcrumb" }, [
-          _c("h1", [_vm._v("Contacts")])
+          _c("h2", [_vm._v("Contacts")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "separator-breadcrumb border-top" }),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "row mb-4" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "card" }, [
               _c("div", { staticClass: "card-body" }, [
-                _c("h1", [_vm._v("Phone")]),
+                _c("h4", { staticClass: "t-font-boldest" }, [_vm._v("Phone")]),
                 _vm._v(" "),
                 _c("ul", [
                   _c("li", [
@@ -24188,7 +24434,7 @@ var staticRenderFns = [
                   _c("li", [_vm._v("Second line: 1900-6034")])
                 ]),
                 _vm._v(" "),
-                _c("h1", [_vm._v("Email")]),
+                _c("h4", { staticClass: "t-font-boldest" }, [_vm._v("Email")]),
                 _vm._v(" "),
                 _c("ul", [
                   _c("li", [
@@ -24208,20 +24454,28 @@ var staticRenderFns = [
                   ])
                 ]),
                 _vm._v(" "),
-                _c("h1", [_vm._v("Fanpage")]),
+                _c("h4", { staticClass: "t-font-boldest" }, [
+                  _vm._v("Address")
+                ]),
                 _vm._v(" "),
                 _c("ul", [
-                  _c("li", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "https://www.facebook.com/alphabooks",
-                          target: "_blank"
-                        }
-                      },
-                      [_vm._v("http://facebook.com/mylibrary")]
-                    )
+                  _c("a", { staticClass: "text-info", attrs: { href: "#" } }, [
+                    _c("li", [
+                      _c("i", { staticClass: "i-Map-Marker text-15" }, [
+                        _vm._v(
+                          " 23 Hoang Dao Thuy, Nhan Chinh, Thanh Xuan, Ha Noi"
+                        )
+                      ])
+                    ])
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "text-info", attrs: { href: "#" } }, [
+                    _c("li", [
+                      _c("i", { staticClass: "i-Map-Marker text-15" }, [
+                        _vm._v(" 112 Thai Ha, Trung Liet, Dong Da, Ha Noi")
+                      ])
+                    ])
                   ])
                 ])
               ])
@@ -24327,10 +24581,289 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "main-content" }, [
       _c("div", { staticClass: "breadcrumb" }, [
-        _c("h1", [_vm._v("Opening Hours")])
+        _c("h1", [_vm._v("Opening Hours (Close on holidays)")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "separator-breadcrumb border-top" })
+      _c("div", { staticClass: "separator-breadcrumb border-top" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mt-4" }, [
+        _c("div", { staticClass: "col-md-12 mb-4" }, [
+          _c(
+            "div",
+            { staticClass: "card ul-weather-card__card-group o-hidden" },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-6 ul-weather-card__both-group text-center"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "ul-weather-card__icon-center text-center"
+                      },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "i-Cloud-Sun display-4 text-mute t-font-boldest"
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "d-inline-block ml-3" }, [
+                      _c("h2", [_vm._v("8:30 AM - 11:30 PM")]),
+                      _vm._v(" "),
+                      _c("h4", [_vm._v("Monday - Saturday")])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-6 ul-weather-card__both-group bg-dark text-center"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "ul-weather-card__icon-center text-center"
+                      },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "i-Clouds display-4 text-mute t-font-boldest"
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "d-inline-block ml-3" }, [
+                      _c("h2", { staticClass: "text-white" }, [
+                        _vm._v("13:30 AM - 18:00 PM")
+                      ]),
+                      _vm._v(" "),
+                      _c("h4", { staticClass: "text-white" }, [
+                        _vm._v("Monday - Friday")
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Price.vue?vue&type=template&id=53a25d6e&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Price.vue?vue&type=template&id=53a25d6e& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-content" }, [
+      _c("div", { staticClass: "breadcrumb" }, [
+        _c("h1", [_vm._v("Pricing Table")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator-breadcrumb border-top" }),
+      _vm._v(" "),
+      _c("section", { staticClass: "ul-pricing-table" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12 col-xl-12" }, [
+            _c("div", { staticClass: "card mb-4" }, [
+              _c("div", { staticClass: "card-header bg-transparent" }, [
+                _c("h5", [_vm._v("Be a member to borrow books")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "ul-pricing__table-list" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-12 col-lg-4 col-xl-4" }, [
+                      _c("div", { staticClass: "ul-pricing__table-1" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "ul-pricing__image card-icon-bg-primary"
+                          },
+                          [_c("i", { staticClass: "i-Bicycle1" })]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "ul-pricing__title" }, [
+                          _c("h2", { staticClass: "heading text-primary" }, [
+                            _vm._v("Basic")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "ul-pricing__text text-mute" },
+                          [_vm._v("1 month")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "ul-pricing__main-number" }, [
+                          _c(
+                            "h3",
+                            {
+                              staticClass:
+                                "heading display-3 text-primary t-font-boldest"
+                            },
+                            [
+                              _vm._v(
+                                "\n                        $20\n                      "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "ul-pricing__list" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                        Lorem Ipsum is simply dummy text of the printing and\n                        typesetting industry. Lorem Ipsum has been the\n                        industry's standard dummy text ever since the 1500s,\n                      "
+                            )
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-12 col-lg-4 col-xl-4" }, [
+                      _c("div", { staticClass: "ul-pricing__table-1" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "ul-pricing__image card-icon-bg-primary"
+                          },
+                          [_c("i", { staticClass: "i-Scooter" })]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "ul-pricing__title" }, [
+                          _c("h2", { staticClass: "heading text-primary" }, [
+                            _vm._v("Standard")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "ul-pricing__text text-mute" },
+                          [_vm._v("3 months")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "ul-pricing__main-number" }, [
+                          _c(
+                            "h3",
+                            {
+                              staticClass:
+                                "heading display-3 text-primary t-font-boldest"
+                            },
+                            [
+                              _vm._v(
+                                "\n                        $50\n                      "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "ul-pricing__list" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                        Lorem Ipsum is simply dummy text of the printing and\n                        typesetting industry. Lorem Ipsum has been the\n                        industry's standard dummy text ever since the 1500s,\n                      "
+                            )
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-12 col-lg-4 col-xl-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "ul-pricing__table-1 border-right-0" },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "ul-pricing__image card-icon-bg-primary"
+                            },
+                            [_c("i", { staticClass: "i-Car-2" })]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ul-pricing__title" }, [
+                            _c("h2", { staticClass: "heading text-primary" }, [
+                              _vm._v("Premium")
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "ul-pricing__text text-mute" },
+                            [_vm._v("1 year")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "ul-pricing__main-number" },
+                            [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "heading display-3 text-primary t-font-boldest"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        $165\n                      "
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ul-pricing__list" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                        Lorem Ipsum is simply dummy text of the printing and\n                        typesetting industry. Lorem Ipsum has been the\n                        industry's standard dummy text ever since the 1500s,\n                      "
+                              )
+                            ])
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
     ])
   }
 ]

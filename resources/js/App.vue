@@ -19,9 +19,11 @@
           ></i>
         </div>
       </div>
-      <div style="margin: auto"></div>
-      <div class="header-part-right">
-        <a href="#">Login</a>
+      <!-- <div style="margin: auto"></div> -->
+      <div class="header-part-right mr-4">
+        <a 
+        style="font-size: 1.1rem"
+        class="typo_link text-primary t-font-boldest" href="#">Admin Login</a>
       </div>
     </div>
     <!-- header top menu end-->
@@ -43,9 +45,8 @@
               >
             </li>
             <li class="nav-item">
-              <router-link data-toggle="pill" class="nav-link" to="/contacts"
-                ><i class="nav-icon i-Telephone mr-1"></i>Contacts
-                </router-link
+              <router-link data-toggle="pill" class="nav-link" to="/price"
+                ><i class="nav-icon i-Dollar-Sign mr-1"></i>Price</router-link
               >
             </li>
             <li class="nav-item">
@@ -55,6 +56,11 @@
                 to="/openinghours"
                 ><i class="nav-icon i-Clock mr-1"></i>Opening Hours</router-link
               >
+            </li>
+            <li class="nav-item">
+              <router-link data-toggle="pill" class="nav-link" to="/contacts"
+                ><i class="nav-icon i-Telephone mr-1"></i>Contacts
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link data-toggle="pill" class="nav-link" to="/books"
@@ -67,8 +73,7 @@
                 data-toggle="pill"
                 class="nav-link"
                 to="/book_requests"
-                ><i class="nav-icon i-Check mr-1"></i>Book
-                Requests</router-link
+                ><i class="nav-icon i-Check mr-1"></i>Book Requests</router-link
               >
             </li>
           </ul>

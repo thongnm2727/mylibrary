@@ -7,11 +7,17 @@ import BookDetail from "./components/Book/BookDetail.vue";
 import UpdateBook from "./components/Book/UpdateBook.vue";
 import BookRequests from "./components/BookRequest/BookRequests.vue";
 import Contacts from "./components/Contacts.vue"
+import Price from "./components/Price.vue"
 // import Router from "vue-router";
 // import Vue from "vue";
 
 
 export const routes = [
+    {
+        name: 'price',
+        path: '/price',
+        component: Price,
+    },
     {
         name: 'contacts',
         path: '/contacts',
