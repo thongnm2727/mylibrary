@@ -31,16 +31,16 @@
                 </h4>
                 <ul class="list-group">
                   <li class="list-group-item border-0">
-                    <a href=""> English</a>
+                    <a href="#"> English</a>
                   </li>
                   <li class="list-group-item border-0">
-                    <a href=""> French</a>
+                    <a href="#"> French</a>
                   </li>
                   <li class="list-group-item border-0">
-                    <a href=""> Chinese (Traditional) </a>
+                    <a href="#"> Chinese (Traditional) </a>
                   </li>
                   <li class="list-group-item border-0">
-                    <a href=""> German </a>
+                    <a href="#"> German </a>
                   </li>
                 </ul>
               </div>
@@ -67,8 +67,8 @@
           </div>
         </div>
       </div>
-      <!-- SORT BY  -->
-      <div class="row mb-4">
+      <!-- ORDERING  -->
+      <div class="row mb-4 mr-4">
         <div class="col">
           <div class="dropdown">
             <button
@@ -140,22 +140,6 @@
       <div class="row mb-4">
         <div class="col-md-12 mb-4">
           <nav aria-label="Page navigation example">
-            <!-- <ul class="pagination">
-              <li v-if="pagination.current_page > 1">
-                    <a href="#" aria-label="Previous"
-                       @click.prevent="changePage(pagination.current_page - 1)">
-                        <span aria-hidden="true">«</span>
-                    </a>
-                </li>
-              <li v-for="page in pagesNumber" :key="page">
-                <a href="#" @click.prevent="changePage(page)">{{ page }}</a>
-              </li>
-              <li v-if="pagination.current_page < pagination.last_page">
-                    <a href="#" aria-label="Next" @click.prevent="changePage(pagination.current_page + 1)">
-                        <span aria-hidden="true">»</span>
-                    </a>
-                </li>
-            </ul> -->
             <ul class="pagination justify-content-center">
               <li 
               v-bind:class="[pagination.current_page == 1 ? 'page-item disabled' : 'page-item ']">
