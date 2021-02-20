@@ -6,11 +6,22 @@ import Books from "./components/Book/Books.vue";
 import BookDetail from "./components/Book/BookDetail.vue";
 import UpdateBook from "./components/Book/UpdateBook.vue";
 import BookRequests from "./components/BookRequest/BookRequests.vue";
+import Contacts from "./components/Contacts.vue"
 // import Router from "vue-router";
 // import Vue from "vue";
 
 
 export const routes = [
+    {
+        name: 'contacts',
+        path: '/contacts',
+        component: Contacts,
+    },
+    {
+        name: "default",
+        path: '/',
+        redirect : {name : 'home'}
+    },
     {
         name: "home",
         path: "/home",

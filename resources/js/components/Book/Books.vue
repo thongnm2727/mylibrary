@@ -25,43 +25,95 @@
               >
                 Add Book
               </router-link>
-              <div>
-                <h4>
-                  <strong>Language:</strong>
-                </h4>
-                <ul class="list-group">
-                  <li class="list-group-item border-0">
-                    <a href="#"> English</a>
-                  </li>
-                  <li class="list-group-item border-0">
-                    <a href="#"> French</a>
-                  </li>
-                  <li class="list-group-item border-0">
-                    <a href="#"> Chinese (Traditional) </a>
-                  </li>
-                  <li class="list-group-item border-0">
-                    <a href="#"> German </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4>
-                  <strong>Author:</strong>
-                </h4>
-                <ul class="list-group">
-                  <li class="list-group-item border-0">
-                    <a href=""> Bill Bryson</a>
-                  </li>
-                  <li class="list-group-item border-0">
-                    <a href=""> Kristin Hannah</a>
-                  </li>
-                  <li class="list-group-item border-0">
-                    <a href=""> Sarah J. Maas </a>
-                  </li>
-                  <li class="list-group-item border-0">
-                    <a href=""> Adam Grant </a>
-                  </li>
-                </ul>
+              <div class="list-group">
+                <label class="text-muted font-weight-600 py-8" for=""
+                  >LANGUAGE</label
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-home-list"
+                  data-toggle="list"
+                  href="#list-home"
+                  role="tab"
+                  aria-controls="home"
+                >
+                  <i class="nav-icon i-At-Sign"></i> English</a
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-profile-list"
+                  data-toggle="list"
+                  href="#list-profile"
+                  role="tab"
+                  aria-controls="profile"
+                >
+                  <i class="nav-icon i-At-Sign"></i> French</a
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-settings-list"
+                  data-toggle="list"
+                  href="#list-settings"
+                  role="tab"
+                  aria-controls="settings"
+                >
+                  <i class="nav-icon i-At-Sign"></i> Japanese</a
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-settings-list"
+                  data-toggle="list"
+                  href="#list-settings"
+                  role="tab"
+                  aria-controls="settings"
+                >
+                  <i class="nav-icon i-At-Sign"></i> Spanish</a
+                >
+              
+              
+                <label class="text-muted font-weight-600 py-8" for=""
+                  >FAVOURITE AUTHOR</label
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-home-list"
+                  data-toggle="list"
+                  href="#list-home"
+                  role="tab"
+                  aria-controls="home"
+                >
+                  <i class="nav-icon i-Administrator"></i> Bill Bryson</a
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-profile-list"
+                  data-toggle="list"
+                  href="#list-profile"
+                  role="tab"
+                  aria-controls="profile"
+                >
+                  <i class="nav-icon i-Administrator"></i> Kristin Hannah</a
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-settings-list"
+                  data-toggle="list"
+                  href="#list-settings"
+                  role="tab"
+                  aria-controls="settings"
+                >
+                  <i class="nav-icon i-Administrator"></i> Sarah J. Maas</a
+                >
+                <a
+                  class="list-group-item list-group-item-action border-0"
+                  id="list-settings-list"
+                  data-toggle="list"
+                  href="#list-settings"
+                  role="tab"
+                  aria-controls="settings"
+                >
+                  <i class="nav-icon i-Administrator"></i> Adam Grant</a
+                >
               </div>
             </div>
           </div>
@@ -72,12 +124,12 @@
         <div class="col">
           <div class="dropdown">
             <button
-              class="btn btn-success dropdown-toggle float-right"
+              class="btn btn-success btn-lg dropdown-toggle float-right"
               id="dropdownMenuButton"
               type="button"
               data-toggle="dropdown"
             >
-              Sort by
+              Order by
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Requested Number</a>
@@ -141,13 +193,20 @@
         <div class="col-md-12 mb-4">
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-              <li 
-              v-bind:class="[pagination.current_page == 1 ? 'page-item disabled' : 'page-item ']">
-                <a class="page-link" 
-                href="#" 
-                @click.prevent="changePage(pagination.current_page - 1)"
-                tabindex="-1">
-                Previous
+              <li
+                v-bind:class="[
+                  pagination.current_page == 1
+                    ? 'page-item disabled'
+                    : 'page-item ',
+                ]"
+              >
+                <a
+                  class="page-link"
+                  href="#"
+                  @click.prevent="changePage(pagination.current_page - 1)"
+                  tabindex="-1"
+                >
+                  Previous
                 </a>
               </li>
               <li
@@ -162,13 +221,20 @@
                   >{{ page }}
                 </a>
               </li>
-              <li 
-              v-bind:class="[pagination.current_page < pagination.last_page ? 'page-item' : 'page-item disabled']">
-                <a class="page-link" 
-                href="#" 
-                @click.prevent="changePage(pagination.current_page + 1)"
-                tabindex="-1">
-                Next
+              <li
+                v-bind:class="[
+                  pagination.current_page < pagination.last_page
+                    ? 'page-item'
+                    : 'page-item disabled',
+                ]"
+              >
+                <a
+                  class="page-link"
+                  href="#"
+                  @click.prevent="changePage(pagination.current_page + 1)"
+                  tabindex="-1"
+                >
+                  Next
                 </a>
               </li>
             </ul>

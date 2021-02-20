@@ -7,9 +7,9 @@
     <router-link to="/books" class="btn btn-xl btn-info" id="home_btn_intro">
       Find your book now!
     </router-link>
-    <button id="home_btn_contact" class="btn btn-xl btn-info">
+    <router-link to="/contacts" id="home_btn_contact" class="btn btn-xl btn-info">
       Contact us!
-    </button>
+    </router-link>
     <div id="intro_content">
       <h3 class="heading display-1 text-white t-font-boldest">Welcome to our library!</h3></div>
   </div>

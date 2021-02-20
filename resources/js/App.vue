@@ -67,7 +67,7 @@
                 data-toggle="pill"
                 class="nav-link"
                 to="/book_requests"
-                ><i class="nav-icon i-Flag-2 mr-1"></i>Book
+                ><i class="nav-icon i-Check mr-1"></i>Book
                 Requests</router-link
               >
             </li>
