@@ -1,17 +1,22 @@
 <template>
-  <div class="home_content">
+  <div class="home_content mb-4">
     <img
       class="rounded rounded"
       v-bind:src="`/dist-assets/images/background-image1.jpg`"
     />
-    <router-link to="/books" class="btn btn-xl btn-info" id="home_btn_intro">
-      Find your book now!
+    <router-link to="/books" id="home_btn_intro">
+      <h1 class="text-white heading t-font-boldest">
+        <u>Find your book now!</u>
+      </h1>
     </router-link>
-    <router-link to="/contacts" id="home_btn_contact" class="btn btn-xl btn-info">
-      Contact us!
+    <router-link to="/contacts" id="home_btn_contact">
+      <h1 class="text-white heading t-font-boldest"><u>Contact us!</u></h1>
     </router-link>
     <div id="intro_content">
-      <h3 class="heading display-1 text-white t-font-boldest">Welcome to our library!</h3></div>
+      <h2 class="heading display-1 text-white t-font-boldest">
+        <label>Welcome to our library!</label>
+      </h2>
+    </div>
   </div>
 </template>
 
@@ -32,8 +37,8 @@
 
 .home_content #home_btn_contact {
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 45%;
+  left: 50%;
   /* transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%); */
   /* background-color: #555; */
@@ -48,14 +53,13 @@
 
 .home_content #home_btn_intro {
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 45%;
+  left: 25%;
 }
 
 .home_content img {
   width: 100%;
 }
-
 </style>
 
 <script>

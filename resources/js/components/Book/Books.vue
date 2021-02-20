@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div class="breadcrumb">
+    <!-- <div class="breadcrumb">
       <h1>Books at library</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
-    <!-- <router-link :to="{ name: 'add_book' }" class="btn btn-outline-primary m-1">
-      Add Book
-    </router-link> -->
+    <div class="separator-breadcrumb border-top"></div> -->
 
     <section class="widget-card">
       <!-- SIDE BAR  -->
@@ -21,7 +18,7 @@
               <!-- Large modal-->
               <router-link
                 :to="{ name: 'add_book' }"
-                class="btn btn-success btn-block mb-4"
+                class="btn btn-primary btn-block mb-4"
               >
                 Add Book
               </router-link>
@@ -124,7 +121,7 @@
         <div class="col">
           <div class="dropdown">
             <button
-              class="btn btn-success btn-lg dropdown-toggle float-right"
+              class="btn btn-primary btn-lg dropdown-toggle float-right"
               id="dropdownMenuButton"
               type="button"
               data-toggle="dropdown"
@@ -167,13 +164,13 @@
 
               <router-link
                 :to="{ name: 'book_detail', params: { id: book.id } }"
-                class="btn btn-success ul-btn-raised--v2 m-1"
+                class="btn btn-primary ul-btn-raised--v2 m-1"
               >
                 Detail
               </router-link>
               <router-link
                 :to="{ name: 'update_book', params: { id: book.id } }"
-                class="btn btn-outline-success ul-btn-raised--v2 m-1"
+                class="btn btn-outline-primary ul-btn-raised--v2 m-1"
               >
                 Update
               </router-link>

@@ -2919,9 +2919,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3223,6 +3220,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /***/ }),
 
@@ -3438,7 +3439,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home_content {\r\n  /* position: relative; */\r\n  width: 100%;\r\n  /* max-width: 400px; */\n}\n#intro_content {\r\n  /* color: white; */\r\n  position: absolute;\r\n  top: 20%;\r\n  left: 15%;\r\n  /* transform: translate(-50%, -50%); */\n}\n.home_content #home_btn_contact {\r\n  position: absolute;\r\n  top: 40%;\r\n  left: 40%;\r\n  /* transform: translate(-50%, -50%);\r\n  -ms-transform: translate(-50%, -50%); */\r\n  /* background-color: #555; */\r\n  /* color: white; */\r\n  /* font-size: 16px;\r\n  padding: 12px 24px; */\r\n  /* border: none; */\r\n  /* cursor: pointer; */\r\n  /* border-radius: 5px; */\r\n  /* text-align: center; */\n}\n.home_content #home_btn_intro {\r\n  position: absolute;\r\n  top: 40%;\r\n  left: 20%;\n}\n.home_content img {\r\n  width: 100%;\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home_content {\r\n  /* position: relative; */\r\n  width: 100%;\r\n  /* max-width: 400px; */\n}\n#intro_content {\r\n  /* color: white; */\r\n  position: absolute;\r\n  top: 20%;\r\n  left: 15%;\r\n  /* transform: translate(-50%, -50%); */\n}\n.home_content #home_btn_contact {\r\n  position: absolute;\r\n  top: 45%;\r\n  left: 50%;\r\n  /* transform: translate(-50%, -50%);\r\n  -ms-transform: translate(-50%, -50%); */\r\n  /* background-color: #555; */\r\n  /* color: white; */\r\n  /* font-size: 16px;\r\n  padding: 12px 24px; */\r\n  /* border: none; */\r\n  /* cursor: pointer; */\r\n  /* border-radius: 5px; */\r\n  /* text-align: center; */\n}\n.home_content #home_btn_intro {\r\n  position: absolute;\r\n  top: 45%;\r\n  left: 25%;\n}\n.home_content img {\r\n  width: 100%;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23412,10 +23413,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "separator-breadcrumb border-top" }),
-    _vm._v(" "),
     _c("section", { staticClass: "widget-card" }, [
       _c("div", { staticClass: "ul-todo-sidebar" }, [
         _c("div", { staticClass: "card" }, [
@@ -23432,13 +23429,13 @@ var render = function() {
                 _c(
                   "router-link",
                   {
-                    staticClass: "btn btn-success btn-block mb-4",
+                    staticClass: "btn btn-primary btn-block mb-4",
                     attrs: { to: { name: "add_book" } }
                   },
                   [_vm._v("\n              Add Book\n            ")]
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(0)
               ],
               1
             )
@@ -23446,7 +23443,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "div",
@@ -23493,7 +23490,7 @@ var render = function() {
                     _c(
                       "router-link",
                       {
-                        staticClass: "btn btn-success ul-btn-raised--v2 m-1",
+                        staticClass: "btn btn-primary ul-btn-raised--v2 m-1",
                         attrs: {
                           to: { name: "book_detail", params: { id: book.id } }
                         }
@@ -23505,7 +23502,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass:
-                          "btn btn-outline-success ul-btn-raised--v2 m-1",
+                          "btn btn-outline-primary ul-btn-raised--v2 m-1",
                         attrs: {
                           to: { name: "update_book", params: { id: book.id } }
                         }
@@ -23641,14 +23638,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "breadcrumb" }, [
-      _c("h1", [_vm._v("Books at library")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -23809,7 +23798,7 @@ var staticRenderFns = [
           _c(
             "button",
             {
-              staticClass: "btn btn-success btn-lg dropdown-toggle float-right",
+              staticClass: "btn btn-primary btn-lg dropdown-toggle float-right",
               attrs: {
                 id: "dropdownMenuButton",
                 type: "button",
@@ -24158,9 +24147,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h3", [_vm._v("Contact component!")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-content" }, [
+      _c("div", { staticClass: "breadcrumb" }, [
+        _c("h1", [_vm._v("Contacts")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator-breadcrumb border-top" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -24185,29 +24187,27 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "home_content" },
+    { staticClass: "home_content mb-4" },
     [
       _c("img", {
         staticClass: "rounded rounded",
         attrs: { src: "/dist-assets/images/background-image1.jpg" }
       }),
       _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "btn btn-xl btn-info",
-          attrs: { to: "/books", id: "home_btn_intro" }
-        },
-        [_vm._v("\n    Find your book now!\n  ")]
-      ),
+      _c("router-link", { attrs: { to: "/books", id: "home_btn_intro" } }, [
+        _c("h1", { staticClass: "text-white heading t-font-boldest" }, [
+          _c("u", [_vm._v("Find your book now!")])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "router-link",
-        {
-          staticClass: "btn btn-xl btn-info",
-          attrs: { to: "/contacts", id: "home_btn_contact" }
-        },
-        [_vm._v("\n    Contact us!\n  ")]
+        { attrs: { to: "/contacts", id: "home_btn_contact" } },
+        [
+          _c("h1", { staticClass: "text-white heading t-font-boldest" }, [
+            _c("u", [_vm._v("Contact us!")])
+          ])
+        ]
       ),
       _vm._v(" "),
       _vm._m(0)
@@ -24221,8 +24221,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "intro_content" } }, [
-      _c("h3", { staticClass: "heading display-1 text-white t-font-boldest" }, [
-        _vm._v("Welcome to our library!")
+      _c("h2", { staticClass: "heading display-1 text-white t-font-boldest" }, [
+        _c("label", [_vm._v("Welcome to our library!")])
       ])
     ])
   }
