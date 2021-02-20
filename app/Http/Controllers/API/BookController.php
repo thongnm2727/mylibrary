@@ -15,11 +15,25 @@ class BookController extends Controller
     }
 
     public function add(Request $request){
-        $bookInput = $request->all();
-        $book = Book::create($bookInput);
+        if($request->get('image'))
+        {
+           $image = $request->get('image');
+           $name = time().'.' . explode('/', explode(':', substr($image, 0, strpos($image, ';')))[1])[1];
+           \Image::make($request->get('image'))->save(public_path('images/').$name);
+         }
+        $book = new Book;
+        $book->name = $request->get('name');
+        $book->author = $request->get('author');
+        $book->publisher = $request->get('publisher');
+        $book->publication_date = $request->get('publication_date');
+        $book->language = $request->get('language');
+        $book->description = $request->get('description');
+        $book->image = $name;
+        $book->save();
+
         if(!is_null($book)){
             return response()->json(["status" => "success", "message" => "Success! New book created", 
-            "data" => $book]);
+            ]);
         }else{
             return response()->json(["status" => "failed", "message" => "Whoops! book created fail!"]);
         }

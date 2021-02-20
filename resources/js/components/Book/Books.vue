@@ -92,20 +92,23 @@
           class="col-lg-4 col-xl-3 mt-3"
         >
           <div class="card">
-            <router-link :to="{ name: 'book_detail', params: { id: book.id } }">
-              <img
-                class="d-block w-100 rounded rounded"
-                v-bind:src="'/dist-assets/images/default_image2.jpg'"
-                alt="First slide"
-              />
-            </router-link>
-
             <div class="card-body">
-              <h5 class="card-title mb-2">{{ book.name }}</h5>
+              <router-link
+                :to="{ name: 'book_detail', params: { id: book.id } }"
+              >
+                <img
+                style="margin:auto"
+                  class="d-block w-75 rounded rounded"
+                  v-bind:src="`/images/${book.image}`"
+                  alt="First slide"
+                />
+              </router-link>
+              <h5 class="heading mt-2 mb-2">{{ book.name }}</h5>
               <p>
-                <mark>{{ book.author }}</mark> - <mark>{{ book.publication_date }}</mark>
+                <mark>{{ book.author }}</mark> -
+                <mark>{{ book.publication_date }}</mark>
               </p>
-              
+
               <router-link
                 :to="{ name: 'book_detail', params: { id: book.id } }"
                 class="btn btn-success ul-btn-raised--v2 m-1"

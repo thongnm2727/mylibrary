@@ -1930,6 +1930,7 @@ module.exports = {
 //
 //
 //
+//
 
 /***/ }),
 
@@ -2367,6 +2368,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2386,22 +2403,23 @@ __webpack_require__.r(__webpack_exports__);
       })["finally"](function () {
         return _this.loading = false;
       });
-    } // onFileChange(e) {
-    //   var files = e.target.files || e.dataTransfer.files;
-    //   if (!files.length)
-    //     return;
-    //   this.createImage(files[0]);
-    // },
-    // createImage(file) {
-    //   // var image = new Image();
-    //   var reader = new FileReader();
-    //   var vm = this;
-    //   reader.onload = (e) => {
-    //     vm.book.image_name = e.target.result;
-    //   };
-    //   reader.readAsDataURL(file);
-    // },
+    },
+    onFileChange: function onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(files[0]);
+    },
+    createImage: function createImage(file) {
+      // var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
 
+      reader.onload = function (e) {
+        vm.book.image = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    }
   }
 });
 
@@ -2640,6 +2658,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
 //
 //
 //
@@ -21659,7 +21680,10 @@ var render = function() {
     _c("div", { staticClass: "main-header" }, [
       _c("div", { staticClass: "logo" }, [
         _c("a", { attrs: { href: "http://localhost:8000" } }, [
-          _c("img", { attrs: { src: "/dist-assets/images/logo.png", alt: "" } })
+          _c("img", {
+            staticClass: "rounded rounded",
+            attrs: { src: "/dist-assets/images/logo.jpg", alt: "" }
+          })
         ])
       ]),
       _vm._v(" "),
@@ -22502,6 +22526,49 @@ var render = function() {
                     "action-bar-horizontal-label col-lg-4 col-form-label",
                   attrs: { for: "staticEmail" }
                 },
+                [_vm._v("Language:\n          ")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-6 mb-4" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.book.language,
+                      expression: "book.language"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    id: "staticEmail",
+                    type: "text",
+                    placeholder: "book's language"
+                  },
+                  domProps: { value: _vm.book.language },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.book, "language", $event.target.value)
+                    }
+                  }
+                }),
+                _c("small", { staticClass: "ul-form__text form-text" }, [
+                  _vm._v(
+                    "Enter publication date of the book (E.g: Dec 12 1992)"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "action-bar-horizontal-label col-lg-4 col-form-label",
+                  attrs: { for: "staticEmail" }
+                },
                 [_vm._v("Description:\n          ")]
               ),
               _vm._v(" "),
@@ -22545,7 +22612,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-8 mb-4" }, [
                 _c("input", {
-                  attrs: { type: "file", name: "book_image" },
+                  attrs: { type: "file", name: "image" },
                   on: { change: _vm.onFileChange }
                 })
               ])
@@ -22638,10 +22705,7 @@ var render = function() {
               _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-12" }, [
                 _c("img", {
                   staticClass: "rounded rounded",
-                  attrs: {
-                    src: "/dist-assets/images/default_image.jpg",
-                    alt: "alt"
-                  }
+                  attrs: { src: "/images/" + _vm.book.image, alt: "alt" }
                 })
               ]),
               _vm._v(" "),
@@ -23009,86 +23073,82 @@ var render = function() {
             "div",
             { key: book.id, staticClass: "col-lg-4 col-xl-3 mt-3" },
             [
-              _c(
-                "div",
-                { staticClass: "card" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "book_detail", params: { id: book.id } }
-                      }
-                    },
-                    [
-                      _c("img", {
-                        staticClass: "d-block w-100 rounded rounded",
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [
+                    _c(
+                      "router-link",
+                      {
                         attrs: {
-                          src: "/dist-assets/images/default_image2.jpg",
-                          alt: "First slide"
+                          to: { name: "book_detail", params: { id: book.id } }
                         }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "card-body" },
-                    [
-                      _c("h5", { staticClass: "card-title mb-2" }, [
-                        _vm._v(_vm._s(book.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _c("mark", [_vm._v(_vm._s(book.author))]),
-                        _vm._v(" - "),
-                        _c("mark", [_vm._v(_vm._s(book.publication_date))])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-success ul-btn-raised--v2 m-1",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "d-block w-75 rounded rounded",
+                          staticStyle: { margin: "auto" },
                           attrs: {
-                            to: { name: "book_detail", params: { id: book.id } }
+                            src: "/images/" + book.image,
+                            alt: "First slide"
                           }
-                        },
-                        [_vm._v("\n              Detail\n            ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass:
-                            "btn btn-outline-success ul-btn-raised--v2 m-1",
-                          attrs: {
-                            to: { name: "update_book", params: { id: book.id } }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("h5", { staticClass: "heading mt-2 mb-2" }, [
+                      _vm._v(_vm._s(book.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _c("mark", [_vm._v(_vm._s(book.author))]),
+                      _vm._v(" -\n              "),
+                      _c("mark", [_vm._v(_vm._s(book.publication_date))])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-success ul-btn-raised--v2 m-1",
+                        attrs: {
+                          to: { name: "book_detail", params: { id: book.id } }
+                        }
+                      },
+                      [_vm._v("\n              Detail\n            ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass:
+                          "btn btn-outline-success ul-btn-raised--v2 m-1",
+                        attrs: {
+                          to: { name: "update_book", params: { id: book.id } }
+                        }
+                      },
+                      [_vm._v("\n              Update\n            ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.deleteBook(book.id)
                           }
-                        },
-                        [_vm._v("\n              Update\n            ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-outline-danger ul-btn-raised--v2 m-1 float-right",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.deleteBook(book.id)
-                            }
-                          }
-                        },
-                        [_vm._v("\n              Delete\n            ")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
+                        }
+                      },
+                      [_vm._v("\n              Delete\n            ")]
+                    )
+                  ],
+                  1
+                )
+              ])
             ]
           )
         }),

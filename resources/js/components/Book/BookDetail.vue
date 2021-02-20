@@ -8,7 +8,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12">
                 <img
                   class="rounded rounded"
-                  v-bind:src="'/dist-assets/images/default_image.jpg'"
+                  v-bind:src="`/images/${book.image}`"
                   alt="alt"
                 />
               </div>

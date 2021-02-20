@@ -15,6 +15,7 @@ class Book extends Model
 
     protected $attributes = [
         'number_of_requests' => 0,     
-        'language' => "English"   
+        'language' => "English",
+        'image' => '',
     ];
 }

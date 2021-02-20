@@ -72,6 +72,22 @@
             <label
               class="action-bar-horizontal-label col-lg-4 col-form-label"
               for="staticEmail"
+              >Language:
+            </label>
+            <div class="col-lg-6 mb-4">
+              <input
+                class="form-control"
+                id="staticEmail"
+                type="text"
+                placeholder="book's language"
+                v-model="book.language"
+              /><small class="ul-form__text form-text"
+                >Enter publication date of the book (E.g: Dec 12 1992)</small
+              >
+            </div>
+            <label
+              class="action-bar-horizontal-label col-lg-4 col-form-label"
+              for="staticEmail"
               >Description:
             </label>
             <div class="col-lg-8 mb-4">
@@ -93,7 +109,7 @@
               >Book's image:
             </label>
             <div class="col-lg-8 mb-4">
-              <input type="file" name="book_image" @change="onFileChange"/>
+              <input type="file" name="image" @change="onFileChange"/>
             </div>
           </div>
         </div>
@@ -132,22 +148,22 @@ export default {
         .catch((error) => console.log(error))
         .finally(() => (this.loading = false));
     },
-    // onFileChange(e) {
-    //   var files = e.target.files || e.dataTransfer.files;
-    //   if (!files.length)
-    //     return;
-    //   this.createImage(files[0]);
-    // },
-    // createImage(file) {
-    //   // var image = new Image();
-    //   var reader = new FileReader();
-    //   var vm = this;
+    onFileChange(e) {
+      let files = e.target.files || e.dataTransfer.files;
+      if (!files.length)
+        return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      // var image = new Image();
+      let reader = new FileReader();
+      let vm = this;
 
-    //   reader.onload = (e) => {
-    //     vm.book.image_name = e.target.result;
-    //   };
-    //   reader.readAsDataURL(file);
-    // },
+      reader.onload = (e) => {
+        vm.book.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
   },
 };
 </script>
