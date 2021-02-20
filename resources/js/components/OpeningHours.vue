@@ -1,6 +1,10 @@
 <template>
-    <!-- <h1>Home component!</h1> -->
-    <h2>Test OpeningHours.vue!!</h2>
+  <div class="main-content">
+    <div class="breadcrumb">
+      <h1>Opening Hours</h1>
+    </div>
+    <div class="separator-breadcrumb border-top"></div>
+  </div>
 </template>
 
 <script>

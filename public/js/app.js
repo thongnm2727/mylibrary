@@ -1954,6 +1954,11 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -1968,10 +1973,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
 //
 //
 //
@@ -3233,6 +3234,10 @@ __webpack_require__.r(__webpack_exports__);
   \*******************************************************************************************************************************************************************************************************************/
 /***/ (() => {
 
+//
+//
+//
+//
 //
 //
 //
@@ -22218,9 +22223,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h2", [_vm._v("Test About.vue!!")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-content" }, [
+      _c("div", { staticClass: "breadcrumb" }, [
+        _c("h1", [_vm._v("About Us")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator-breadcrumb border-top" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -22244,12 +22262,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "main-content" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "separator-breadcrumb border-top" }),
-    _vm._v(" "),
     _c("section", { staticClass: "ul-todo-list-content" }, [
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
@@ -22269,7 +22283,7 @@ var render = function() {
             { staticClass: "modal-dialog", attrs: { role: "document" } },
             [
               _c("div", { staticClass: "modal-content" }, [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-body" }, [
                   _c(
@@ -22412,7 +22426,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(3)
+                _vm._m(2)
               ])
             ]
           )
@@ -22432,7 +22446,7 @@ var render = function() {
                       attrs: { id: "book_requests_table" }
                     },
                     [
-                      _vm._m(4),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -22520,7 +22534,7 @@ var render = function() {
                         0
                       ),
                       _vm._v(" "),
-                      _vm._m(5)
+                      _vm._m(4)
                     ]
                   )
                 ])
@@ -22537,14 +22551,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "breadcrumb" }, [
-      _c("h1", [_vm._v("Book Requests")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ul-todo-sidebar" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-body" }, [
@@ -22557,7 +22563,7 @@ var staticRenderFns = [
             _c(
               "button",
               {
-                staticClass: "btn btn-success btn-block mb-4",
+                staticClass: "btn btn-primary btn-block mb-4",
                 attrs: {
                   type: "button",
                   "data-toggle": "modal",
@@ -23490,7 +23496,8 @@ var render = function() {
                     _c(
                       "router-link",
                       {
-                        staticClass: "btn btn-primary ul-btn-raised--v2 m-1",
+                        staticClass:
+                          "btn btn-outline-primary ul-btn-raised--v2 m-1",
                         attrs: {
                           to: { name: "book_detail", params: { id: book.id } }
                         }
@@ -23798,7 +23805,8 @@ var staticRenderFns = [
           _c(
             "button",
             {
-              staticClass: "btn btn-primary btn-lg dropdown-toggle float-right",
+              staticClass:
+                "btn btn-outline-primary btn-lg dropdown-toggle float-right",
               attrs: {
                 id: "dropdownMenuButton",
                 type: "button",
@@ -24249,9 +24257,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h2", [_vm._v("Test OpeningHours.vue!!")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-content" }, [
+      _c("div", { staticClass: "breadcrumb" }, [
+        _c("h1", [_vm._v("Opening Hours")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separator-breadcrumb border-top" })
+    ])
+  }
+]
 render._withStripped = true
 
 

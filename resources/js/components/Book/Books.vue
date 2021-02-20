@@ -121,7 +121,7 @@
         <div class="col">
           <div class="dropdown">
             <button
-              class="btn btn-primary btn-lg dropdown-toggle float-right"
+              class="btn btn-outline-primary btn-lg dropdown-toggle float-right"
               id="dropdownMenuButton"
               type="button"
               data-toggle="dropdown"
@@ -164,7 +164,7 @@
 
               <router-link
                 :to="{ name: 'book_detail', params: { id: book.id } }"
-                class="btn btn-primary ul-btn-raised--v2 m-1"
+                class="btn btn-outline-primary ul-btn-raised--v2 m-1"
               >
                 Detail
               </router-link>

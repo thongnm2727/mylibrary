@@ -1,9 +1,5 @@
 <template>
   <div class="main-content">
-    <div class="breadcrumb">
-      <h1>Book Requests</h1>
-    </div>
-    <div class="separator-breadcrumb border-top"></div>
     <!-- content goes here-->
     <section class="ul-todo-list-content">
       <div class="ul-todo-sidebar">
@@ -16,7 +12,7 @@
               ></i>
               <!-- Large modal-->
               <button
-                class="btn btn-success btn-block mb-4"
+                class="btn btn-primary btn-block mb-4"
                 type="button"
                 data-toggle="modal"
                 data-target="#modal-add-book-request"
