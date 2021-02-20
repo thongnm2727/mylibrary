@@ -3,8 +3,11 @@
     <div class="main-header">
       <div class="logo">
         <a href="http://localhost:8000">
-          <img class="rounded rounded" v-bind:src="'/dist-assets/images/logo.jpg'" alt=""
-        />
+          <img
+            class="rounded rounded"
+            v-bind:src="'/dist-assets/images/logo.jpg'"
+            alt=""
+          />
         </a>
       </div>
       <div class="d-flex align-items-center">
@@ -40,6 +43,12 @@
               >
             </li>
             <li class="nav-item">
+              <router-link data-toggle="pill" class="nav-link" to="/contacts"
+                ><i class="nav-icon i-Telephone mr-1"></i>Contact
+                us</router-link
+              >
+            </li>
+            <li class="nav-item">
               <router-link
                 data-toggle="pill"
                 class="nav-link"
@@ -52,6 +61,7 @@
                 ><i class="nav-icon i-Book mr-1"></i>Books</router-link
               >
             </li>
+
             <li class="nav-item">
               <router-link
                 data-toggle="pill"
