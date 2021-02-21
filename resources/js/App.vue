@@ -21,10 +21,22 @@
       </div>
       <!-- <div style="margin: auto"></div> -->
       <div class="header-part-right mr-4">
-        <a 
-        style="font-size: 1.1rem"
-        class="typo_link text-primary t-font-boldest" 
-        href="http://localhost:8000/admin">Admin Login</a>
+        <a
+          v-if="isLoggedIn"
+          style="font-size: 1.1rem"
+          class="typo_link text-primary t-font-boldest"
+          href="#"
+          @click="logout"
+        >
+          Log out
+        </a>
+        <a
+          v-else
+          style="font-size: 1.1rem"
+          class="typo_link text-primary t-font-boldest"
+          href="http://localhost:8000/login"
+          >Admin Login
+        </a>
       </div>
     </div>
     <!-- header top menu end-->
@@ -36,7 +48,11 @@
           > -->
           <ul class="nav nav-pills" role="tablist">
             <li class="nav-item">
-              <router-link data-toggle="pill" class="nav-link" to="/home">
+              <router-link           
+              data-toggle="pill" 
+              class="nav-link" 
+              to="/home"        
+              >
                 <i class="nav-icon i-Home1 mr-1"></i>Home
               </router-link>
             </li>
@@ -71,6 +87,7 @@
 
             <li class="nav-item">
               <router-link
+                v-if="isLoggedIn"
                 data-toggle="pill"
                 class="nav-link"
                 to="/book_requests"
@@ -106,4 +123,28 @@
 </style>
 
 <script>
+export default {
+  computed: {
+    isLoggedIn: function () {
+      return this.$store.getters.isLoggedIn;
+    },
+  },
+  methods: {
+    logout: function () {
+      this.$store.dispatch("logout").then(() => {
+        location.reload();
+      });
+    },
+  },
+  created: function () {
+    this.$http.interceptors.response.use(undefined, function (err) {
+      return new Promise(function (resolve, reject) {
+        if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
+          this.$store.dispatch(logout);
+        }
+        throw err;
+      });
+    });
+  },
+};
 </script>

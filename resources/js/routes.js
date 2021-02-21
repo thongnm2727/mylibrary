@@ -8,6 +8,7 @@ import UpdateBook from "./components/Book/UpdateBook.vue";
 import BookRequests from "./components/BookRequest/BookRequests.vue";
 import Contacts from "./components/Contacts.vue"
 import Price from "./components/Price.vue"
+import Login from "./components/Login.vue"
 // import Router from "vue-router";
 // import Vue from "vue";
 
@@ -68,4 +69,9 @@ export const routes = [
         path: "/book_requests",
         component: BookRequests,
     },
+    {
+        name:"login",
+        path: "/login",
+        component: Login,
+    }
 ]

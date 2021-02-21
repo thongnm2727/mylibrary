@@ -17,6 +17,6 @@ Route::get('/{any}', function () {
     return view('app');
 })->where('any', '(|home|price|about|books|contacts|openinghours|book_requests)');
 
-Route::get('/admin', function(){
+Route::get('/login', function(){
     return view('login');
 });

@@ -128,6 +128,7 @@
                     </td>
                     <td>
                       <button
+                        v-if="isLoggedIn"
                         class="btn btn-outline-danger"
                         @click.prevent="deleteBookCopy(book_copy.id)"
                       >
@@ -140,6 +141,7 @@
               <!-- <div class="row"> -->
               <div class="col-lg-12 text-center">
                 <button
+                  v-if="isLoggedIn"
                   @click.prevent="addBookCopy(book.id)"
                   class="btn btn-success m-2"
                   type="button"
@@ -147,11 +149,13 @@
                   Add Copy
                 </button>
                 <router-link
+                  v-if="isLoggedIn"
                   :to="{ name: 'update_book', params: { id: book.id } }"
                   class="btn btn-outline-success ul-btn-raised--v2 m-1"
                 >
                   Update Book
                 </router-link>
+
                 <router-link to="/books" class="btn btn-outline-primary m-2">
                   Back to book list
                 </router-link>
@@ -167,6 +171,11 @@
 
 <script>
 export default {
+  computed: {
+    isLoggedIn: function () {
+      return this.$store.getters.isLoggedIn;
+    },
+  },
   data() {
     return {
       book: {},
@@ -187,7 +196,7 @@ export default {
       });
   },
   methods: {
-    deleteBookCopy( id) {
+    deleteBookCopy(id) {
       this.axios
         .delete(`http://localhost:8000/api/book_copy/delete/${id}`)
         .then((response) => {

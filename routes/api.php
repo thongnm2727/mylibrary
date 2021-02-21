@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\BookController;
 use App\Http\Controllers\API\BookCopyController;
 use App\Http\Controllers\API\BookRequestController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,9 +35,18 @@ Route::group(['prefix' => 'book_copy'], function(){
     Route::post('add/{book_id}', [BookCopyController::class, "add"]);
 });
 
-Route::get("book_requests", [BookRequestController::class, "getAll"]);
-Route::group(['prefix' => 'book_request'], function(){
-    Route::post('add', [BookRequestController::class, "add"]);
-    Route::post('return/{id}', [BookRequestController::class, "return"]);    
-    Route::delete('delete/{id}', [BookRequestController::class, "delete"]);
+Route::post("login", [UserController::class, "login"]);
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get("book_requests", [BookRequestController::class, "getAll"]);
+    Route::group(['prefix' => 'book_request'], function(){
+        Route::post('add', [BookRequestController::class, "add"]);
+        Route::post('return/{id}', [BookRequestController::class, "return"]);    
+        Route::delete('delete/{id}', [BookRequestController::class, "delete"]);
+    });
 });
+// Route::group(['prefix' => 'book_request'], function(){
+//     Route::post('add', [BookRequestController::class, "add"]);
+//     Route::post('return/{id}', [BookRequestController::class, "return"]);    
+//     Route::delete('delete/{id}', [BookRequestController::class, "delete"]);
+// });

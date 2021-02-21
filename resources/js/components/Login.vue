@@ -12,13 +12,16 @@
                 <img v-bind:src="'/dist-assets/images/logo.jpg'" alt="" />
               </div>
               <h1 class="mb-3 text-18">Sign In</h1>
-              <form>
+              <form class="login" @submit.prevent="login">
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input
                     class="form-control form-control-rounded"
                     id="email"
                     type="email"
+                    v-model="email"
+                    required
+                    name="email"
                   />
                 </div>
                 <div class="form-group">
@@ -27,18 +30,20 @@
                     class="form-control form-control-rounded"
                     id="password"
                     type="password"
+                    v-model="password"
+                    required
+                    name="password"
                   />
                 </div>
                 <button
                   class="btn btn-rounded btn-primary btn-block mt-2"
+                  type="submit"
                 >
                   Sign In
                 </button>
               </form>
               <div class="mt-3 text-center">
-                <a class="text-muted" href="#">
-                  <u>Forgot Password?</u></a
-                >
+                <a class="text-muted" href="#"> <u>Forgot Password?</u></a>
               </div>
             </div>
           </div>
@@ -51,7 +56,7 @@
           >
             <div class="pr-3 auth-right t-font-boldest">
               <a
-                class="btn btn-rounded btn-outline-primary  btn-block btn-icon-text"
+                class="btn btn-rounded btn-outline-primary btn-block btn-icon-text"
                 href="http://localhost:8000/home"
               >
                 <i class="i-Back1 text-20"></i> Home</a
@@ -82,4 +87,24 @@
 </style>
 
 <script>
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login: function () {
+      console.log(this.$store);
+      let email = this.email;
+      let password = this.password;
+      this.$store
+        .dispatch("login", { email, password })
+        // .then(() => console.log(localStorage.getItem('token')))
+        // .then(() => this.$router.go('http://localhost:8000/'))
+        .catch((err) => console.log(err));
+    },
+  },
+};
 </script>

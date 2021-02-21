@@ -17,6 +17,7 @@
               ></i>
               <!-- Large modal-->
               <router-link
+                v-if="isLoggedIn"
                 :to="{ name: 'add_book' }"
                 class="btn btn-primary btn-block mb-4"
               >
@@ -33,7 +34,7 @@
                   href="#list-home"
                   role="tab"
                   aria-controls="home"
-                  @click.prevent="(getBooksByLanguage('English'))"
+                  @click.prevent="getBooksByLanguage('English')"
                 >
                   <i class="nav-icon i-At-Sign"></i> English</a
                 >
@@ -44,7 +45,7 @@
                   href="#list-profile"
                   role="tab"
                   aria-controls="profile"
-                  @click.prevent="(getBooksByLanguage('French'))"
+                  @click.prevent="getBooksByLanguage('French')"
                 >
                   <i class="nav-icon i-At-Sign"></i> French</a
                 >
@@ -54,8 +55,8 @@
                   data-toggle="list"
                   href="#list-settings"
                   role="tab"
-                  aria-controls="settings"                  
-                  @click.prevent="(getBooksByLanguage('Japanese'))"
+                  aria-controls="settings"
+                  @click.prevent="getBooksByLanguage('Japanese')"
                 >
                   <i class="nav-icon i-At-Sign"></i> Japanese</a
                 >
@@ -65,8 +66,8 @@
                   data-toggle="list"
                   href="#list-settings"
                   role="tab"
-                  aria-controls="settings"                  
-                  @click.prevent="(getBooksByLanguage('Spanish'))"
+                  aria-controls="settings"
+                  @click.prevent="getBooksByLanguage('Spanish')"
                 >
                   <i class="nav-icon i-At-Sign"></i> Spanish</a
                 >
@@ -81,7 +82,7 @@
                   href="#list-home"
                   role="tab"
                   aria-controls="home"
-                  @click.prevent="(getBooksByAuthor('Bill Bryson'))"
+                  @click.prevent="getBooksByAuthor('Bill Bryson')"
                 >
                   <i class="nav-icon i-Administrator"></i> Bill Bryson</a
                 >
@@ -92,7 +93,7 @@
                   href="#list-profile"
                   role="tab"
                   aria-controls="profile"
-                  @click.prevent="(getBooksByAuthor('Kristin Hannah'))"
+                  @click.prevent="getBooksByAuthor('Kristin Hannah')"
                 >
                   <i class="nav-icon i-Administrator"></i> Kristin Hannah</a
                 >
@@ -102,8 +103,8 @@
                   data-toggle="list"
                   href="#list-settings"
                   role="tab"
-                  aria-controls="settings"                  
-                  @click.prevent="(getBooksByAuthor('Sarah J. Maas'))"
+                  aria-controls="settings"
+                  @click.prevent="getBooksByAuthor('Sarah J. Maas')"
                 >
                   <i class="nav-icon i-Administrator"></i> Sarah J. Maas</a
                 >
@@ -114,7 +115,7 @@
                   href="#list-settings"
                   role="tab"
                   aria-controls="settings"
-                  @click.prevent="(getBooksByAuthor('Adam Grant'))"
+                  @click.prevent="getBooksByAuthor('Adam Grant')"
                 >
                   <i class="nav-icon i-Administrator"></i> Adam Grant</a
                 >
@@ -169,25 +170,29 @@
                 <mark>{{ book.publication_date }}</mark>
               </p>
 
-              <router-link
-                :to="{ name: 'book_detail', params: { id: book.id } }"
-                class="btn btn-outline-primary ul-btn-raised--v2 m-1"
-              >
-                Detail
-              </router-link>
-              <router-link
-                :to="{ name: 'update_book', params: { id: book.id } }"
-                class="btn btn-outline-primary ul-btn-raised--v2 m-1"
-              >
-                Update
-              </router-link>
-              <button
-                class="btn btn-outline-danger ul-btn-raised--v2 m-1 float-right"
-                type="button"
-                @click.prevent="deleteBook(book.id)"
-              >
-                Delete
-              </button>
+              <div v-if="isLoggedIn">
+                <router-link
+                  :to="{ name: 'update_book', params: { id: book.id } }"
+                  class="btn btn-outline-primary ul-btn-raised--v2 m-1"
+                >
+                  Update
+                </router-link>
+                <button
+                  class="btn btn-outline-danger ul-btn-raised--v2 m-1 float-right"
+                  type="button"
+                  @click.prevent="deleteBook(book.id)"
+                >
+                  Delete
+                </button>
+              </div>
+              <div v-else>
+                <router-link
+                  :to="{ name: 'book_detail', params: { id: book.id } }"
+                  class="btn btn-outline-primary ul-btn-raised--v2 m-1"
+                >
+                  Detail
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -265,6 +270,9 @@ export default {
     };
   },
   computed: {
+    isLoggedIn: function () {
+      return this.$store.getters.isLoggedIn;
+    },
     isActived: function () {
       return this.pagination.current_page;
     },
@@ -298,7 +306,7 @@ export default {
     // isActive: function (page) {
     //   return this.pagination.current_page == $page;
     // },
-        getBooksByLanguage(language) {
+    getBooksByLanguage(language) {
       this.axios
         .get(`http://localhost:8000/api/books?language=${language}`)
         .then((response) => {

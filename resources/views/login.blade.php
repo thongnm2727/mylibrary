@@ -14,7 +14,7 @@
 </head>
 
 <body class="text-left">
-    <div id="login" >
+    <div id="login_container" >
     </div>
     <script src="{{ mix('js/auth.js') }}" type="text/javascript"></script>
 </body>
