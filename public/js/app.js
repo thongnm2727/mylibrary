@@ -1946,6 +1946,7 @@ module.exports = {
 //
 //
 //
+//
 
 /***/ }),
 
@@ -22378,7 +22379,7 @@ var staticRenderFns = [
         {
           staticClass: "typo_link text-primary t-font-boldest",
           staticStyle: { "font-size": "1.1rem" },
-          attrs: { href: "#" }
+          attrs: { href: "http://localhost:8000/admin" }
         },
         [_vm._v("Admin Login")]
       )

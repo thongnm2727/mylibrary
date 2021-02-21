@@ -23,7 +23,8 @@
       <div class="header-part-right mr-4">
         <a 
         style="font-size: 1.1rem"
-        class="typo_link text-primary t-font-boldest" href="#">Admin Login</a>
+        class="typo_link text-primary t-font-boldest" 
+        href="http://localhost:8000/admin">Admin Login</a>
       </div>
     </div>
     <!-- header top menu end-->
