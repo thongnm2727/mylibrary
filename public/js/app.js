@@ -2006,6 +2006,13 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
@@ -22382,7 +22389,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "separator-breadcrumb border-top" }),
     _vm._v(" "),
-    _c("div", { staticClass: "row t-font-boldest text-20" }, [
+    _c("div", { staticClass: "row t-font-boldest" }, [
       _c("div", { staticClass: "col-lg-4 col-xl-6 mt-3" }, [
         _c("div", { staticClass: "card bg-dark text-white o-hidden mb-4" }, [
           _c("img", {
@@ -22433,21 +22440,25 @@ var staticRenderFns = [
         staticStyle: { "white-space": "pre" }
       },
       [
-        _c("h3", { staticClass: "card-title text-white t-font-boldest" }, [
-          _c("u", [_vm._v("Our Missions")])
+        _c("h3", { staticClass: " text-white t-font-boldest" }, [
+          _c("u", [_vm._v("Overview")])
         ]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero\n            quis beatae officia saepe perferendis voluptatum minima eveniet\n            voluptates dolorum, temporibus nisi maxime nesciunt totam\n            repudiandae commodi sequi dolor quibusdam\n          "
-          )
+        _c("ul", [
+          _c("li", [
+            _c("u", [_vm._v("Function:")]),
+            _vm._v(
+              " \n              This website is built so that people can go checking \n              books at our library at any time, find out if we have the book \n              they want, and whether it is available or not. In addition, they \n              can get other useful information such as: opening hours, the price\n              to be member, how they can contact us, etc\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("u", [_vm._v("Collection: ")]),
+            _vm._v(
+              "\n              Almost 20,000 textbooks and references;\n              Updated newspapers and magazines: Making friends \n                with computers, Computer Daily, PC world and so forth... (20 sorts);\n            "
+            )
+          ])
         ]),
-        _vm._v(" "),
-        _c("i", { staticClass: "text-20 i-Smile" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "text-20 i-Smile" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "text-20 i-Smile" }),
         _vm._v(" "),
         _c("br")
       ]
@@ -22460,18 +22471,30 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "card-img-overlay",
+        staticClass: "card-img-overlay t-font-boldest",
         staticStyle: { "white-space": "pre" }
       },
       [
-        _c("h3", { staticClass: "card-title text-white t-font-boldest" }, [
-          _c("u", [_vm._v("Our History")])
+        _c("h3", { staticClass: " text-white t-font-boldest" }, [
+          _c("u", [_vm._v("Address")])
         ]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero\n            quis beatae officia saepe perferendis voluptatum minima eveniet\n            voluptates dolorum, temporibus nisi maxime nesciunt totam\n            repudiandae commodi sequi dolor quibusdam\n          "
-          )
+        _c("ul", [
+          _c("i", { staticClass: "i-Map-Marker text-20" }, [_vm._v("#1")]),
+          _vm._v(" "),
+          _c("li", [
+            _c("label", [
+              _vm._v(" 23 Hoang Dao Thuy, Nhan Chinh, Thanh Xuan, Ha Noi")
+            ])
+          ]),
+          _c("br"),
+          _vm._v(" "),
+          _c("i", { staticClass: "i-Map-Marker text-20" }, [_vm._v("#2")]),
+          _vm._v(" "),
+          _c("li", [
+            _c("label", [_vm._v(" 112 Thai Ha, Trung Liet, Dong Da, Ha Noi")])
+          ]),
+          _c("br")
         ]),
         _vm._v(" "),
         _c("i", { staticClass: "text-20 i-Smile" }),
@@ -24435,8 +24458,10 @@ var staticRenderFns = [
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-4" }, [
             _c("div", { staticClass: "card mb-4" }, [
               _c("div", { staticClass: "card-body" }, [
@@ -24459,37 +24484,6 @@ var staticRenderFns = [
                     _c("i", { staticClass: "i-Mail-Favorite ml-1 mr-1" }),
                     _c("a", { staticClass: "text-info t-font-boldest" }, [
                       _vm._v("marketing@mylibrary.com")
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "card mb-4" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("h4", { staticClass: "t-font-boldest" }, [
-                  _vm._v("Address")
-                ]),
-                _vm._v(" "),
-                _c("ul", [
-                  _c("a", { staticClass: "text-info", attrs: { href: "#" } }, [
-                    _c("li", [
-                      _c("i", { staticClass: "i-Map-Marker text-15" }, [
-                        _vm._v(
-                          " 23 Hoang Dao Thuy, Nhan Chinh, Thanh Xuan, Ha Noi"
-                        )
-                      ])
-                    ])
-                  ]),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("a", { staticClass: "text-info", attrs: { href: "#" } }, [
-                    _c("li", [
-                      _c("i", { staticClass: "i-Map-Marker text-15" }, [
-                        _vm._v(" 112 Thai Ha, Trung Liet, Dong Da, Ha Noi")
-                      ])
                     ])
                   ])
                 ])
@@ -24628,7 +24622,7 @@ var staticRenderFns = [
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "d-inline-block ml-3" }, [
-                      _c("h2", [_vm._v("8:30 AM - 11:30 PM")]),
+                      _c("h2", [_vm._v("8:30 AM - 11:30 AM")]),
                       _vm._v(" "),
                       _c("h4", [_vm._v("Monday - Saturday")])
                     ])
@@ -24657,7 +24651,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("div", { staticClass: "d-inline-block ml-3" }, [
                       _c("h2", { staticClass: "text-white" }, [
-                        _vm._v("13:30 AM - 18:00 PM")
+                        _vm._v("13:30 PM - 18:00 PM")
                       ]),
                       _vm._v(" "),
                       _c("h4", { staticClass: "text-white" }, [
@@ -24741,7 +24735,7 @@ var staticRenderFns = [
                         _c(
                           "div",
                           { staticClass: "ul-pricing__text text-mute" },
-                          [_vm._v("1 month - 5 books")]
+                          [_vm._v("1 month")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "ul-pricing__main-number" }, [
@@ -24762,7 +24756,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "ul-pricing__list" }, [
                           _c("p", [
                             _vm._v(
-                              "\n                        Lorem Ipsum is simply dummy text of the printing and\n                        typesetting industry. Lorem Ipsum has been the\n                        industry's standard dummy text ever since the 1500s,\n                      "
+                              "\n                        Borrow in maximum \n                        of 5 books during member\n                        time. No more 1 book \n                        borrowed at the \n                        same time.\n                      "
                             )
                           ])
                         ])
@@ -24789,7 +24783,7 @@ var staticRenderFns = [
                         _c(
                           "div",
                           { staticClass: "ul-pricing__text text-mute" },
-                          [_vm._v("3 months - 20 books")]
+                          [_vm._v("3 months")]
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "ul-pricing__main-number" }, [
@@ -24810,7 +24804,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "ul-pricing__list" }, [
                           _c("p", [
                             _vm._v(
-                              "\n                        Lorem Ipsum is simply dummy text of the printing and\n                        typesetting industry. Lorem Ipsum has been the\n                        industry's standard dummy text ever since the 1500s,\n                      "
+                              "\n                        Borrow in maximum \n                        of 20 books during member\n                        time. No more 2 book \n                        borrowed at the \n                        same time. Be able to\n                        use the reading corner\n                        at the library.\n                      "
                             )
                           ])
                         ])
@@ -24840,7 +24834,7 @@ var staticRenderFns = [
                           _c(
                             "div",
                             { staticClass: "ul-pricing__text text-mute" },
-                            [_vm._v("1 year - No limit")]
+                            [_vm._v("1 year")]
                           ),
                           _vm._v(" "),
                           _c(
@@ -24865,7 +24859,7 @@ var staticRenderFns = [
                           _c("div", { staticClass: "ul-pricing__list" }, [
                             _c("p", [
                               _vm._v(
-                                "\n                        Lorem Ipsum is simply dummy text of the printing and\n                        typesetting industry. Lorem Ipsum has been the\n                        industry's standard dummy text ever since the 1500s,\n                      "
+                                "\n                        No limit at the number \n                        of books can be borrowed. No\n                        more than 2 book at each\n                        time. Be able to use reading \n                        corner and the library's \n                        computer for searching useful\n                        resource.\n                      "
                               )
                             ])
                           ])

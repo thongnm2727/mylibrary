@@ -22,7 +22,7 @@
                       <div class="ul-pricing__title">
                         <h2 class="heading text-primary">Basic</h2>
                       </div>
-                      <div class="ul-pricing__text text-mute">1 month - 5 books</div>
+                      <div class="ul-pricing__text text-mute">1 month</div>
                       <div class="ul-pricing__main-number">
                         <h3
                           class="heading display-3 text-primary t-font-boldest"
@@ -32,9 +32,11 @@
                       </div>
                       <div class="ul-pricing__list">
                         <p>
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
+                          Borrow in maximum 
+                          of 5 books during member
+                          time. No more 1 book 
+                          borrowed at the 
+                          same time.
                         </p>
                       </div>
                     </div>
@@ -47,7 +49,7 @@
                       <div class="ul-pricing__title">
                         <h2 class="heading text-primary">Standard</h2>
                       </div>
-                      <div class="ul-pricing__text text-mute">3 months - 20 books</div>
+                      <div class="ul-pricing__text text-mute">3 months</div>
                       <div class="ul-pricing__main-number">
                         <h3
                           class="heading display-3 text-primary t-font-boldest"
@@ -57,9 +59,13 @@
                       </div>
                       <div class="ul-pricing__list">
                         <p>
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
+                          Borrow in maximum 
+                          of 20 books during member
+                          time. No more 2 book 
+                          borrowed at the 
+                          same time. Be able to
+                          use the reading corner
+                          at the library.
                         </p>
                       </div>
                     </div>
@@ -72,7 +78,7 @@
                       <div class="ul-pricing__title">
                         <h2 class="heading text-primary">Premium</h2>
                       </div>
-                      <div class="ul-pricing__text text-mute">1 year - No limit</div>
+                      <div class="ul-pricing__text text-mute">1 year</div>
                       <div class="ul-pricing__main-number">
                         <h3
                           class="heading display-3 text-primary t-font-boldest"
@@ -82,9 +88,13 @@
                       </div>
                       <div class="ul-pricing__list">
                         <p>
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
+                          No limit at the number 
+                          of books can be borrowed. No
+                          more than 2 book at each
+                          time. Be able to use reading 
+                          corner and the library's 
+                          computer for searching useful
+                          resource.
                         </p>
                       </div>
                     </div>
