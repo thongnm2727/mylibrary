@@ -9,10 +9,23 @@ use App\Models\Book;
 class BookController extends Controller
 {
     //
-    public function index(){
-        $books = Book::latest()->paginate(8);
-        // ->values()
-        // ->toArray();
+    public function index(Request $request){
+        // if($request->input('author')){
+        //     $books = Book::latest()
+        //     ->where('author', $request->input('author'))
+        //     ->paginate(8);
+        // }else{
+            $author = $request->input('author');
+            $language = $request->input('language');
+            $books = Book::latest()
+            ->when($author, function($query, $author){
+                return $query->where('author', $author);
+            })
+            ->when($language, function($query, $language){
+                return $query->where('language', $language);
+            })
+            ->paginate(8);
+        // }
 
         $response = [
             'pagination' => [

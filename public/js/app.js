@@ -2974,6 +2974,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3028,12 +3035,28 @@ __webpack_require__.r(__webpack_exports__);
     // isActive: function (page) {
     //   return this.pagination.current_page == $page;
     // },
-    getBooks: function getBooks(page) {
+    getBooksByLanguage: function getBooksByLanguage(language) {
       var _this = this;
 
-      this.axios.get("http://localhost:8000/api/books?page=".concat(page)).then(function (response) {
+      this.axios.get("http://localhost:8000/api/books?language=".concat(language)).then(function (response) {
         _this.books = response.data.books.data;
         _this.pagination = response.data.pagination;
+      });
+    },
+    getBooksByAuthor: function getBooksByAuthor(author) {
+      var _this2 = this;
+
+      this.axios.get("http://localhost:8000/api/books?author=".concat(author)).then(function (response) {
+        _this2.books = response.data.books.data;
+        _this2.pagination = response.data.pagination;
+      });
+    },
+    getBooks: function getBooks(page) {
+      var _this3 = this;
+
+      this.axios.get("http://localhost:8000/api/books?page=".concat(page)).then(function (response) {
+        _this3.books = response.data.books.data;
+        _this3.pagination = response.data.pagination;
       });
     },
     changePage: function changePage(page) {
@@ -3041,15 +3064,15 @@ __webpack_require__.r(__webpack_exports__);
       this.getBooks(page);
     },
     deleteBook: function deleteBook(id) {
-      var _this2 = this;
+      var _this4 = this;
 
       this.axios["delete"]("http://localhost:8000/api/book/delete/".concat(id)).then(function (response) {
-        var i = _this2.books.map(function (item) {
+        var i = _this4.books.map(function (item) {
           return item.id;
         }).indexOf(id); //fix index of objects
 
 
-        _this2.books.splice(i, 1);
+        _this4.books.splice(i, 1);
       });
     }
   }
@@ -23710,7 +23733,225 @@ var render = function() {
                   [_vm._v("\n              Add Book\n            ")]
                 ),
                 _vm._v(" "),
-                _vm._m(0)
+                _c("div", { staticClass: "list-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "text-muted font-weight-600 py-8",
+                      attrs: { for: "" }
+                    },
+                    [_vm._v("LANGUAGE")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-home-list",
+                        "data-toggle": "list",
+                        href: "#list-home",
+                        role: "tab",
+                        "aria-controls": "home"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByLanguage("English")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-At-Sign" }),
+                      _vm._v(" English")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-profile-list",
+                        "data-toggle": "list",
+                        href: "#list-profile",
+                        role: "tab",
+                        "aria-controls": "profile"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByLanguage("French")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-At-Sign" }),
+                      _vm._v(" French")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-settings-list",
+                        "data-toggle": "list",
+                        href: "#list-settings",
+                        role: "tab",
+                        "aria-controls": "settings"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByLanguage("Japanese")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-At-Sign" }),
+                      _vm._v(" Japanese")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-settings-list",
+                        "data-toggle": "list",
+                        href: "#list-settings",
+                        role: "tab",
+                        "aria-controls": "settings"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByLanguage("Spanish")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-At-Sign" }),
+                      _vm._v(" Spanish")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "text-muted font-weight-600 py-8",
+                      attrs: { for: "" }
+                    },
+                    [_vm._v("FAVOURITE AUTHOR")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-home-list",
+                        "data-toggle": "list",
+                        href: "#list-home",
+                        role: "tab",
+                        "aria-controls": "home"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByAuthor("Bill Bryson")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-Administrator" }),
+                      _vm._v(" Bill Bryson")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-profile-list",
+                        "data-toggle": "list",
+                        href: "#list-profile",
+                        role: "tab",
+                        "aria-controls": "profile"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByAuthor("Kristin Hannah")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-Administrator" }),
+                      _vm._v(" Kristin Hannah")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-settings-list",
+                        "data-toggle": "list",
+                        href: "#list-settings",
+                        role: "tab",
+                        "aria-controls": "settings"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByAuthor("Sarah J. Maas")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-Administrator" }),
+                      _vm._v(" Sarah J. Maas")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "list-group-item list-group-item-action border-0",
+                      attrs: {
+                        id: "list-settings-list",
+                        "data-toggle": "list",
+                        href: "#list-settings",
+                        role: "tab",
+                        "aria-controls": "settings"
+                      },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.getBooksByAuthor("Adam Grant")
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "nav-icon i-Administrator" }),
+                      _vm._v(" Adam Grant")
+                    ]
+                  )
+                ])
               ],
               1
             )
@@ -23718,7 +23959,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
@@ -23914,156 +24155,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "list-group" }, [
-      _c(
-        "label",
-        { staticClass: "text-muted font-weight-600 py-8", attrs: { for: "" } },
-        [_vm._v("LANGUAGE")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-home-list",
-            "data-toggle": "list",
-            href: "#list-home",
-            role: "tab",
-            "aria-controls": "home"
-          }
-        },
-        [_c("i", { staticClass: "nav-icon i-At-Sign" }), _vm._v(" English")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-profile-list",
-            "data-toggle": "list",
-            href: "#list-profile",
-            role: "tab",
-            "aria-controls": "profile"
-          }
-        },
-        [_c("i", { staticClass: "nav-icon i-At-Sign" }), _vm._v(" French")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-settings-list",
-            "data-toggle": "list",
-            href: "#list-settings",
-            role: "tab",
-            "aria-controls": "settings"
-          }
-        },
-        [_c("i", { staticClass: "nav-icon i-At-Sign" }), _vm._v(" Japanese")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-settings-list",
-            "data-toggle": "list",
-            href: "#list-settings",
-            role: "tab",
-            "aria-controls": "settings"
-          }
-        },
-        [_c("i", { staticClass: "nav-icon i-At-Sign" }), _vm._v(" Spanish")]
-      ),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "text-muted font-weight-600 py-8", attrs: { for: "" } },
-        [_vm._v("FAVOURITE AUTHOR")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-home-list",
-            "data-toggle": "list",
-            href: "#list-home",
-            role: "tab",
-            "aria-controls": "home"
-          }
-        },
-        [
-          _c("i", { staticClass: "nav-icon i-Administrator" }),
-          _vm._v(" Bill Bryson")
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-profile-list",
-            "data-toggle": "list",
-            href: "#list-profile",
-            role: "tab",
-            "aria-controls": "profile"
-          }
-        },
-        [
-          _c("i", { staticClass: "nav-icon i-Administrator" }),
-          _vm._v(" Kristin Hannah")
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-settings-list",
-            "data-toggle": "list",
-            href: "#list-settings",
-            role: "tab",
-            "aria-controls": "settings"
-          }
-        },
-        [
-          _c("i", { staticClass: "nav-icon i-Administrator" }),
-          _vm._v(" Sarah J. Maas")
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "list-group-item list-group-item-action border-0",
-          attrs: {
-            id: "list-settings-list",
-            "data-toggle": "list",
-            href: "#list-settings",
-            role: "tab",
-            "aria-controls": "settings"
-          }
-        },
-        [
-          _c("i", { staticClass: "nav-icon i-Administrator" }),
-          _vm._v(" Adam Grant")
-        ]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

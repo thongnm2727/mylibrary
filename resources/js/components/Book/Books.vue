@@ -33,6 +33,7 @@
                   href="#list-home"
                   role="tab"
                   aria-controls="home"
+                  @click.prevent="(getBooksByLanguage('English'))"
                 >
                   <i class="nav-icon i-At-Sign"></i> English</a
                 >
@@ -43,6 +44,7 @@
                   href="#list-profile"
                   role="tab"
                   aria-controls="profile"
+                  @click.prevent="(getBooksByLanguage('French'))"
                 >
                   <i class="nav-icon i-At-Sign"></i> French</a
                 >
@@ -52,7 +54,8 @@
                   data-toggle="list"
                   href="#list-settings"
                   role="tab"
-                  aria-controls="settings"
+                  aria-controls="settings"                  
+                  @click.prevent="(getBooksByLanguage('Japanese'))"
                 >
                   <i class="nav-icon i-At-Sign"></i> Japanese</a
                 >
@@ -62,12 +65,12 @@
                   data-toggle="list"
                   href="#list-settings"
                   role="tab"
-                  aria-controls="settings"
+                  aria-controls="settings"                  
+                  @click.prevent="(getBooksByLanguage('Spanish'))"
                 >
                   <i class="nav-icon i-At-Sign"></i> Spanish</a
                 >
-              
-              
+
                 <label class="text-muted font-weight-600 py-8" for=""
                   >FAVOURITE AUTHOR</label
                 >
@@ -78,6 +81,7 @@
                   href="#list-home"
                   role="tab"
                   aria-controls="home"
+                  @click.prevent="(getBooksByAuthor('Bill Bryson'))"
                 >
                   <i class="nav-icon i-Administrator"></i> Bill Bryson</a
                 >
@@ -88,6 +92,7 @@
                   href="#list-profile"
                   role="tab"
                   aria-controls="profile"
+                  @click.prevent="(getBooksByAuthor('Kristin Hannah'))"
                 >
                   <i class="nav-icon i-Administrator"></i> Kristin Hannah</a
                 >
@@ -97,7 +102,8 @@
                   data-toggle="list"
                   href="#list-settings"
                   role="tab"
-                  aria-controls="settings"
+                  aria-controls="settings"                  
+                  @click.prevent="(getBooksByAuthor('Sarah J. Maas'))"
                 >
                   <i class="nav-icon i-Administrator"></i> Sarah J. Maas</a
                 >
@@ -108,6 +114,7 @@
                   href="#list-settings"
                   role="tab"
                   aria-controls="settings"
+                  @click.prevent="(getBooksByAuthor('Adam Grant'))"
                 >
                   <i class="nav-icon i-Administrator"></i> Adam Grant</a
                 >
@@ -291,6 +298,22 @@ export default {
     // isActive: function (page) {
     //   return this.pagination.current_page == $page;
     // },
+        getBooksByLanguage(language) {
+      this.axios
+        .get(`http://localhost:8000/api/books?language=${language}`)
+        .then((response) => {
+          this.books = response.data.books.data;
+          this.pagination = response.data.pagination;
+        });
+    },
+    getBooksByAuthor(author) {
+      this.axios
+        .get(`http://localhost:8000/api/books?author=${author}`)
+        .then((response) => {
+          this.books = response.data.books.data;
+          this.pagination = response.data.pagination;
+        });
+    },
     getBooks(page) {
       this.axios
         .get(`http://localhost:8000/api/books?page=${page}`)
