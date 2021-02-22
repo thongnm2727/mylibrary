@@ -1,63 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tổng quan
+Project giả lập một trang web quản lý dành cho thư viện như một cổng thông tin cung cấp các tính năng cho phép người dùng tra cứu các thông tin về thư viện, cũng như
+quản lý thông tin về thư viện tùy theo đối tượng. Đối tượng người dùng chính của trang web bao gồm Guest và Admin, Guest là những người muốn tra cứu thông tin về
+thư viện trước khi tới mượn sách. Admin ngoài được cấp những quyền như Guest còn có thể quản lý, cập nhật sách, quản lý thông tin về lượt mượn sách tại thư viện, ...
 
-## About Laravel
+    Framework sử dụng
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Backend: Laravel
+- Frontend: VueJS, Gull - Laravel + Bootstrap 4 admin template
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Thông tin mà thư viện cung cấp:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Thông tin chung về thư viện
+- Phí thành viên (phí đăng ký để trở thành thành viên của thư viện, thành viên là người có thể mượn sách tại thư viện)
+- Thông tin liên hệ
+- Giờ mở cửa
+- Danh sách các đầu sách hiện có tại thư viện, các cuốn sách thuộc về đầu sách đó và tình trạng sẵn có của các cuốn sách này 
 
-## Learning Laravel
+## Quyền sử dụng của Guest và Admin:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Guest: Tra cứu thông tin thư viện, tra cứu thông tin sách
+- Admin: Có đầy đủ quyền sử dụng như Guest, ngoài ra có thể quản lý những lượt mượn sách tại thư viện, cũng như thêm, sửa, xóa các đầu sách hiện có tại thư viện.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Đối tượng & quan hệ giữa các đối tượng
 
-## Laravel Sponsors
+- Book (đầu sách): những đầu sách có trong thư viện. ( Đắc Nhân Tâm, Bố Già, ...)
+- Book Copy (sách): các cuốn sách thuộc về một đầu sách nào đó. Ví dụ: Trong thư viện có đầu sách (book) Đắc Nhân Tâm, đầu sách này hiện đang có
+3 cuốn ( 3 book copies), trong đó 1 cuốn sẵn có (Available) và 2 cuốn hiện đang có người mượn (Unavailable)
+- Book Request (lượt mượn sách): bao gồm thông tin về cuốn sách được mượn (book copy), ngày mượn, ngày trả, tình trạng: Đang mượn (Unreturned), Đã trả (Returned), Quá hạn (Overdue)
+- Admin: Có quyền Login với account được cấp sẵn, sau khi đăng nhập có thể xem và quản lý thông tin về Book Request, cũng như cập nhật, quản lý danh sách đầu sách (Book) hiện có tại thư viện
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Giao diện
+ Google Drive (https://drive.google.com/drive/folders/1VAfKRQJx4YjY0wfIH0NF_TLwpoRLQRCJ?usp=sharing)
+- Book List
+![image](https://drive.google.com/uc?export=view&id=1okfpp3bIm6bPbJHgvYwN0lPIPjYA1cIX)
+- Book Detail
+![image](https://drive.google.com/uc?export=view&id=1Ll_1Ncu8MfuPrsNeb3wcLUqFv8xluvJJ)
+- Book Requests
+![image](https://drive.google.com/uc?export=view&id=1oUPi8n_YOlvH4pnDYBFGUpsn37_4PDp0)
+- Login
+![image](https://drive.google.com/uc?export=view&id=1m9EKz1shAwf6RoKsOKg8k7Vm9xhdDQDp)
+## Hướng dẫn cài đặt
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# mylibrary" 
