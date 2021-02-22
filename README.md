@@ -41,7 +41,14 @@ thư viện trước khi tới mượn sách. Admin ngoài được cấp nhữ
 - Login
 ![image](https://drive.google.com/uc?export=view&id=1m9EKz1shAwf6RoKsOKg8k7Vm9xhdDQDp)
 ## Hướng dẫn cài đặt
-
+- git clone https://github.com/thongnm2727/mylibrary.git
+- cd mylibrary
+- composer update
+- npm install
+- npm run dev
+- mở file .env và thay đổi thông tin db connection 
+- php artisan migrate
+- php artisan serve
 
 
 
