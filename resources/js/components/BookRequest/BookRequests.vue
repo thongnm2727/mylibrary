@@ -23,18 +23,22 @@
                 <p class="text-muted mb-2">Status:</p>
                 <ul class="list-group">
                   <li class="list-group-item border-0">
-                    <a href=""
+                    <a 
+                    href="" 
+                    @click.prevent="getRequestsByStatus('Returned')"
                       ><i class="icon-regular i-Find-User mr-2"></i> Returned</a
                     >
                   </li>
                   <li class="list-group-item border-0">
                     <a href=""
+                    @click.prevent="getRequestsByStatus('Unreturned')"
                       ><i class="icon-regular i-Favorite-Window mr-2"></i>
                       Unreturned</a
                     >
                   </li>
                   <li class="list-group-item border-0">
                     <a href=""
+                    @click.prevent="getRequestsByStatus('Overdue')"
                       ><i class="icon-regular i-Delete-File mr-2"></i>
                       Overdue</a
                     >
@@ -80,7 +84,7 @@
                     >Book copy's Id:</label
                   >
                   <input
-                  name="book_copy_id"
+                    name="book_copy_id"
                     class="form-control"
                     type="number"
                     required
@@ -92,7 +96,7 @@
                     >Request date:</label
                   >
                   <input
-                  name="requested_date"
+                    name="requested_date"
                     class="form-control"
                     type="text"
                     required
@@ -103,8 +107,8 @@
                   <label class="col-form-label" for="recipient-name-2"
                     >Return date:</label
                   >
-                  <input                  
-                  name="return_date"
+                  <input
+                    name="return_date"
                     class="form-control"
                     type="text"
                     required
@@ -141,10 +145,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="ul-todo-body">
-                  <table
-                    id="book_requests_table"
-                    class="table table-striped"
-                  >
+                  <table id="book_requests_table" class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#Request ID</th>
@@ -233,15 +234,22 @@ export default {
     this.axios
       .get("http://localhost:8000/api/book_requests")
       .then((response) => {
-        this.book_requests = response.data.book_requests;      
+        this.book_requests = response.data.book_requests;
       })
       .then(() => {
         $("#book_requests_table").DataTable({
-          "order" : [[0,"desc"]]
-        });        
+          order: [[0, "desc"]],
+        });
       });
   },
   methods: {
+    getRequestsByStatus(status) {
+      this.axios
+        .get(`http://localhost:8000/api/book_requests?language=${status}`)
+        .then((response) => {
+          this.book_requests = response.data.book_requests;
+        });
+    },
     addBookRequest() {
       this.axios
         .post(`http://localhost:8000/api/book_request/add`, this.book_request)

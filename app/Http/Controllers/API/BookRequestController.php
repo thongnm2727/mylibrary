@@ -13,16 +13,20 @@ use Illuminate\Support\Facades\Auth;
 class BookRequestController extends Controller
 {
     //
-    public function getAll()
+    public function getAll(Request $request)
     {
         $user = Auth::user();
         if (!is_null($user)) {
+            $status = $request->input('language');
             $book_requests = DB::table('book_request')
+                ->when($status, function ($query, $status) {
+                    return $query->where('status', $status);
+                })
                 ->orderBy('id', 'desc')
                 ->get()->toArray();
 
             return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
-        }else {
+        } else {
             return response()->json(["status" => "failed", "message" => "Un-authorized user"], 403);
         }
     }
@@ -50,7 +54,7 @@ class BookRequestController extends Controller
                 ->orderBy('id', 'desc')
                 ->get()->toArray();
             return response()->json(["status" => "success", "book_requests" => $book_requests], 200);
-        }else {
+        } else {
             return response()->json(["status" => "failed", "message" => "Un-authorized user"], 403);
         }
     }
@@ -84,7 +88,7 @@ class BookRequestController extends Controller
                 ->get()->toArray();
 
             return response()->json(["status" => "success", 'book_requests' => $book_requests], 200);
-        }else {
+        } else {
             return response()->json(["status" => "failed", "message" => "Un-authorized user"], 403);
         }
     }
@@ -95,7 +99,7 @@ class BookRequestController extends Controller
         if (!is_null($user)) {
             DB::table('book_request')->where('id', $id)->delete();
             return response()->json(["status" => "success", "message" => "Delete request success!"], 200);
-        }else {
+        } else {
             return response()->json(["status" => "failed", "message" => "Un-authorized user"], 403);
         }
     }

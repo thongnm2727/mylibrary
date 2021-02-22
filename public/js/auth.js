@@ -2135,6 +2135,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2149,16 +2150,23 @@ __webpack_require__.r(__webpack_exports__);
       _this.book_requests = response.data.book_requests;
     }).then(function () {
       $("#book_requests_table").DataTable({
-        "order": [[0, "desc"]]
+        order: [[0, "desc"]]
       });
     });
   },
   methods: {
-    addBookRequest: function addBookRequest() {
+    getRequestsByStatus: function getRequestsByStatus(status) {
       var _this2 = this;
 
-      this.axios.post("http://localhost:8000/api/book_request/add", this.book_request).then(function (response) {
+      this.axios.get("http://localhost:8000/api/book_requests?language=".concat(status)).then(function (response) {
         _this2.book_requests = response.data.book_requests;
+      });
+    },
+    addBookRequest: function addBookRequest() {
+      var _this3 = this;
+
+      this.axios.post("http://localhost:8000/api/book_request/add", this.book_request).then(function (response) {
+        _this3.book_requests = response.data.book_requests;
 
         if (response.data.status == "success") {
           $("#message").text("Add request success!").addClass(" text-success");
@@ -2166,24 +2174,24 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     returnBook: function returnBook(book_request_id) {
-      var _this3 = this;
+      var _this4 = this;
 
       this.axios.post("http://localhost:8000/api/book_request/return/".concat(book_request_id)).then(function (response) {
         // let i = this.books.map((item) => item.id).indexOf(id); //fix index of objects
         // this.books.splice(i, 1);
-        _this3.book_requests = response.data.book_requests;
+        _this4.book_requests = response.data.book_requests;
       });
     },
     deleteBookRequest: function deleteBookRequest(id) {
-      var _this4 = this;
+      var _this5 = this;
 
       this.axios["delete"]("http://localhost:8000/api/book_request/delete/".concat(id)).then(function (response) {
-        var i = _this4.book_requests.map(function (item) {
+        var i = _this5.book_requests.map(function (item) {
           return item.id;
         }).indexOf(id); //fix index of objects
 
 
-        _this4.book_requests.splice(i, 1);
+        _this5.book_requests.splice(i, 1);
       });
     }
   }
@@ -3321,9 +3329,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.dispatch("login", {
         email: email,
         password: password
-      }) // .then(() => console.log(localStorage.getItem('token')))
-      // .then(() => this.$router.go('http://localhost:8000/'))
-      ["catch"](function (err) {
+      }).then(window.location.replace('http://localhost:8000'))["catch"](function (err) {
         return console.log(err);
       });
     }
@@ -3424,8 +3430,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BookRequest_BookRequests_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/BookRequest/BookRequests.vue */ "./resources/js/components/BookRequest/BookRequests.vue");
 /* harmony import */ var _components_Contacts_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Contacts.vue */ "./resources/js/components/Contacts.vue");
 /* harmony import */ var _components_Price_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Price.vue */ "./resources/js/components/Price.vue");
-/* harmony import */ var _components_Login_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Login.vue */ "./resources/js/components/Login.vue");
-
 
 
 
@@ -3484,10 +3488,6 @@ var routes = [{
   name: "book_requests",
   path: "/book_requests",
   component: _components_BookRequest_BookRequests_vue__WEBPACK_IMPORTED_MODULE_7__.default
-}, {
-  name: "login",
-  path: "/login",
-  component: _components_Login_vue__WEBPACK_IMPORTED_MODULE_10__.default
 }];
 
 /***/ }),
@@ -22410,7 +22410,102 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "main-content" }, [
     _c("section", { staticClass: "ul-todo-list-content" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "ul-todo-sidebar" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "pr-3 pb-3" }, [
+              _c("i", {
+                staticClass: "todo-sidebar-close i-Close pb-3 text-right",
+                attrs: { "data-sidebar-toggle": "main" }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn-block mb-4",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "modal",
+                    "data-target": "#modal-add-book-request"
+                  }
+                },
+                [_vm._v("\n              Add Request\n            ")]
+              ),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "text-muted mb-2" }, [
+                  _vm._v("Status:")
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "list-group" }, [
+                  _c("li", { staticClass: "list-group-item border-0" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.getRequestsByStatus("Returned")
+                          }
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "icon-regular i-Find-User mr-2"
+                        }),
+                        _vm._v(" Returned")
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "list-group-item border-0" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.getRequestsByStatus("Unreturned")
+                          }
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "icon-regular i-Favorite-Window mr-2"
+                        }),
+                        _vm._v("\n                    Unreturned")
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "list-group-item border-0" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.getRequestsByStatus("Overdue")
+                          }
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "icon-regular i-Delete-File mr-2"
+                        }),
+                        _vm._v("\n                    Overdue")
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -22430,7 +22525,7 @@ var render = function() {
             { staticClass: "modal-dialog", attrs: { role: "document" } },
             [
               _c("div", { staticClass: "modal-content" }, [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-body" }, [
                   _c(
@@ -22573,7 +22668,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(2)
+                _vm._m(1)
               ])
             ]
           )
@@ -22593,7 +22688,7 @@ var render = function() {
                       attrs: { id: "book_requests_table" }
                     },
                     [
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -22681,7 +22776,7 @@ var render = function() {
                         0
                       ),
                       _vm._v(" "),
-                      _vm._m(4)
+                      _vm._m(3)
                     ]
                   )
                 ])
@@ -22694,65 +22789,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ul-todo-sidebar" }, [
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "pr-3 pb-3" }, [
-            _c("i", {
-              staticClass: "todo-sidebar-close i-Close pb-3 text-right",
-              attrs: { "data-sidebar-toggle": "main" }
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary btn-block mb-4",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "modal",
-                  "data-target": "#modal-add-book-request"
-                }
-              },
-              [_vm._v("\n              Add Request\n            ")]
-            ),
-            _vm._v(" "),
-            _c("div", [
-              _c("p", { staticClass: "text-muted mb-2" }, [_vm._v("Status:")]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "list-group" }, [
-                _c("li", { staticClass: "list-group-item border-0" }, [
-                  _c("a", { attrs: { href: "" } }, [
-                    _c("i", { staticClass: "icon-regular i-Find-User mr-2" }),
-                    _vm._v(" Returned")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item border-0" }, [
-                  _c("a", { attrs: { href: "" } }, [
-                    _c("i", {
-                      staticClass: "icon-regular i-Favorite-Window mr-2"
-                    }),
-                    _vm._v("\n                    Unreturned")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item border-0" }, [
-                  _c("a", { attrs: { href: "" } }, [
-                    _c("i", { staticClass: "icon-regular i-Delete-File mr-2" }),
-                    _vm._v("\n                    Overdue")
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

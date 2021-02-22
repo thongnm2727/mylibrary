@@ -101,8 +101,7 @@ export default {
       let password = this.password;
       this.$store
         .dispatch("login", { email, password })
-        // .then(() => console.log(localStorage.getItem('token')))
-        // .then(() => this.$router.go('http://localhost:8000/'))
+        .then(window.location.replace('http://localhost:8000'))
         .catch((err) => console.log(err));
     },
   },
