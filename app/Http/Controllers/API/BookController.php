@@ -24,7 +24,7 @@ class BookController extends Controller
             ->when($language, function($query, $language){
                 return $query->where('language', $language);
             })
-            ->paginate(8);
+            ->paginate(4);
         // }
 
         $response = [

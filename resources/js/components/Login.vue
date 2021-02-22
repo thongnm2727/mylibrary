@@ -9,7 +9,7 @@
           <div class="col-md-6">
             <div class="p-4">
               <div class="auth-logo text-center mb-4">
-                <img v-bind:src="'/dist-assets/images/logo.jpg'" alt="" />
+                <img v-bind:src="'/dist-assets/images/logo.png'" alt="" />
               </div>
               <h1 class="mb-3 text-18">Sign In</h1>
               <form class="login" @submit.prevent="login">

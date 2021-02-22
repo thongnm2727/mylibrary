@@ -22371,7 +22371,7 @@ var render = function() {
         _c("a", { attrs: { href: "http://localhost:8000" } }, [
           _c("img", {
             staticClass: "rounded rounded",
-            attrs: { src: "/dist-assets/images/logo.jpg", alt: "" }
+            attrs: { src: "/dist-assets/images/logo.png", alt: "" }
           })
         ])
       ]),

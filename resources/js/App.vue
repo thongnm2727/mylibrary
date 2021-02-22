@@ -5,7 +5,7 @@
         <a href="http://localhost:8000">
           <img
             class="rounded rounded"
-            v-bind:src="'/dist-assets/images/logo.jpg'"
+            v-bind:src="'/dist-assets/images/logo.png'"
             alt=""
           />
         </a>

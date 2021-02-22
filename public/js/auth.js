@@ -24624,7 +24624,7 @@ var render = function() {
               _c("div", { staticClass: "p-4" }, [
                 _c("div", { staticClass: "auth-logo text-center mb-4" }, [
                   _c("img", {
-                    attrs: { src: "/dist-assets/images/logo.jpg", alt: "" }
+                    attrs: { src: "/dist-assets/images/logo.png", alt: "" }
                   })
                 ]),
                 _vm._v(" "),
