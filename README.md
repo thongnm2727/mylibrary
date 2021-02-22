@@ -31,7 +31,7 @@ thư viện trước khi tới mượn sách. Admin ngoài được cấp nhữ
 - Admin: Có quyền Login với account được cấp sẵn, sau khi đăng nhập có thể xem và quản lý thông tin về Book Request, cũng như cập nhật, quản lý danh sách đầu sách (Book) hiện có tại thư viện
 
 ## Giao diện
-![Link Google Drive](https://drive.google.com/drive/folders/1VAfKRQJx4YjY0wfIH0NF_TLwpoRLQRCJ?usp=sharing)
+ Google Drive (https://drive.google.com/drive/folders/1VAfKRQJx4YjY0wfIH0NF_TLwpoRLQRCJ?usp=sharing)
 - Book List
 ![image](https://drive.google.com/uc?export=view&id=1okfpp3bIm6bPbJHgvYwN0lPIPjYA1cIX)
 - Book Detail
